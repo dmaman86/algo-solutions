@@ -2,7 +2,7 @@
 
 Write a function that takes in a non-empty of integers and returns the maximum
 sum that can be obtained by summing up all of the integers in a non-empty
-subarray of the input array. A subarray must only contain adjacent numbers
+sub-array of the input array. A sub-array must only contain adjacent numbers
 (numbers next to each other in the input array).
 
 Sample Input

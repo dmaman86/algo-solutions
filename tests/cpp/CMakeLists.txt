@@ -1,2 +1,2 @@
 add_subdirectory(arrays)
-# add_subdirectory(bst)
+add_subdirectory(famous_algorithms)
