@@ -1,8 +1,4 @@
-from typing import List
-
-
-def isValidSubsequence(array: List[int], sequence: List[int]) -> bool:
-
+def isValidSubsequence(array: list[int], sequence: list[int]) -> bool:
     arrIdx = 0
     seqIdx = 0
 

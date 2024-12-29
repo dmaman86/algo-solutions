@@ -12,3 +12,6 @@ Testing/
 build/
 
 .cache/
+
+__pycache__/
+*.pyc
