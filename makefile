@@ -1,6 +1,5 @@
 JS_TEST_DIR = tests/__tests__
 PYTHON_TEST_DIR = tests/python
-CPP_TEST_DIR = tests/cpp
 
 all: test
 
