@@ -1,0 +1,89 @@
+{
+  "repo": "https://github.com/dmaman86/algo-solutions/tree/main",
+  "problems": [
+    {
+      "name": "four_number_sum",
+      "topic": "arrays",
+      "difficulty": "hard",
+      "languages": ["cpp", "js"],
+      "path": "problems/arrays/four_number_sum"
+    },
+    {
+      "name": "sorted_squared_array",
+      "topic": "arrays",
+      "difficulty": "easy",
+      "languages": ["js"],
+      "path": "problems/arrays/sorted_squared_array"
+    },
+    {
+      "name": "tournament_winner",
+      "topic": "arrays",
+      "difficulty": "easy",
+      "languages": ["js", "cpp"],
+      "path": "problems/arrays/tournament_winner"
+    },
+    {
+      "name": "two_number_sum",
+      "topic": "arrays",
+      "difficulty": "easy",
+      "languages": ["js"],
+      "path": "problems/arrays/two_number_sum"
+    },
+    {
+      "name": "validate_subsequence",
+      "topic": "arrays",
+      "difficulty": "easy",
+      "languages": ["js", "python"],
+      "path": "problems/arrays/validate_subsequence"
+    },
+    {
+      "name": "repair_bst",
+      "topic": "binary_search_trees",
+      "difficulty": "hard",
+      "languages": ["js", "python"],
+      "path": "problems/binary_search_trees/repair_bst"
+    },
+    {
+      "name": "dijkstras_algorithm",
+      "topic": "famous_algorithms",
+      "difficulty": "hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/famous_algorithms/dijkstras_algorithm"
+    },
+    {
+      "name": "kadanes_algorithm",
+      "topic": "famous_algorithms",
+      "difficulty": "normal",
+      "languages": ["js", "cpp"],
+      "path": "problems/famous_algorithms/kadanes_algorithm"
+    },
+    {
+      "name": "kruskals_algorithm",
+      "topic": "famous_algorithms",
+      "difficulty": "hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/famous_algorithms/kruskals_algorithm"
+    },
+    {
+      "name": "prims_algorithm",
+      "topic": "famous_algorithms",
+      "difficulty": "hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/famous_algorithms/prims_algorithm"
+    },
+    {
+      "name": "topological_sort",
+      "topic": "famous_algorithms",
+      "difficulty": "hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/famous_algorithms/topological_sort"
+    },
+    {
+      "name": "airport_connections",
+      "topic": "graphs",
+      "difficulty": "very hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/graphs/airport_connections"
+    }
+  ]
+}
