@@ -38,45 +38,52 @@
     },
     {
       "name": "repair_bst",
-      "topic": "binary_search_trees",
+      "topic": "binary search_trees",
       "difficulty": "hard",
       "languages": ["js", "python"],
       "path": "problems/binary_search_trees/repair_bst"
     },
     {
       "name": "dijkstras_algorithm",
-      "topic": "famous_algorithms",
+      "topic": "famous algorithms",
       "difficulty": "hard",
       "languages": ["js", "python", "cpp"],
       "path": "problems/famous_algorithms/dijkstras_algorithm"
     },
     {
       "name": "kadanes_algorithm",
-      "topic": "famous_algorithms",
+      "topic": "famous algorithms",
       "difficulty": "normal",
       "languages": ["js", "cpp"],
       "path": "problems/famous_algorithms/kadanes_algorithm"
     },
     {
       "name": "kruskals_algorithm",
-      "topic": "famous_algorithms",
+      "topic": "famous algorithms",
       "difficulty": "hard",
       "languages": ["js", "python", "cpp"],
       "path": "problems/famous_algorithms/kruskals_algorithm"
     },
     {
       "name": "prims_algorithm",
-      "topic": "famous_algorithms",
+      "topic": "famous algorithms",
       "difficulty": "hard",
       "languages": ["js", "python", "cpp"],
       "path": "problems/famous_algorithms/prims_algorithm"
     },
     {
       "name": "topological_sort",
-      "topic": "famous_algorithms",
+      "topic": "famous algorithms",
       "difficulty": "hard",
       "languages": ["js", "python", "cpp"],
       "path": "problems/famous_algorithms/topological_sort"
+    },
+    {
+      "name": "a_star_algorithm",
+      "topic": "famous algorithms",
+      "difficulty": "very hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/famous_algorithms/a_star_algorithm"
     },
     {
       "name": "airport_connections",
