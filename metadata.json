@@ -79,11 +79,11 @@
       "path": "problems/famous_algorithms/topological_sort"
     },
     {
-      "name": "a_star_algorithm",
+      "name": "astar_algorithm",
       "topic": "famous algorithms",
       "difficulty": "very hard",
       "languages": ["js", "python", "cpp"],
-      "path": "problems/famous_algorithms/a_star_algorithm"
+      "path": "problems/famous_algorithms/astar_algorithm"
     },
     {
       "name": "airport_connections",
