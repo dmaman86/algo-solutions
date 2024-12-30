@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.14)
 
-#Nombre del proyecto
+
 project(algo-solutions)
 
-#Configuración general de C++
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -19,5 +19,4 @@ set(ARRAYS_DIR ${PROJECT_SOURCE_DIR}/problems/arrays)
 set(FAMOUS_ALGORITHMS_DIR ${PROJECT_SOURCE_DIR}/problems/famous_algorithms)
 set(GRAPHS_DIR ${PROJECT_SOURCE_DIR}/problems/graphs)
 
-#Incluir subdirectorios para compilación
 add_subdirectory(tests/cpp)
