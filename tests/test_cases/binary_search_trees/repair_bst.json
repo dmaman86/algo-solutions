@@ -1,0 +1,322 @@
+[
+  {
+    "tree": {
+      "nodes": [
+        { "id": "2", "left": null, "right": "1", "value": 2 },
+        { "id": "1", "left": null, "right": null, "value": 1 }
+      ],
+      "root": "2"
+    },
+    "expected": {
+      "nodes": [
+        { "id": "1", "left": null, "right": "2", "value": 1 },
+        { "id": "2", "left": null, "right": null, "value": 2 }
+      ],
+      "root": "1"
+    }
+  },
+  {
+    "tree": {
+      "nodes": [
+        { "id": "1", "left": null, "right": "3", "value": 1 },
+        { "id": "2", "left": null, "right": null, "value": 2 },
+        { "id": "3", "left": null, "right": "2", "value": 3 }
+      ],
+      "root": "1"
+    },
+    "expected": {
+      "nodes": [
+        { "id": "1", "left": null, "right": "2", "value": 1 },
+        { "id": "2", "left": null, "right": "3", "value": 2 },
+        { "id": "3", "left": null, "right": null, "value": 3 }
+      ],
+      "root": "1"
+    }
+  },
+  {
+    "tree": {
+      "nodes": [
+        { "id": "2", "left": "3", "right": "1", "value": 2 },
+        { "id": "1", "left": null, "right": null, "value": 1 },
+        { "id": "3", "left": null, "right": null, "value": 3 }
+      ],
+      "root": "2"
+    },
+    "expected": {
+      "nodes": [
+        { "id": "2", "left": "1", "right": "3", "value": 2 },
+        { "id": "3", "left": null, "right": null, "value": 3 },
+        { "id": "1", "left": null, "right": null, "value": 1 }
+      ],
+      "root": "2"
+    }
+  },
+  {
+    "tree": {
+      "nodes": [
+        { "id": "2", "left": "1", "right": "3", "value": 2 },
+        { "id": "3", "left": null, "right": "0", "value": 3 },
+        { "id": "4", "left": null, "right": null, "value": 4 },
+        { "id": "1", "left": "4", "right": null, "value": 1 },
+        { "id": "0", "left": null, "right": null, "value": 0 }
+      ],
+      "root": "2"
+    },
+    "expected": {
+      "nodes": [
+        { "id": "2", "left": "1", "right": "3", "value": 2 },
+        { "id": "3", "left": null, "right": "4", "value": 3 },
+        { "id": "4", "left": null, "right": null, "value": 4 },
+        { "id": "1", "left": "0", "right": null, "value": 1 },
+        { "id": "0", "left": null, "right": null, "value": 0 }
+      ],
+      "root": "2"
+    }
+  },
+  {
+    "tree": {
+      "nodes": [
+        { "id": "10", "left": "5", "right": "13", "value": 10 },
+        { "id": "13", "left": "15", "right": "22", "value": 13 },
+        { "id": "22", "left": null, "right": null, "value": 22 },
+        { "id": "15", "left": null, "right": "14", "value": 15 },
+        { "id": "14", "left": null, "right": null, "value": 14 },
+        { "id": "5", "left": "2", "right": "6", "value": 5 },
+        { "id": "6", "left": null, "right": null, "value": 6 },
+        { "id": "2", "left": "1", "right": null, "value": 2 },
+        { "id": "1", "left": null, "right": null, "value": 1 }
+      ],
+      "root": "10"
+    },
+    "expected": {
+      "nodes": [
+        { "id": "10", "left": "5", "right": "15", "value": 10 },
+        { "id": "15", "left": "13", "right": "22", "value": 15 },
+        { "id": "22", "left": null, "right": null, "value": 22 },
+        { "id": "13", "left": null, "right": "14", "value": 13 },
+        { "id": "14", "left": null, "right": null, "value": 14 },
+        { "id": "5", "left": "2", "right": "6", "value": 5 },
+        { "id": "6", "left": null, "right": null, "value": 6 },
+        { "id": "2", "left": "1", "right": null, "value": 2 },
+        { "id": "1", "left": null, "right": null, "value": 1 }
+      ],
+      "root": "10"
+    }
+  },
+  {
+    "tree": {
+      "nodes": [
+        { "id": "10", "left": "5", "right": "15", "value": 10 },
+        { "id": "15", "left": null, "right": "22", "value": 15 },
+        { "id": "22", "left": null, "right": null, "value": 22 },
+        { "id": "5", "left": "2", "right": "-15", "value": 5 },
+        { "id": "-15", "left": null, "right": null, "value": -15 },
+        { "id": "2", "left": "1", "right": null, "value": 2 },
+        { "id": "1", "left": "-5", "right": null, "value": 1 },
+        { "id": "-5", "left": "7", "right": "-4", "value": -5 },
+        { "id": "-4", "left": null, "right": "-2", "value": -4 },
+        { "id": "-2", "left": null, "right": "-1", "value": -2 },
+        { "id": "-1", "left": null, "right": null, "value": -1 },
+        { "id": "7", "left": "-22", "right": null, "value": 7 },
+        { "id": "-22", "left": null, "right": null, "value": -22 }
+      ],
+      "root": "10"
+    },
+    "expected": {
+      "nodes": [
+        { "id": "10", "left": "5", "right": "15", "value": 10 },
+        { "id": "15", "left": null, "right": "22", "value": 15 },
+        { "id": "22", "left": null, "right": null, "value": 22 },
+        { "id": "5", "left": "2", "right": "7", "value": 5 },
+        { "id": "7", "left": null, "right": null, "value": 7 },
+        { "id": "2", "left": "1", "right": null, "value": 2 },
+        { "id": "1", "left": "-5", "right": null, "value": 1 },
+        { "id": "-5", "left": "-15", "right": "-4", "value": -5 },
+        { "id": "-4", "left": null, "right": "-2", "value": -4 },
+        { "id": "-2", "left": null, "right": "-1", "value": -2 },
+        { "id": "-1", "left": null, "right": null, "value": -1 },
+        { "id": "-15", "left": "-22", "right": null, "value": -15 },
+        { "id": "-22", "left": null, "right": null, "value": -22 }
+      ],
+      "root": "10"
+    }
+  },
+  {
+    "tree": {
+      "nodes": [
+        { "id": "10", "left": "-5", "right": "15", "value": 10 },
+        { "id": "15", "left": null, "right": "22", "value": 15 },
+        { "id": "22", "left": null, "right": null, "value": 22 },
+        { "id": "-5", "left": "2", "right": "6", "value": -5 },
+        { "id": "6", "left": null, "right": null, "value": 6 },
+        { "id": "2", "left": "1", "right": null, "value": 2 },
+        { "id": "1", "left": "5", "right": null, "value": 1 },
+        { "id": "5", "left": "-15", "right": "-4", "value": 5 },
+        { "id": "-4", "left": null, "right": "-2", "value": -4 },
+        { "id": "-2", "left": null, "right": "-1", "value": -2 },
+        { "id": "-1", "left": null, "right": null, "value": -1 },
+        { "id": "-15", "left": "-22", "right": null, "value": -15 },
+        { "id": "-22", "left": null, "right": null, "value": -22 }
+      ],
+      "root": "10"
+    },
+    "expected": {
+      "nodes": [
+        { "id": "10", "left": "5", "right": "15", "value": 10 },
+        { "id": "15", "left": null, "right": "22", "value": 15 },
+        { "id": "22", "left": null, "right": null, "value": 22 },
+        { "id": "5", "left": "2", "right": "6", "value": 5 },
+        { "id": "6", "left": null, "right": null, "value": 6 },
+        { "id": "2", "left": "1", "right": null, "value": 2 },
+        { "id": "1", "left": "-5", "right": null, "value": 1 },
+        { "id": "-5", "left": "-15", "right": "-4", "value": -5 },
+        { "id": "-4", "left": null, "right": "-2", "value": -4 },
+        { "id": "-2", "left": null, "right": "-1", "value": -2 },
+        { "id": "-1", "left": null, "right": null, "value": -1 },
+        { "id": "-15", "left": "-22", "right": null, "value": -15 },
+        { "id": "-22", "left": null, "right": null, "value": -22 }
+      ],
+      "root": "10"
+    }
+  },
+  {
+    "tree": {
+      "nodes": [
+        { "id": "1", "left": "5", "right": "15", "value": 1 },
+        { "id": "15", "left": null, "right": "22", "value": 15 },
+        { "id": "22", "left": null, "right": "500", "value": 22 },
+        { "id": "500", "left": "50", "right": "1500", "value": 500 },
+        { "id": "1500", "left": null, "right": "10000", "value": 1500 },
+        { "id": "10000", "left": "2200", "right": null, "value": 10000 },
+        { "id": "2200", "left": null, "right": null, "value": 2200 },
+        { "id": "50", "left": null, "right": "200", "value": 50 },
+        { "id": "200", "left": null, "right": null, "value": 200 },
+        { "id": "5", "left": "2", "right": "6", "value": 5 },
+        { "id": "6", "left": null, "right": null, "value": 6 },
+        { "id": "2", "left": "10", "right": null, "value": 2 },
+        { "id": "10", "left": null, "right": null, "value": 10 }
+      ],
+      "root": "1"
+    },
+    "expected": {
+      "nodes": [
+        { "id": "10", "left": "5", "right": "15", "value": 10 },
+        { "id": "15", "left": null, "right": "22", "value": 15 },
+        { "id": "22", "left": null, "right": "500", "value": 22 },
+        { "id": "500", "left": "50", "right": "1500", "value": 500 },
+        { "id": "1500", "left": null, "right": "10000", "value": 1500 },
+        { "id": "10000", "left": "2200", "right": null, "value": 10000 },
+        { "id": "2200", "left": null, "right": null, "value": 2200 },
+        { "id": "50", "left": null, "right": "200", "value": 50 },
+        { "id": "200", "left": null, "right": null, "value": 200 },
+        { "id": "5", "left": "2", "right": "6", "value": 5 },
+        { "id": "6", "left": null, "right": null, "value": 6 },
+        { "id": "2", "left": "1", "right": null, "value": 2 },
+        { "id": "1", "left": null, "right": null, "value": 1 }
+      ],
+      "root": "10"
+    }
+  },
+  {
+    "tree": {
+      "nodes": [
+        { "id": "5000", "left": "5", "right": "55000", "value": 5000 },
+        { "id": "55000", "left": null, "right": null, "value": 55000 },
+        { "id": "5", "left": "2", "right": "15", "value": 5 },
+        { "id": "15", "left": "14", "right": "22", "value": 15 },
+        { "id": "22", "left": null, "right": "502", "value": 22 },
+        { "id": "502", "left": "1", "right": null, "value": 502 },
+        { "id": "1", "left": "203", "right": "205", "value": 1 },
+        { "id": "205", "left": null, "right": "207", "value": 205 },
+        { "id": "207", "left": "206", "right": "208", "value": 207 },
+        { "id": "208", "left": null, "right": null, "value": 208 },
+        { "id": "206", "left": null, "right": null, "value": 206 },
+        { "id": "203", "left": null, "right": null, "value": 203 },
+        { "id": "14", "left": null, "right": null, "value": 14 },
+        { "id": "2", "left": "-3", "right": "3", "value": 2 },
+        { "id": "3", "left": null, "right": null, "value": 3 },
+        { "id": "-3", "left": null, "right": "-2", "value": -3 },
+        { "id": "-2", "left": null, "right": "-1", "value": -2 },
+        { "id": "-1", "left": null, "right": "204", "value": -1 },
+        { "id": "204", "left": null, "right": null, "value": 204 }
+      ],
+      "root": "5000"
+    },
+    "expected": {
+      "nodes": [
+        { "id": "5000", "left": "5", "right": "55000", "value": 5000 },
+        { "id": "5", "left": "2", "right": "15", "value": 5 },
+        { "id": "2", "left": "-3", "right": "3", "value": 2 },
+        { "id": "-3", "left": null, "right": "-2", "value": -3 },
+        { "id": "-2", "left": null, "right": "-1", "value": -2 },
+        { "id": "-1", "left": null, "right": "1", "value": -1 },
+        { "id": "1", "left": null, "right": null, "value": 1 },
+        { "id": "3", "left": null, "right": null, "value": 3 },
+        { "id": "15", "left": "14", "right": "22", "value": 15 },
+        { "id": "14", "left": null, "right": null, "value": 14 },
+        { "id": "22", "left": null, "right": "502", "value": 22 },
+        { "id": "502", "left": "204", "right": null, "value": 502 },
+        { "id": "204", "left": "203", "right": "205", "value": 204 },
+        { "id": "203", "left": null, "right": null, "value": 203 },
+        { "id": "205", "left": null, "right": "207", "value": 205 },
+        { "id": "207", "left": "206", "right": "208", "value": 207 },
+        { "id": "206", "left": null, "right": null, "value": 206 },
+        { "id": "208", "left": null, "right": null, "value": 208 },
+        { "id": "55000", "left": null, "right": null, "value": 55000 }
+      ],
+      "root": "5000"
+    }
+  },
+  {
+    "tree": {
+      "nodes": [
+        { "id": "5000", "left": "8", "right": "203", "value": 5000 },
+        { "id": "203", "left": null, "right": null, "value": 203 },
+        { "id": "8", "left": "6", "right": "15", "value": 8 },
+        { "id": "15", "left": "10", "right": "22", "value": 15 },
+        { "id": "22", "left": null, "right": "502", "value": 22 },
+        { "id": "502", "left": "204", "right": null, "value": 502 },
+        { "id": "204", "left": "55000", "right": "205", "value": 204 },
+        { "id": "205", "left": null, "right": "207", "value": 205 },
+        { "id": "207", "left": "206", "right": "208", "value": 207 },
+        { "id": "208", "left": null, "right": null, "value": 208 },
+        { "id": "206", "left": null, "right": null, "value": 206 },
+        { "id": "55000", "left": null, "right": null, "value": 55000 },
+        { "id": "10", "left": null, "right": null, "value": 10 },
+        { "id": "6", "left": "1", "right": "7", "value": 6 },
+        { "id": "7", "left": null, "right": null, "value": 7 },
+        { "id": "1", "left": null, "right": "2", "value": 1 },
+        { "id": "2", "left": null, "right": "3", "value": 2 },
+        { "id": "3", "left": null, "right": "4", "value": 3 },
+        { "id": "4", "left": null, "right": "5", "value": 4 },
+        { "id": "5", "left": null, "right": null, "value": 5 }
+      ],
+      "root": "5000"
+    },
+    "expected": {
+      "nodes": [
+        { "id": "5000", "left": "8", "right": "55000", "value": 5000 },
+        { "id": "8", "left": "6", "right": "15", "value": 8 },
+        { "id": "6", "left": "1", "right": "7", "value": 6 },
+        { "id": "1", "left": null, "right": "2", "value": 1 },
+        { "id": "2", "left": null, "right": "3", "value": 2 },
+        { "id": "3", "left": null, "right": "4", "value": 3 },
+        { "id": "4", "left": null, "right": "5", "value": 4 },
+        { "id": "5", "left": null, "right": null, "value": 5 },
+        { "id": "7", "left": null, "right": null, "value": 7 },
+        { "id": "15", "left": "10", "right": "22", "value": 15 },
+        { "id": "10", "left": null, "right": null, "value": 10 },
+        { "id": "22", "left": null, "right": "502", "value": 22 },
+        { "id": "502", "left": "204", "right": null, "value": 502 },
+        { "id": "204", "left": "203", "right": "205", "value": 204 },
+        { "id": "203", "left": null, "right": null, "value": 203 },
+        { "id": "205", "left": null, "right": "207", "value": 205 },
+        { "id": "207", "left": "206", "right": "208", "value": 207 },
+        { "id": "206", "left": null, "right": null, "value": 206 },
+        { "id": "208", "left": null, "right": null, "value": 208 },
+        { "id": "55000", "left": null, "right": null, "value": 55000 }
+      ],
+      "root": "5000"
+    }
+  }
+]

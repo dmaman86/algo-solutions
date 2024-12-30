@@ -1,2 +1,3 @@
 add_subdirectory(arrays)
 add_subdirectory(famous_algorithms)
+add_subdirectory(graphs)

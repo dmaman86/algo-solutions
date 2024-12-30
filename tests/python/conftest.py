@@ -7,7 +7,12 @@ def pytest_configure():
     problems_dir = root_dir / "problems"
     # sys.path.append(str(problems_dir))
 
-    problem_categories = ["arrays", "famous_algorithms"]
+    problem_categories = [
+        "arrays",
+        "famous_algorithms",
+        "graphs",
+        "binary_search_trees",
+    ]
 
     for category in problem_categories:
         category_path = problems_dir / category

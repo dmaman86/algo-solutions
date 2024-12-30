@@ -17,6 +17,7 @@ enable_testing()
 
 set(ARRAYS_DIR ${PROJECT_SOURCE_DIR}/problems/arrays)
 set(FAMOUS_ALGORITHMS_DIR ${PROJECT_SOURCE_DIR}/problems/famous_algorithms)
+set(GRAPHS_DIR ${PROJECT_SOURCE_DIR}/problems/graphs)
 
 #Incluir subdirectorios para compilación
 add_subdirectory(tests/cpp)
