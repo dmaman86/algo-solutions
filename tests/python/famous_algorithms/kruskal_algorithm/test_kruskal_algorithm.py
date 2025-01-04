@@ -1,23 +1,13 @@
-import json
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import networkx as nx
 from kruskals_algorithm.python.kruskal_algorithm import kruskalsAlgorithm
+from utility import load_test_cases
 
 AdjacencyList = list[list[tuple[int, int]]]
 Edge = tuple[int, int, int]
 MSTResult = tuple[list[Edge], AdjacencyList]
-
-
-def load_test_cases(filename: str) -> list[dict]:
-    root_dir = Path(__file__).resolve().parents[3]
-    json_path = root_dir / "test_cases" / "famous_algorithms" / filename
-    if not json_path.exists():
-        raise FileNotFoundError(f"File not found: {json_path}")
-
-    with json_path.open("r") as file:
-        return json.load(file)
 
 
 def are_permutations(list1: AdjacencyList, list2: AdjacencyList) -> bool:
@@ -82,7 +72,7 @@ def visualize_graph(
 
 def test_kruskal_algorithm() -> None:
 
-    test_cases = load_test_cases("kruskals_algorithm.json")
+    test_cases = load_test_cases("famous_algorithms/kruskals_algorithm.json")
 
     for idx, case in enumerate(test_cases):
         edges: AdjacencyList = case["edges"]

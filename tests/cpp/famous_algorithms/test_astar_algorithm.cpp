@@ -1,28 +1,21 @@
 #include "../../../problems/famous_algorithms/astar_algorithm/cpp/astar_algorithm.h"
-#include <fstream>
+#include "../jsontestbase.h"
 #include <gtest/gtest.h>
 #include <nlohmann/json.hpp>
 #include <vector>
 
 using json = nlohmann::json;
 
-class AStarAlgorithmTest : public ::testing::Test {
-protected:
-  void SetUp() override {
-    std::string test_file =
+class AStarAlgorithmTest : public JsonTestBase {
+public:
+  AStarAlgorithmTest() {
+    json_file_path =
         std::string(TEST_CASES_DIR) + "/famous_algorithms/astar_algorithm.json";
-    std::ifstream f(test_file);
-
-    if (!f.is_open()) {
-      throw std::runtime_error("Failed to open test file: " + test_file);
-    }
-    test_cases = json::parse(f);
   }
-  json test_cases;
 };
 
 TEST_F(AStarAlgorithmTest, TestCases) {
-
+  ASSERT_FALSE(test_cases.empty()) << "Test cases are empty";
   for (const auto &test : test_cases) {
     auto startRow = test["startRow"].get<int>();
     auto startCol = test["startCol"].get<int>();

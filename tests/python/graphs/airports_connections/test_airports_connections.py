@@ -1,19 +1,9 @@
-import json
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import networkx as nx
 from airport_connections.python.airport_connections import airport_connections
-
-
-def load_test_cases() -> list[dict]:
-    root_dir = Path(__file__).resolve().parents[3]
-    json_path = root_dir / "test_cases" / "graphs" / "airports_connections.json"
-    if not json_path.exists():
-        raise FileNotFoundError("File not found")
-
-    with json_path.open("r") as file:
-        return json.load(file)
+from utility import load_test_cases
 
 
 def build_graph(airports: list[str], routes: list[list[str]]) -> nx.DiGraph:
@@ -88,7 +78,7 @@ def display_graph(
 
 
 def test_airports_connections() -> None:
-    test_cases = load_test_cases()
+    test_cases = load_test_cases("graphs/airports_connections.json")
 
     for idx, case in enumerate(test_cases):
         airports = case["airports"]

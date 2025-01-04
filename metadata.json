@@ -37,10 +37,17 @@
       "path": "problems/arrays/validate_subsequence"
     },
     {
+      "name": "subarray_sort",
+      "topic": "arrays",
+      "difficulty": "hard",
+      "languages": ["cpp", "js", "python"],
+      "path": "problems/arrays/subarray_sort"
+    },
+    {
       "name": "repair_bst",
       "topic": "binary search_trees",
       "difficulty": "hard",
-      "languages": ["js", "python"],
+      "languages": ["js", "python", "cpp"],
       "path": "problems/binary_search_trees/repair_bst"
     },
     {
@@ -91,6 +98,20 @@
       "difficulty": "very hard",
       "languages": ["js", "python", "cpp"],
       "path": "problems/graphs/airport_connections"
+    },
+    {
+      "name": "boggle_board",
+      "topic": "graphs",
+      "difficulty": "hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/graphs/boggle_board"
+    },
+    {
+      "name": "detect_arbitrage",
+      "topic": "graphs",
+      "difficulty": "very hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/graphs/detect_arbitrage"
     }
   ]
 }

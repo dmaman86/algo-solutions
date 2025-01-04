@@ -1,26 +1,20 @@
 #include "../../../problems/famous_algorithms/topological_sort/cpp/topological_sort.h"
-#include <fstream>
+#include "../jsontestbase.h"
 #include <gtest/gtest.h>
 #include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
 
-class TopologicalSortTest : public ::testing::Test {
-protected:
-  void SetUp() override {
-    std::string test_file = std::string(TEST_CASES_DIR) +
-                            "/famous_algorithms/topological_sort.json";
-    std::ifstream file(test_file);
-    if (!file.is_open())
-      throw std::runtime_error("Could not open file " + test_file);
-
-    test_cases = json::parse(file);
+class TopologicalSortTest : public JsonTestBase {
+public:
+  TopologicalSortTest() {
+    json_file_path = std::string(TEST_CASES_DIR) +
+                     "/famous_algorithms/topological_sort.json";
   }
-
-  json test_cases;
 };
 
 TEST_F(TopologicalSortTest, TopologicalSort) {
+  ASSERT_FALSE(test_cases.empty()) << "Test cases are empty";
   for (auto &test_case : test_cases) {
     std::vector<int> jobs = test_case["jobs"];
     std::vector<std::vector<int>> deps = test_case["deps"];

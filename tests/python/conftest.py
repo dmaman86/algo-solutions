@@ -5,7 +5,9 @@ from pathlib import Path
 def pytest_configure():
     root_dir = Path(__file__).resolve().parents[2]
     problems_dir = root_dir / "problems"
-    # sys.path.append(str(problems_dir))
+    test_dir = root_dir / "tests" / "python"
+
+    sys.path.append(str(test_dir))
 
     problem_categories = [
         "arrays",

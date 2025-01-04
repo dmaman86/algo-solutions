@@ -4,17 +4,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import networkx as nx
 from astar_algorithm.python.astar_algorithm import aStarAlgorithm
-
-
-def load_test_cases(filename: str) -> list[dict]:
-    root_dir = Path(__file__).resolve().parents[3]
-    json_path = root_dir / "test_cases" / "famous_algorithms" / filename
-
-    if not json_path.exists():
-        raise FileNotFoundError(f"{json_path} not found.")
-
-    with json_path.open() as file:
-        return json.load(file)
+from utility import load_test_cases
 
 
 def create_graph_from_matrix(matrix: list[list[int]]) -> nx.Graph:
@@ -73,7 +63,7 @@ def draw_graph(
 
 
 def test_astar_algorithm() -> None:
-    test_cases = load_test_cases("astar_algorithm.json")
+    test_cases = load_test_cases("famous_algorithms/astar_algorithm.json")
 
     for idx, test in enumerate(test_cases):
         startRow = test["startRow"]

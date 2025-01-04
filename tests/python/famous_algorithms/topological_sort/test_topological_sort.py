@@ -1,21 +1,10 @@
-import json
 from collections import Counter
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import networkx as nx
 from topological_sort.python.topological_sort import topological_sort
-
-
-def load_test_cases(filename: str) -> list[dict]:
-    root_dir = Path(__file__).resolve().parents[3]
-    json_path = root_dir / "test_cases" / "famous_algorithms" / filename
-
-    if not json_path.exists():
-        raise FileNotFoundError(f"{json_path} not found.")
-
-    with json_path.open() as file:
-        return json.load(file)
+from utility import load_test_cases
 
 
 def buildGraph(graph: dict[int, list[int]], jobs: list[int]) -> nx.DiGraph:
@@ -84,7 +73,7 @@ def visualizeGraph(
 
 
 def test_topological_sort() -> None:
-    test_cases = load_test_cases("topological_sort.json")
+    test_cases = load_test_cases("famous_algorithms/topological_sort.json")
 
     for idx, test_case in enumerate(test_cases):
         jobs = test_case["jobs"]

@@ -1,26 +1,20 @@
 #include "../../../problems/famous_algorithms/kadanes_algorithm/cpp/kadanes_algorithm.h"
-#include <filesystem>
-#include <fstream>
+#include "../jsontestbase.h"
 #include <gtest/gtest.h>
 #include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
 
-class KadanesAlgorithmTest : public ::testing::Test {
-protected:
-  void SetUp() override {
-    std::string test_file = std::string(TEST_CASES_DIR) +
-                            "/famous_algorithms/kadanes_algorithm.json";
-    std::ifstream f(test_file);
-    if (!f.is_open()) {
-      throw std::runtime_error("Couldn't open test file: " + test_file);
-    }
-    test_cases = json::parse(f);
+class KadanesAlgorithmTest : public JsonTestBase {
+public:
+  KadanesAlgorithmTest() {
+    json_file_path = std::string(TEST_CASES_DIR) +
+                     "/famous_algorithms/kadanes_algorithm.json";
   }
-  json test_cases;
 };
 
 TEST_F(KadanesAlgorithmTest, TestCases) {
+  ASSERT_FALSE(test_cases.empty()) << "Test cases are empty";
   for (auto &test : test_cases) {
     std::vector<int> array = test["array"];
     int expected = test["expected"];

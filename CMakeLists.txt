@@ -13,10 +13,11 @@ find_package(nlohmann_json REQUIRED)
 
 set(TEST_CASES_DIR "${PROJECT_SOURCE_DIR}/tests/test_cases")
 
-enable_testing()
-
 set(ARRAYS_DIR ${PROJECT_SOURCE_DIR}/problems/arrays)
+set(BST_DIR ${PROJECT_SOURCE_DIR}/problems/binary_search_trees)
 set(FAMOUS_ALGORITHMS_DIR ${PROJECT_SOURCE_DIR}/problems/famous_algorithms)
 set(GRAPHS_DIR ${PROJECT_SOURCE_DIR}/problems/graphs)
+
+enable_testing()
 
 add_subdirectory(tests/cpp)

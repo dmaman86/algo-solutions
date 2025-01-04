@@ -1,6 +1,6 @@
 #include "../../../problems/famous_algorithms/prims_algorithm/cpp/prims_algorithm.h"
-#include <algorithm>
-#include <fstream>
+#include "../jsontestbase.h"
+
 #include <gtest/gtest.h>
 #include <nlohmann/json.hpp>
 #include <vector>
@@ -8,20 +8,16 @@
 using json = nlohmann::json;
 using AdjacencyList = std::vector<std::vector<std::vector<int>>>;
 
-class PrimsAlgorithmTest : public ::testing::Test {
-protected:
-  void SetUp() override {
-    std::string file_path =
+class PrimsAlgorithmTest : public JsonTestBase {
+public:
+  PrimsAlgorithmTest() {
+    json_file_path =
         std::string(TEST_CASES_DIR) + "/famous_algorithms/prims_algorithm.json";
-    std::ifstream file(file_path);
-    if (!file.is_open())
-      throw std::runtime_error("Could not open file");
-    test_cases = json::parse(file);
   }
-  json test_cases;
 };
 
 TEST_F(PrimsAlgorithmTest, TestCases) {
+  ASSERT_FALSE(test_cases.empty()) << "Test cases are empty";
   for (const auto &test : test_cases) {
     auto edges = test["edges"].get<AdjacencyList>();
 

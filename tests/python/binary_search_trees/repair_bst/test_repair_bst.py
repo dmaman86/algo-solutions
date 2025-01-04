@@ -1,19 +1,9 @@
-import json
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import networkx as nx
 from repair_bst.python.repair_bst import BST, repair_bst
-
-
-def load_test_cases() -> list[dict]:
-    root_dir = Path(__file__).resolve().parents[3]
-    json_path = root_dir / "test_cases" / "binary_search_trees" / "repair_bst.json"
-    if not json_path.exists():
-        raise FileNotFoundError(f"File not found: {json_path}")
-
-    with json_path.open("r") as file:
-        return json.load(file)
+from utility import load_test_cases
 
 
 def build_bst(nodes: list[dict], root_id: str) -> BST:
@@ -112,7 +102,7 @@ def visualize_bst(
 
 
 def test_repair_bst() -> None:
-    test_cases = load_test_cases()
+    test_cases = load_test_cases("binary_search_trees/repair_bst.json")
 
     for idx, case in enumerate(test_cases):
         tree = case["tree"]

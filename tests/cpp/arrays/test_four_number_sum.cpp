@@ -1,26 +1,19 @@
 #include "../../../problems/arrays/four_number_sum/cpp/four_number_sum.h"
+#include "../jsontestbase.h"
 #include <algorithm>
-#include <filesystem>
-#include <fstream>
+
 #include <gtest/gtest.h>
 #include <nlohmann/json.hpp>
 #include <vector>
 
 using json = nlohmann::json;
 
-class TestFourNumberSum : public ::testing::Test {
-protected:
-  void SetUp() override {
-    std::string test_file =
+class TestFourNumberSum : public JsonTestBase {
+public:
+  TestFourNumberSum() {
+    json_file_path =
         std::string(TEST_CASES_DIR) + "/arrays/four_number_sum.json";
-    std::ifstream f(test_file);
-
-    if (!f.is_open()) {
-      throw std::runtime_error("Could not open test file: " + test_file);
-    }
-    test_cases = json::parse(f);
   }
-  json test_cases;
 };
 
 bool areCombinationSetsEquivalent(
@@ -37,6 +30,7 @@ bool areCombinationSetsEquivalent(
 };
 
 TEST_F(TestFourNumberSum, TestCases) {
+  ASSERT_FALSE(test_cases.empty()) << "Test cases are empty";
   FourNumberSumSolver solver;
   for (const auto &test : test_cases) {
     std::vector<int> array = test["array"];

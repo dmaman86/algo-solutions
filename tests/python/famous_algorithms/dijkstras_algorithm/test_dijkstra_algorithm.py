@@ -1,20 +1,9 @@
-import json
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import networkx as nx
 from dijkstras_algorithm.python.dijkstras_algorithm import dijkstra_algorithm
-
-
-def load_test_cases(filename: str) -> list[dict]:
-    root_dir = Path(__file__).resolve().parents[3]
-    json_path = root_dir / "test_cases" / "famous_algorithms" / filename
-
-    if not json_path.exists():
-        raise FileNotFoundError(f"{json_path} not found.")
-
-    with json_path.open() as file:
-        return json.load(file)
+from utility import load_test_cases
 
 
 def draw_graph(
@@ -80,7 +69,7 @@ def plot_graphs(
 
 
 def test_dijkstra_algorithm() -> None:
-    test_cases = load_test_cases("dijkstras_algorithm.json")
+    test_cases = load_test_cases("famous_algorithms/dijkstras_algorithm.json")
 
     for idx, case in enumerate(test_cases):
         start = case["start"]
