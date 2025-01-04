@@ -1,7 +1,9 @@
+from copy import deepcopy
+from io import BytesIO
 from pathlib import Path
 
+import graphviz
 import matplotlib.pyplot as plt
-import networkx as nx
 from repair_bst.python.repair_bst import BST, repair_bst
 from utility import load_test_cases
 
@@ -20,26 +22,6 @@ def build_bst(nodes: list[dict], root_id: str) -> BST:
     return id_to_node[root_id]
 
 
-def bst_to_dict(bst_root: BST) -> dict:
-    result: dict = {"nodes": [], "root": str(bst_root.value)}
-
-    def traverse(node: BST | None) -> None:
-        if node:
-            result["nodes"].append(
-                {
-                    "id": str(node.value),
-                    "value": node.value,
-                    "left": str(node.left.value) if node.left else None,
-                    "right": str(node.right.value) if node.right else None,
-                }
-            )
-            traverse(node.left)
-            traverse(node.right)
-
-    traverse(bst_root)
-    return result
-
-
 def are_bsts_equal(bst1: BST, bst2: BST) -> bool:
     if not bst1 and not bst2:
         return True
@@ -50,55 +32,55 @@ def are_bsts_equal(bst1: BST, bst2: BST) -> bool:
     )
 
 
-def bst_to_networkx(bst_root: BST, graph: nx.DiGraph = None) -> nx.DiGraph:
-    if graph is None:
-        graph = nx.DiGraph()
+def generate_dot(
+    bst_root: BST, dot: graphviz.Digraph = None, label: str = ""
+) -> graphviz.Digraph:
+    if dot is None:
+        dot = graphviz.Digraph(comment=label)
 
     if bst_root:
-        graph.add_node(str(bst_root.value), label=str(bst_root.value))
+        dot.node(str(bst_root.value))
         if bst_root.left:
-            graph.add_edge(str(bst_root.value), str(bst_root.left.value))
-            bst_to_networkx(bst_root.left, graph)
+            dot.edge(str(bst_root.value), str(bst_root.left.value))
+            generate_dot(bst_root.left, dot)
         if bst_root.right:
-            graph.add_edge(str(bst_root.value), str(bst_root.right.value))
-            bst_to_networkx(bst_root.right, graph)
+            dot.edge(str(bst_root.value), str(bst_root.right.value))
+            generate_dot(bst_root.right, dot)
 
-    return graph
+    return dot
 
 
-def visualize_bst(
+def graphviz_to_image(dot_graph: graphviz.Digraph) -> None:
+    image_data = BytesIO(dot_graph.pipe(format="png"))
+    return plt.imread(image_data, format="png")
+
+
+def visualize_dot(
     original_bst: BST, result_bst: BST, filename: str, output_dir: str = "output_images"
 ) -> None:
     base_path = Path(__file__).parent / output_dir
     base_path.mkdir(parents=True, exist_ok=True)
 
-    original_graph = bst_to_networkx(original_bst)
-    result_graph = bst_to_networkx(result_bst)
+    original_dot = generate_dot(original_bst, label="Original BST")
+    result_dot = generate_dot(result_bst, label="Repaired BST")
 
-    fig, axes = plt.subplots(1, 2, figsize=(10, 5))
-    nx.draw(
-        original_graph,
-        nx.spring_layout(original_graph),
-        with_labels=True,
-        ax=axes[0],
-        node_size=500,
-        node_color="lightblue",
-    )
+    original_img = graphviz_to_image(original_dot)
+    result_img = graphviz_to_image(result_dot)
+
+    fig, axes = plt.subplots(1, 2, figsize=(12, 6))
+
+    axes[0].imshow(original_img)
+    axes[0].axis("off")
     axes[0].set_title("Original BST")
 
-    nx.draw(
-        result_graph,
-        nx.spring_layout(result_graph),
-        with_labels=True,
-        ax=axes[1],
-        node_size=500,
-        node_color="lightgreen",
-    )
+    axes[1].imshow(result_img)
+    axes[1].axis("off")
     axes[1].set_title("Repaired BST")
 
     output_file = base_path / f"{filename}.png"
     plt.savefig(output_file, format="png", bbox_inches="tight")
     plt.close()
+    print(f"Saved to {output_file}")
 
 
 def test_repair_bst() -> None:
@@ -110,9 +92,11 @@ def test_repair_bst() -> None:
         root_id = tree["root"]
         bst = build_bst(nodes, root_id)
 
+        original_bst = deepcopy(bst)
+
         result = repair_bst(bst)
 
         expected_bst = build_bst(case["expected"]["nodes"], case["expected"]["root"])
         filename = f"test_case_{idx + 1}"
-        visualize_bst(bst, result, filename)
+        visualize_dot(original_bst, result, filename)
         assert are_bsts_equal(result, expected_bst), f"Test case {idx + 1} failed"
