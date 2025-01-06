@@ -1,5 +1,8 @@
-from detect_arbitrage.python.detect_arbitrage import detectArbitrage
-from utility import load_test_cases
+import argparse
+
+from problems.graphs.detect_arbitrage.python.detect_arbitrage import \
+    detectArbitrage
+from tests.python.utility import load_test_cases
 
 
 def test_detect_arbitrage() -> None:
@@ -11,3 +14,16 @@ def test_detect_arbitrage() -> None:
 
         result = detectArbitrage(exchangeRates)
         assert result == expected, f"Test case failed at index {idx}!"
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Run test for the detect_arbitrage function"
+    )
+    parser.add_argument(
+        "--save-results",
+        action="store_true",
+        help="Save the results of the tests in the results folder",
+    )
+    args = parser.parse_args()
+    test_detect_arbitrage()

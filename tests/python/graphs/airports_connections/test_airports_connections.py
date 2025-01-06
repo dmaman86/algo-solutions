@@ -1,84 +1,13 @@
-from pathlib import Path
+import argparse
 
-import matplotlib.pyplot as plt
-import networkx as nx
-from airport_connections.python.airport_connections import airport_connections
-from utility import load_test_cases
-
-
-def build_graph(airports: list[str], routes: list[list[str]]) -> nx.DiGraph:
-    G = nx.DiGraph()
-
-    for airport in airports:
-        G.add_node(airport)
-
-    for route in routes:
-        G.add_edge(route[0], route[1])
-
-    return G
+from problems.graphs.airport_connections.python.airport_connections import \
+    airport_connections
+from tests.python.utility import load_test_cases, save_results
 
 
-def draw_graph(graph: nx.DiGraph, pos: dict, title: str, ax: plt.Axes) -> None:
-    nx.draw_networkx_nodes(
-        graph, pos, node_size=700, node_color="skyblue", alpha=0.9, ax=ax
-    )
-    nx.draw_networkx_edges(
-        graph,
-        pos,
-        edgelist=graph.edges(),
-        arrowstyle="-|>",
-        arrowsize=20,
-        edge_color="gray",
-        alpha=0.7,
-        ax=ax,
-    )
-    nx.draw_networkx_labels(graph, pos, font_size=10, font_family="sans-serif", ax=ax)
-    ax.set_title(title)
-
-
-def display_graph(
-    airports: list[str],
-    routes: list[list[str]],
-    connections: list[tuple[str, str]],
-    filename: str,
-    output_dir: str = "output_images",
-) -> None:
-    base_path = Path(__file__).parent / output_dir
-    base_path.mkdir(parents=True, exist_ok=True)
-
-    graph_original = build_graph(airports, routes)
-    pos_original = nx.spring_layout(graph_original)
-
-    graph_connections = build_graph(airports, routes)
-    pos_connections = nx.spring_layout(graph_connections)
-
-    fig, axes = plt.subplots(1, 2, figsize=(16, 7))
-    draw_graph(graph_original, pos_original, "Original Graph", axes[0])
-    draw_graph(graph_connections, pos_connections, "Connections Graph", axes[1])
-
-    for connection in connections:
-        graph_connections.add_edge(connection[0], connection[1])
-
-    nx.draw_networkx_edges(
-        graph_connections,
-        pos_connections,
-        edgelist=connections,
-        arrowstyle="-|>",
-        arrowsize=20,
-        edge_color="red",
-        alpha=0.7,
-        style="dashed",
-        ax=axes[1],
-    )
-
-    output_file = base_path / f"{filename}.png"
-    plt.savefig(output_file, format="png", bbox_inches="tight")
-    plt.close()
-    print(f"Graph saved in {output_file}")
-
-
-def test_airports_connections() -> None:
+def test_airports_connections(save_results_flag: bool = False) -> None:
     test_cases = load_test_cases("graphs/airports_connections.json")
+    results: list[dict] = []
 
     for idx, case in enumerate(test_cases):
         airports = case["airports"]
@@ -87,7 +16,22 @@ def test_airports_connections() -> None:
         expected = case["expected"]
 
         result = airport_connections(airports, routes, starting_airport)
-        filename = f"test_case_{idx}"
-        display_graph(airports, routes, result, filename)
 
+        if save_results_flag:
+            results.append({"connections": result})
         assert len(result) == expected, f"Test case {idx} failed"
+
+    if save_results_flag:
+        save_results("graphs/airports_connections.json", results)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Run test Airport Connections")
+    parser.add_argument(
+        "--save-results",
+        action="store_true",
+        help="Save test results to results/graphs/airports_connections.json",
+    )
+
+    args = parser.parse_args()
+    test_airports_connections(save_results_flag=args.save_results)

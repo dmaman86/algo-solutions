@@ -1,11 +1,8 @@
-from copy import deepcopy
-from io import BytesIO
-from pathlib import Path
+import argparse
 
-import graphviz
-import matplotlib.pyplot as plt
-from repair_bst.python.repair_bst import BST, repair_bst
-from utility import load_test_cases
+from problems.binary_search_trees.repair_bst.python.repair_bst import (
+    BST, repair_bst)
+from tests.python.utility import load_test_cases, save_results
 
 
 def build_bst(nodes: list[dict], root_id: str) -> BST:
@@ -32,59 +29,29 @@ def are_bsts_equal(bst1: BST, bst2: BST) -> bool:
     )
 
 
-def generate_dot(
-    bst_root: BST, dot: graphviz.Digraph = None, label: str = ""
-) -> graphviz.Digraph:
-    if dot is None:
-        dot = graphviz.Digraph(comment=label)
+def bst_to_dict(bst: BST) -> dict:
+    result: dict = {"nodes": [], "root": str(bst.value)}
 
-    if bst_root:
-        dot.node(str(bst_root.value))
-        if bst_root.left:
-            dot.edge(str(bst_root.value), str(bst_root.left.value))
-            generate_dot(bst_root.left, dot)
-        if bst_root.right:
-            dot.edge(str(bst_root.value), str(bst_root.right.value))
-            generate_dot(bst_root.right, dot)
+    def traverse(node: BST):
+        if node:
+            result["nodes"].append(
+                {
+                    "id": str(node.value),
+                    "value": node.value,
+                    "left": str(node.left.value) if node.left else None,
+                    "right": str(node.right.value) if node.right else None,
+                }
+            )
+            traverse(node.left)
+            traverse(node.right)
 
-    return dot
-
-
-def graphviz_to_image(dot_graph: graphviz.Digraph) -> None:
-    image_data = BytesIO(dot_graph.pipe(format="png"))
-    return plt.imread(image_data, format="png")
+    traverse(bst)
+    return {"tree": result}
 
 
-def visualize_dot(
-    original_bst: BST, result_bst: BST, filename: str, output_dir: str = "output_images"
-) -> None:
-    base_path = Path(__file__).parent / output_dir
-    base_path.mkdir(parents=True, exist_ok=True)
-
-    original_dot = generate_dot(original_bst, label="Original BST")
-    result_dot = generate_dot(result_bst, label="Repaired BST")
-
-    original_img = graphviz_to_image(original_dot)
-    result_img = graphviz_to_image(result_dot)
-
-    fig, axes = plt.subplots(1, 2, figsize=(12, 6))
-
-    axes[0].imshow(original_img)
-    axes[0].axis("off")
-    axes[0].set_title("Original BST")
-
-    axes[1].imshow(result_img)
-    axes[1].axis("off")
-    axes[1].set_title("Repaired BST")
-
-    output_file = base_path / f"{filename}.png"
-    plt.savefig(output_file, format="png", bbox_inches="tight")
-    plt.close()
-    print(f"Saved to {output_file}")
-
-
-def test_repair_bst() -> None:
+def test_repair_bst(save_results_flag: bool = False) -> None:
     test_cases = load_test_cases("binary_search_trees/repair_bst.json")
+    results: list[dict] = []
 
     for idx, case in enumerate(test_cases):
         tree = case["tree"]
@@ -92,11 +59,25 @@ def test_repair_bst() -> None:
         root_id = tree["root"]
         bst = build_bst(nodes, root_id)
 
-        original_bst = deepcopy(bst)
-
         result = repair_bst(bst)
 
+        if save_results_flag:
+            results.append(bst_to_dict(result))
+
         expected_bst = build_bst(case["expected"]["nodes"], case["expected"]["root"])
-        filename = f"test_case_{idx + 1}"
-        visualize_dot(original_bst, result, filename)
         assert are_bsts_equal(result, expected_bst), f"Test case {idx + 1} failed"
+
+    if save_results_flag:
+        save_results("binary_search_trees/repair_bst.json", results)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Run test repair_bst")
+    parser.add_argument(
+        "--save-results",
+        action="store_true",
+        help="Save the results of the test cases to a JSON file.",
+    )
+    args = parser.parse_args()
+
+    test_repair_bst(save_results_flag=args.save_results)

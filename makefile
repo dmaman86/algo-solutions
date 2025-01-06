@@ -1,5 +1,11 @@
 JS_TEST_DIR = tests/__tests__
 PYTHON_TEST_DIR = tests/python
+VISUALIZATION_DIR = visualization
+OUTPUT_IMAGES_DIR = output_images
+RESULTS_DIR = tests/results
+
+ROOT_DIR := $(shell pwd)
+PYTHON := python
 
 all: test
 
@@ -11,12 +17,21 @@ test-js:
 
 test-python:
 	@echo "Running Python tests with pytest..."
-	@pytest $(PYTHON_TEST_DIR)
+	@pytest $(PYTHON_TEST_DIR) --tb=short -q --disable-warnings
+	# PYTHONPATH=$(shell pwd) pytest $(PYTHON_TEST_DIR) --tb=short -q --disable-warnings
 
 test-cpp:
 	@echo "Running C++ tests with CMake..."
 	@mkdir -p build
 	@cd build && cmake .. && make && ctest --output-on-failure
+
+visualize:
+	@echo "Running Python tests with results generation..."
+	PYTHONPATH=$(ROOT_DIR) $(PYTHON) $(PYTHON_TEST_DIR)/test_runner.py --save-results
+	@echo "Ensuring output directory exists..."
+	@mkdir -p $(OUTPUT_IMAGES_DIR)
+	@echo "Generating visualizations..."
+	PYTHONPATH=$(ROOT_DIR) $(PYTHON) $(VISUALIZATION_DIR)/visualization_runner.py
 
 clean:
 	@echo "Cleaning build directories..."
@@ -25,8 +40,9 @@ clean:
 
 help:
 	@echo "Usage:"
-	@echo "  make test        - Run all tests"
+	@echo "  make test        - Run all tests, without visualizations"
 	@echo "  make test-js     - Run JavaScript tests with npm"
 	@echo "  make test-python - Run Python tests with pytest"
 	@echo "  make test-cpp    - Run C++ tests with CMake"
+	@echo "  make visualize   - Run Python tests and generate visualizations"
 	@echo "  make clean       - Clean temporary files"
