@@ -244,11 +244,32 @@ Before using the Makefile, ensure the following tools are installed:
 
 - **Python**:
 
-  - Python 3.x with `pytest` installed.
-  - Install `pytest` using:
+  - Python 3.x installed with the following libraries:
+
+    - `pytest` for running Python tests.
+    - `matplotlib` for creating visualizations.
+    - `networkx` for graph-based visualizations.
+    - `graphviz` for tree and graph visualizations.
+    - `fpdf` for generating PDF files.
+
+  - **Install the required Python libraries**:
+
     ```bash
-    pip install pytest
+    pip install pytest matplotlib networkx graphviz fpdf2
     ```
+
+    Additionally, ensure that Graphviz is installed on your system. You can install it using:
+
+    - **macOS (with Homebrew)**:
+      ```bash
+      brew install graphviz
+      ```
+    - **Ubuntu**:
+      ```bash
+      sudo apt-get install graphviz
+      ```
+    - **Windows**:
+      Download the Graphviz installer from the [official website](https://graphviz.org/download/).
 
 - **C++**:
   - CMake (version 3.14 or higher).
