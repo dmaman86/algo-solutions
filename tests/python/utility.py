@@ -11,13 +11,3 @@ def load_test_cases(filename: str) -> list[dict]:
 
     with open(json_path, "r") as file:
         return json.load(file)
-
-
-def save_results(filename: str, results: list[dict]) -> None:
-    root_dir = Path(__file__).resolve().parents[1]
-    json_path = root_dir / "results" / filename
-
-    json_path.parent.mkdir(parents=True, exist_ok=True)
-
-    with open(json_path, "w") as file:
-        json.dump(results, file, indent=4)

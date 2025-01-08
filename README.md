@@ -2,24 +2,24 @@
 
 <!-- START_TABLE -->
 
-| Problem                                                                                                                    | Topic               | Difficulty | Languages                                                                                                                                                                                                                                                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------------- | ------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Four Number Sum](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum)                    | Arrays              | Hard       | [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum/cpp), [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum/js)                                                                                                                                                     |
-| [Sorted Squared Array](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/sorted_squared_array)          | Arrays              | Easy       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/sorted_squared_array/js)                                                                                                                                                                                                                                                 |
-| [Tournament Winner](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/tournament_winner)                | Arrays              | Easy       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/tournament_winner/js), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/tournament_winner/cpp)                                                                                                                                                 |
-| [Two Number Sum](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/two_number_sum)                      | Arrays              | Easy       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/two_number_sum/js)                                                                                                                                                                                                                                                       |
-| [Validate Subsequence](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence)          | Arrays              | Easy       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence/python)                                                                                                                                     |
-| [Subarray Sort](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort)                        | Arrays              | Hard       | [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/cpp), [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/python)                                                    |
-| [Repair Bst](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/repair_bst)                 | Binary search_trees | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/repair_bst/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/repair_bst/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/repair_bst/cpp)                      |
-| [Dijkstras Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/dijkstras_algorithm) | Famous algorithms   | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/dijkstras_algorithm/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/dijkstras_algorithm/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/dijkstras_algorithm/cpp) |
-| [Kadanes Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kadanes_algorithm)     | Famous algorithms   | Normal     | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kadanes_algorithm/js), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kadanes_algorithm/cpp)                                                                                                                           |
-| [Kruskals Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kruskals_algorithm)   | Famous algorithms   | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kruskals_algorithm/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kruskals_algorithm/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kruskals_algorithm/cpp)    |
-| [Prims Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/prims_algorithm)         | Famous algorithms   | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/prims_algorithm/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/prims_algorithm/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/prims_algorithm/cpp)             |
-| [Topological Sort](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/topological_sort)       | Famous algorithms   | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/topological_sort/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/topological_sort/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/topological_sort/cpp)          |
-| [Astar Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/astar_algorithm)         | Famous algorithms   | Very hard  | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/astar_algorithm/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/astar_algorithm/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/astar_algorithm/cpp)             |
-| [Airport Connections](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/airport_connections)            | Graphs              | Very hard  | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/airport_connections/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/airport_connections/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/airport_connections/cpp)                                  |
-| [Boggle Board](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/boggle_board)                          | Graphs              | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/boggle_board/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/boggle_board/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/boggle_board/cpp)                                                       |
-| [Detect Arbitrage](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/detect_arbitrage)                  | Graphs              | Very hard  | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/detect_arbitrage/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/detect_arbitrage/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/detect_arbitrage/cpp)                                           |
+| #   | Problem                                                                                                                    | Topic               | Difficulty | Languages                                                                                                                                                                                                                                                                                                                                          |
+| --- | -------------------------------------------------------------------------------------------------------------------------- | ------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [Four Number Sum](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum)                    | Arrays              | Hard       | [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum/cpp), [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum/js)                                                                                                                                                     |
+| 2   | [Sorted Squared Array](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/sorted_squared_array)          | Arrays              | Easy       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/sorted_squared_array/js)                                                                                                                                                                                                                                                 |
+| 3   | [Tournament Winner](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/tournament_winner)                | Arrays              | Easy       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/tournament_winner/js), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/tournament_winner/cpp)                                                                                                                                                 |
+| 4   | [Two Number Sum](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/two_number_sum)                      | Arrays              | Easy       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/two_number_sum/js)                                                                                                                                                                                                                                                       |
+| 5   | [Validate Subsequence](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence)          | Arrays              | Easy       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence/python)                                                                                                                                     |
+| 6   | [Subarray Sort](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort)                        | Arrays              | Hard       | [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/cpp), [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/python)                                                    |
+| 7   | [Repair Bst](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/repair_bst)                 | Binary search_trees | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/repair_bst/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/repair_bst/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/repair_bst/cpp)                      |
+| 8   | [Dijkstras Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/dijkstras_algorithm) | Famous algorithms   | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/dijkstras_algorithm/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/dijkstras_algorithm/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/dijkstras_algorithm/cpp) |
+| 9   | [Kadanes Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kadanes_algorithm)     | Famous algorithms   | Normal     | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kadanes_algorithm/js), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kadanes_algorithm/cpp)                                                                                                                           |
+| 10  | [Kruskals Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kruskals_algorithm)   | Famous algorithms   | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kruskals_algorithm/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kruskals_algorithm/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kruskals_algorithm/cpp)    |
+| 11  | [Prims Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/prims_algorithm)         | Famous algorithms   | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/prims_algorithm/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/prims_algorithm/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/prims_algorithm/cpp)             |
+| 12  | [Topological Sort](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/topological_sort)       | Famous algorithms   | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/topological_sort/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/topological_sort/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/topological_sort/cpp)          |
+| 13  | [Astar Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/astar_algorithm)         | Famous algorithms   | Very hard  | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/astar_algorithm/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/astar_algorithm/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/astar_algorithm/cpp)             |
+| 14  | [Airport Connections](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/airport_connections)            | Graphs              | Very hard  | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/airport_connections/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/airport_connections/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/airport_connections/cpp)                                  |
+| 15  | [Boggle Board](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/boggle_board)                          | Graphs              | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/boggle_board/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/boggle_board/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/boggle_board/cpp)                                                       |
+| 16  | [Detect Arbitrage](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/detect_arbitrage)                  | Graphs              | Very hard  | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/detect_arbitrage/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/detect_arbitrage/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/detect_arbitrage/cpp)                                           |
 
 <!-- END_TABLE -->
 
@@ -60,6 +60,7 @@ make test-js
 
 - Runs only Python tests using `pytest`.
 - Executes tests in the `tests/python` directory.
+- This command does not generate visualizations.
 
 **Example**:
 
@@ -81,15 +82,12 @@ make test-cpp
 ```
 
 5. **`make visualize`**:
-   Generates visualizations for certain Python tests. This command:
-1. Executes Python tests that are configured to generate results (e.g., in JSON format).
-1. Uses the generated results to create visualizations in the `output_images` directory.
+   Generates visualizations for specific Python tests. This command runs Python tests with the `--visualize` flag, which enables the generation of visual outputs for supported problems.
 
-**Steps in `make visualize`:**
+   **Steps in make visualize**:
 
-- Runs Python tests with `test_runner.py` using the `--save-results` flag to generate results.
-- Ensures the `output_images` directory exists.
-- Runs `visualization_runner.py` to generate the visualizations.
+   1. Executes Python tests using `pytest` in the `tests/python` directory.
+   2. Generates visualizations for supported problems and stores them in the `output_images` directory.
 
 **Example**:
 
@@ -117,66 +115,70 @@ The project separates tests, results, and visualizations into well-defined direc
 Below is an overview of the project structure:
 
 ````plaintext
-```plaintext
+```
 .
-├── CMakeLists.txt                  # Main configuration file for CMake (used for C++ tests)
-├── README.md                       # Project documentation and Makefile usage guide
+├── CMakeLists.txt                  # Main configuration file for C++ tests
+├── README.md                       # Project documentation and usage instructions
 ├── babel.config.json               # Babel configuration for JavaScript tests
 ├── jest.config.cjs                 # Jest configuration file for JavaScript tests
-├── makefile                        # Automates common tasks like running tests and generating visualizations
-├── metadata.json
-├── output_images/                  # Stores generated visualizations
-│   ├── binary_search_trees/        # Visualizations for binary search tree problems
-│   ├── famous_algorithms/          # Visualizations for famous algorithms
-│   └── graphs/                     # Visualizations for graph problems
-├── problems/                       # Algorithmic problems organized by topic
-│   ├── arrays/                     # Problems related to arrays
-│   ├── binary_search_trees/        # Problems related to binary search trees
-│   ├── famous_algorithms/          # Problems for well-known algorithms
-│   └── graphs/                     # Problems related to graph algorithms
-├── scripts/                        # Utility and maintenance scripts
-│   └── update_readme.py            # Script to update README or project metadata
-├── tests/                          # Contains all test-related files
-│   ├── __tests__/                  # JavaScript tests (run with Jest)
-│   │   ├── arrays/                 # JavaScript tests for array problems
-│   │   ├── binary_search_trees/    # JavaScript tests for binary search tree problems
-│   │   ├── famous_algorithms/      # JavaScript tests for famous algorithms
-│   │   └── graphs/                 # JavaScript tests for graph problems
-│   ├── cpp/                        # C++ tests (run with CMake and CTest)
-│   │   ├── CMakeLists.txt          # Main configuration file for all C++ tests
-│   │   ├── arrays/                 # C++ tests for array problems
-│   │   │   ├── CMakeLists.txt      # Configuration for array-specific tests
-│   │   ├── binary_search_trees/    # C++ tests for binary search tree problems
-│   │   │   ├── CMakeLists.txt      # Configuration for binary search tree tests
-│   │   ├── famous_algorithms/      # C++ tests for famous algorithms
-│   │   │   ├── CMakeLists.txt      # Configuration for famous algorithms tests
-│   │   ├── graphs/                 # C++ tests for graph problems
-│   │   │   ├── CMakeLists.txt      # Configuration for graph tests
-│   │   └── jsontestbase.h          # Header file for handling JSON-based test cases in C++
-│   ├── python/                     # Python tests (run with pytest)
-│   │   ├── arrays/                 # Python tests for array problems
-│   │   ├── binary_search_trees/    # Python tests for binary search tree problems
-│   │   ├── conftest.py             # Configuration for pytest
-│   │   ├── famous_algorithms/      # Python tests for famous algorithms
-│   │   ├── graphs/                 # Python tests for graph problems
-│   │   ├── test_runner.py          # Centralized script to execute Python tests with optional result saving
-│   │   └── utility.py              # Helper functions for Python tests
-│   ├── results/                    # Stores test results generated during execution
-│   │   ├── binary_search_trees/    # Results for binary search tree problems
-│   │   ├── famous_algorithms/      # Results for famous algorithms
-│   │   └── graphs/                 # Results for graph problems
-│   └── test_cases/                 # JSON files containing test cases for all problems
-│       ├── arrays/                 # Test cases for array problems
-│       ├── binary_search_trees/    # Test cases for binary search tree problems
-│       ├── famous_algorithms/      # Test cases for famous algorithms
-│       └── graphs/                 # Test cases for graph problems
-└── visualization/                  # Scripts and utilities for generating visualizations
-    ├── binary_search_trees/        # Visualization scripts for binary search tree problems
-    ├── famous_algorithms/          # Visualization scripts for famous algorithms
-    ├── graphs/                     # Visualization scripts for graph problems
-    ├── utility.py                  # Helper functions for visualization scripts
-    └── visualization_runner.py     # Centralized script to generate visualizations
+├── makefile                        # Automates common tasks (e.g., testing, visualization)
+├── metadata.json                   # Metadata about problems and their solutions
+├── package-lock.json               # Dependency lock file for npm
+├── package.json                    # Node.js project configuration file
+├── problems/                       # Solutions to problems, organized by topic
+│   ├── arrays/                     # Array-related problems
+│   ├── binary_search_trees/        # Binary search tree problems
+│   ├── famous_algorithms/          # Well-known algorithms
+│   └── graphs/                     # Graph-related problems
+├── scripts/                        # Utility scripts for project maintenance
+│   └── update_readme.py            # Updates README with metadata or problem table
+└── tests/                          # Contains all test-related files
+    ├── __tests__/                  # JavaScript tests (run with Jest)
+    │   ├── arrays/                 # Array-related JavaScript tests
+    │   ├── binary_search_trees/    # Binary search tree JavaScript tests
+    │   ├── famous_algorithms/      # Well-known algorithm JavaScript tests
+    │   └── graphs/                 # Graph-related JavaScript tests
+    ├── cpp/                        # C++ tests (run with CMake and CTest)
+    │   ├── CMakeLists.txt          # Main configuration for all C++ tests
+    │   ├── arrays/                 # C++ tests for array problems
+    │   │   ├── CMakeLists.txt      # Configuration for array-specific tests
+    │   ├── binary_search_trees/    # C++ tests for binary search tree problems
+    │   │   ├── CMakeLists.txt      # Configuration for binary search tree tests
+    │   ├── famous_algorithms/      # C++ tests for well-known algorithms
+    │   │   ├── CMakeLists.txt      # Configuration for famous algorithms tests
+    │   ├── graphs/                 # C++ tests for graph problems
+    │   │   ├── CMakeLists.txt      # Configuration for graph-specific tests
+    │   └── jsontestbase.h          # Header for handling JSON-based test cases in C++
+    ├── python/                     # Python tests (run with pytest)
+    │   ├── arrays/                 # Python tests for array problems
+    │   ├── binary_search_trees/    # Python tests for binary search tree problems
+    │   ├── conftest.py             # Configuration for pytest
+    │   ├── famous_algorithms/      # Python tests for well-known algorithms
+    │   ├── graphs/                 # Python tests for graph problems
+    │   └── utility.py              # Helper functions for Python tests
+    └── test_cases/                 # JSON test cases for all problems
+        ├── arrays/                 # Test cases for array problems
+        ├── binary_search_trees/    # Test cases for binary search tree problems
+        ├── famous_algorithms/      # Test cases for well-known algorithms
+        └── graphs/                 # Test cases for graph problems
 ````
+
+### **Key Points**
+
+1. **problems/**: Contains solutions to all problems, categorized into topics like arrays, graphs, etc.
+
+2. **tests/**: Organized by language:
+
+- **JavaScript (**tests**/)**: Test written for solutions in JavaScript.
+- **C++ (cpp/)**: C++ tests managed using CMake and Google Test.
+- **Python (python/)**: Tests for Python solutions, executed with `pytest`. Includes a
+  `conftest.py` file for shared configurations and a `utility.py` file for helper functions.
+
+3. **test_cases/**: JSON files specifying input and expected output for all problems, ensuring consistent testing across languages.
+
+4. **scripts/**: Utility scripts like `update_readme.py` for project maintenance.
+
+5. **makefile**: Provides automation for running tests across all languages and other tasks like visualization generation and cleanup.
 
 ---
 

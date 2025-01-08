@@ -1,8 +1,12 @@
-import argparse
+from io import BytesIO
+from pathlib import Path
+
+import graphviz
+import matplotlib.pyplot as plt
 
 from problems.binary_search_trees.repair_bst.python.repair_bst import (
     BST, repair_bst)
-from tests.python.utility import load_test_cases, save_results
+from tests.python.utility import load_test_cases
 
 
 def build_bst(nodes: list[dict], root_id: str) -> BST:
@@ -29,55 +33,74 @@ def are_bsts_equal(bst1: BST, bst2: BST) -> bool:
     )
 
 
-def bst_to_dict(bst: BST) -> dict:
-    result: dict = {"nodes": [], "root": str(bst.value)}
+def generate_dot(
+    bst_root: BST, dot: graphviz.Digraph = None, label: str = ""
+) -> graphviz.Digraph:
+    if dot is None:
+        dot = graphviz.Digraph(comment=label)
 
-    def traverse(node: BST):
-        if node:
-            result["nodes"].append(
-                {
-                    "id": str(node.value),
-                    "value": node.value,
-                    "left": str(node.left.value) if node.left else None,
-                    "right": str(node.right.value) if node.right else None,
-                }
-            )
-            traverse(node.left)
-            traverse(node.right)
+    if bst_root:
+        dot.node(str(bst_root.value))
+        if bst_root.left:
+            dot.edge(str(bst_root.value), str(bst_root.left.value))
+            generate_dot(bst_root.left, dot)
+        if bst_root.right:
+            dot.edge(str(bst_root.value), str(bst_root.right.value))
+            generate_dot(bst_root.right, dot)
 
-    traverse(bst)
-    return {"tree": result}
+    return dot
 
 
-def test_repair_bst(save_results_flag: bool = False) -> None:
+def graphviz_to_image(dot_graph: graphviz.Digraph) -> None:
+    image_data = BytesIO(dot_graph.pipe(format="png"))
+    return plt.imread(image_data, format="png")
+
+
+def visualize_dot(original_bst: BST, result_bst: BST, filename: str) -> None:
+
+    root_dir = Path(__file__).resolve().parent
+    base_path = root_dir / "repair_bst_images"
+    base_path.mkdir(parents=True, exist_ok=True)
+
+    original_dot = generate_dot(original_bst, label="Original BST")
+    result_dot = generate_dot(result_bst, label="Repaired BST")
+
+    original_img = graphviz_to_image(original_dot)
+    result_img = graphviz_to_image(result_dot)
+
+    fig, axes = plt.subplots(1, 2, figsize=(12, 6))
+
+    axes[0].imshow(original_img)
+    axes[0].axis("off")
+    axes[0].set_title("Original BST")
+
+    axes[1].imshow(result_img)
+    axes[1].axis("off")
+    axes[1].set_title("Repaired BST")
+
+    output_file = base_path / f"{filename}.png"
+    plt.savefig(output_file, format="png", bbox_inches="tight")
+    plt.close()
+    print(f"Saved to {output_file}")
+
+
+def test_repair_bst(visualize: bool) -> None:
+
     test_cases = load_test_cases("binary_search_trees/repair_bst.json")
-    results: list[dict] = []
 
-    for idx, case in enumerate(test_cases):
-        tree = case["tree"]
+    for idx, test in enumerate(test_cases):
+        tree = test["tree"]
         nodes = tree["nodes"]
         root_id = tree["root"]
         bst = build_bst(nodes, root_id)
 
         result = repair_bst(bst)
 
-        if save_results_flag:
-            results.append(bst_to_dict(result))
+        expected_bst = build_bst(test["expected"]["nodes"], test["expected"]["root"])
 
-        expected_bst = build_bst(case["expected"]["nodes"], case["expected"]["root"])
-        assert are_bsts_equal(result, expected_bst), f"Test case {idx + 1} failed"
+        assert are_bsts_equal(
+            result, expected_bst
+        ), f"Test case {idx} failed. Expected: {expected_bst}, got: {result}"
 
-    if save_results_flag:
-        save_results("binary_search_trees/repair_bst.json", results)
-
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Run test repair_bst")
-    parser.add_argument(
-        "--save-results",
-        action="store_true",
-        help="Save the results of the test cases to a JSON file.",
-    )
-    args = parser.parse_args()
-
-    test_repair_bst(save_results_flag=args.save_results)
+        if visualize:
+            visualize_dot(bst, result, f"test_case_{idx}")

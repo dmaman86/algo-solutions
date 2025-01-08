@@ -18,20 +18,17 @@ test-js:
 test-python:
 	@echo "Running Python tests with pytest..."
 	@pytest $(PYTHON_TEST_DIR) --tb=short -q --disable-warnings
-	# PYTHONPATH=$(shell pwd) pytest $(PYTHON_TEST_DIR) --tb=short -q --disable-warnings
 
 test-cpp:
 	@echo "Running C++ tests with CMake..."
 	@mkdir -p build
 	@cd build && cmake .. && make && ctest --output-on-failure
 
+
 visualize:
-	@echo "Running Python tests with results generation..."
-	PYTHONPATH=$(ROOT_DIR) $(PYTHON) $(PYTHON_TEST_DIR)/test_runner.py --save-results
-	@echo "Ensuring output directory exists..."
-	@mkdir -p $(OUTPUT_IMAGES_DIR)
-	@echo "Generating visualizations..."
-	PYTHONPATH=$(ROOT_DIR) $(PYTHON) $(VISUALIZATION_DIR)/visualization_runner.py
+	@echo "Running Python tests with visualizations..."
+	@pytest $(PYTHON_TEST_DIR) --tb=short -q --disable-warnings --visualize
+
 
 clean:
 	@echo "Cleaning build directories..."
