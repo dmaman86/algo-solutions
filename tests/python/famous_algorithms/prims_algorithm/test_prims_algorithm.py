@@ -2,11 +2,10 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 import networkx as nx
-import pytest
 
 from problems.famous_algorithms.prims_algorithm.python.prims_algorithm import \
     primsAlgorithm
-from tests.python.utility import load_test_cases, save_results
+from tests.python.utility import load_test_cases
 
 AdjacencyList = list[list[list[int]]]
 

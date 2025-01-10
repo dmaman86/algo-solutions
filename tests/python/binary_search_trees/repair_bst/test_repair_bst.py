@@ -1,3 +1,4 @@
+import copy
 from io import BytesIO
 from pathlib import Path
 
@@ -93,7 +94,7 @@ def test_repair_bst(visualize: bool) -> None:
         nodes = tree["nodes"]
         root_id = tree["root"]
         bst = build_bst(nodes, root_id)
-
+        original_bst = copy.deepcopy(bst)
         result = repair_bst(bst)
 
         expected_bst = build_bst(test["expected"]["nodes"], test["expected"]["root"])
@@ -103,4 +104,4 @@ def test_repair_bst(visualize: bool) -> None:
         ), f"Test case {idx} failed. Expected: {expected_bst}, got: {result}"
 
         if visualize:
-            visualize_dot(bst, result, f"test_case_{idx}")
+            visualize_dot(original_bst, result, f"test_case_{idx}")

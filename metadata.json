@@ -51,6 +51,13 @@
       "path": "problems/binary_search_trees/repair_bst"
     },
     {
+      "name": "right_smaller_than",
+      "topic": "binary search_trees",
+      "difficulty": "very hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/binary_search_trees/right_smaller_than"
+    },
+    {
       "name": "dijkstras_algorithm",
       "topic": "famous algorithms",
       "difficulty": "hard",
@@ -98,6 +105,13 @@
       "difficulty": "medium",
       "languages": ["js", "python", "cpp"],
       "path": "problems/graphs/minimum_passes_of_matrix"
+    },
+    {
+      "name": "cycle_in_graph",
+      "topic": "graphs",
+      "difficulty": "medium",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/graphs/cycle_in_graph"
     },
     {
       "name": "airport_connections",
