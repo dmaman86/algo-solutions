@@ -21,5 +21,6 @@ endfunction()
 
 add_subdirectory(arrays)
 add_subdirectory(binary_search_trees)
+add_subdirectory(binary_trees)
 add_subdirectory(famous_algorithms)
 add_subdirectory(graphs)

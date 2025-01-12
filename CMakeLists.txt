@@ -15,6 +15,7 @@ set(TEST_CASES_DIR "${PROJECT_SOURCE_DIR}/tests/test_cases")
 
 set(ARRAYS_DIR ${PROJECT_SOURCE_DIR}/problems/arrays)
 set(BST_DIR ${PROJECT_SOURCE_DIR}/problems/binary_search_trees)
+set(BT_DIR ${PROJECT_SOURCE_DIR}/problems/binary_trees)
 set(FAMOUS_ALGORITHMS_DIR ${PROJECT_SOURCE_DIR}/problems/famous_algorithms)
 set(GRAPHS_DIR ${PROJECT_SOURCE_DIR}/problems/graphs)
 
