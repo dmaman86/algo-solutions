@@ -45,14 +45,14 @@
     },
     {
       "name": "repair_bst",
-      "topic": "binary searchtrees",
+      "topic": "binary search trees",
       "difficulty": "hard",
       "languages": ["js", "python", "cpp"],
       "path": "problems/binary_search_trees/repair_bst"
     },
     {
       "name": "right_smaller_than",
-      "topic": "binary searchtrees",
+      "topic": "binary search trees",
       "difficulty": "very hard",
       "languages": ["js", "python", "cpp"],
       "path": "problems/binary_search_trees/right_smaller_than"
@@ -63,6 +63,13 @@
       "difficulty": "very hard",
       "languages": ["js", "python", "cpp"],
       "path": "problems/binary_trees/compare_leaf_traversal"
+    },
+    {
+      "name": "right_sibling_tree",
+      "topic": "binary trees",
+      "difficulty": "very hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/binary_trees/right_sibling_tree"
     },
     {
       "name": "dijkstras_algorithm",

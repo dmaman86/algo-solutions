@@ -27,10 +27,9 @@ describe("Compare leaf traversal", () => {
     test(`Test case ${idx}`, () => {
       const root1 = buildBT(tree1.nodes, tree1.root);
       const root2 = buildBT(tree2.nodes, tree2.root);
-      const result = expected;
 
-      const test_result = compareLeafTraversal(root1, root2);
-      expect(test_result).toBe(result);
+      const result = compareLeafTraversal(root1, root2);
+      expect(result).toBe(expected);
     });
   });
 });
