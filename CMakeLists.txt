@@ -18,6 +18,8 @@ set(BST_DIR ${PROJECT_SOURCE_DIR}/problems/binary_search_trees)
 set(BT_DIR ${PROJECT_SOURCE_DIR}/problems/binary_trees)
 set(FAMOUS_ALGORITHMS_DIR ${PROJECT_SOURCE_DIR}/problems/famous_algorithms)
 set(GRAPHS_DIR ${PROJECT_SOURCE_DIR}/problems/graphs)
+set(GREEDY_ALGORITHMS_DIR ${PROJECT_SOURCE_DIR}/problems/greedy_algorithms)
+set(DYNAMIC_PROGRAMMING_DIR ${PROJECT_SOURCE_DIR}/problems/dynamic_programming)
 
 enable_testing()
 

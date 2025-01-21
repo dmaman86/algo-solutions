@@ -13,8 +13,7 @@ def generate_summary(metadata: dict) -> str:
         topic_counts[topic] = topic_counts.get(topic, 0) + 1
 
     # Generate the table
-    summary_table = "## Summary of Problems\n\n"
-    summary_table += "| Topic               | Number of Problems |\n"
+    summary_table = "| Topic               | Number of Problems |\n"
     summary_table += "|---------------------|--------------------|\n"
 
     total_problems = 0

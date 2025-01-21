@@ -1,60 +1,78 @@
 # AlgoExpert Solutions
 
 <!-- START_TABLE -->
-## Summary of Problems
 
 ## Summary of Problems
 
-| Topic               | Number of Problems |
-|---------------------|--------------------|
-| Arrays              | 6                  |
-| Binary search trees | 2                  |
-| Binary trees        | 2                  |
-| Famous algorithms   | 6                  |
-| Graphs              | 5                  |
-|---------------------|--------------------|
-| **Total**          | **21**           |
+| Topic                 | Number of Problems   |
+| --------------------- | -------------------- |
+| Arrays                | 6                    |
+| Binary search trees   | 2                    |
+| Binary trees          | 2                    |
+| Famous algorithms     | 6                    |
+| Graphs                | 5                    |
+| Greedy algorithms     | 1                    |
+| Dynamic programming   | 1                    |
+| --------------------- | -------------------- |
+| **Total**             | **23**               |
 
 ### Arrays Problems
-| #   | Problem               | Difficulty | Languages               |
-|-----|-----------------------|------------|-------------------------|
-| 1   | [Sorted Squared Array](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/sorted_squared_array) | Easy | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/sorted_squared_array/js) |
-| 2   | [Tournament Winner](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/tournament_winner) | Easy | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/tournament_winner/js), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/tournament_winner/cpp) |
-| 3   | [Two Number Sum](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/two_number_sum) | Easy | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/two_number_sum/js) |
-| 4   | [Validate Subsequence](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence) | Easy | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence/python) |
-| 5   | [Four Number Sum](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum) | Hard | [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum/cpp), [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum/js) |
-| 6   | [Subarray Sort](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort) | Hard | [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/cpp), [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/python) |
+
+| #   | Problem                                                                                                           | Difficulty | Languages                                                                                                                                                                                                                                                                                       |
+| --- | ----------------------------------------------------------------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [Sorted Squared Array](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/sorted_squared_array) | Easy       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/sorted_squared_array/js)                                                                                                                                                                                              |
+| 2   | [Tournament Winner](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/tournament_winner)       | Easy       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/tournament_winner/js), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/tournament_winner/cpp)                                                                                              |
+| 3   | [Two Number Sum](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/two_number_sum)             | Easy       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/two_number_sum/js)                                                                                                                                                                                                    |
+| 4   | [Validate Subsequence](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence) | Easy       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence/python)                                                                                  |
+| 5   | [Four Number Sum](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum)           | Hard       | [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum/cpp), [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum/js)                                                                                                  |
+| 6   | [Subarray Sort](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort)               | Hard       | [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/cpp), [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/python) |
 
 ### Binary search trees Problems
-| #   | Problem               | Difficulty | Languages               |
-|-----|-----------------------|------------|-------------------------|
-| 1   | [Repair Bst](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/repair_bst) | Hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/repair_bst/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/repair_bst/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/repair_bst/cpp) |
-| 2   | [Right Smaller Than](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/right_smaller_than) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/right_smaller_than/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/right_smaller_than/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/right_smaller_than/cpp) |
+
+| #   | Problem                                                                                                                    | Difficulty | Languages                                                                                                                                                                                                                                                                                                                                             |
+| --- | -------------------------------------------------------------------------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [Repair Bst](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/repair_bst)                 | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/repair_bst/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/repair_bst/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/repair_bst/cpp)                         |
+| 2   | [Right Smaller Than](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/right_smaller_than) | Very hard  | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/right_smaller_than/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/right_smaller_than/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees/right_smaller_than/cpp) |
 
 ### Binary trees Problems
-| #   | Problem               | Difficulty | Languages               |
-|-----|-----------------------|------------|-------------------------|
-| 1   | [Compare Leaf Traversal](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees/compare_leaf_traversal) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees/compare_leaf_traversal/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees/compare_leaf_traversal/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees/compare_leaf_traversal/cpp) |
-| 2   | [Right Sibling Tree](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees/right_sibling_tree) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees/right_sibling_tree/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees/right_sibling_tree/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees/right_sibling_tree/cpp) |
+
+| #   | Problem                                                                                                                     | Difficulty | Languages                                                                                                                                                                                                                                                                                                                                    |
+| --- | --------------------------------------------------------------------------------------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [Compare Leaf Traversal](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees/compare_leaf_traversal) | Very hard  | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees/compare_leaf_traversal/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees/compare_leaf_traversal/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees/compare_leaf_traversal/cpp) |
+| 2   | [Right Sibling Tree](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees/right_sibling_tree)         | Very hard  | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees/right_sibling_tree/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees/right_sibling_tree/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees/right_sibling_tree/cpp)             |
 
 ### Famous algorithms Problems
-| #   | Problem               | Difficulty | Languages               |
-|-----|-----------------------|------------|-------------------------|
-| 1   | [Kadanes Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kadanes_algorithm) | Medium | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kadanes_algorithm/js), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kadanes_algorithm/cpp) |
-| 2   | [Dijkstras Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/dijkstras_algorithm) | Hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/dijkstras_algorithm/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/dijkstras_algorithm/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/dijkstras_algorithm/cpp) |
-| 3   | [Kruskals Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kruskals_algorithm) | Hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kruskals_algorithm/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kruskals_algorithm/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kruskals_algorithm/cpp) |
-| 4   | [Prims Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/prims_algorithm) | Hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/prims_algorithm/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/prims_algorithm/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/prims_algorithm/cpp) |
-| 5   | [Topological Sort](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/topological_sort) | Hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/topological_sort/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/topological_sort/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/topological_sort/cpp) |
-| 6   | [Astar Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/astar_algorithm) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/astar_algorithm/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/astar_algorithm/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/astar_algorithm/cpp) |
+
+| #   | Problem                                                                                                                    | Difficulty | Languages                                                                                                                                                                                                                                                                                                                                          |
+| --- | -------------------------------------------------------------------------------------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [Kadanes Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kadanes_algorithm)     | Medium     | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kadanes_algorithm/js), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kadanes_algorithm/cpp)                                                                                                                           |
+| 2   | [Dijkstras Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/dijkstras_algorithm) | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/dijkstras_algorithm/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/dijkstras_algorithm/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/dijkstras_algorithm/cpp) |
+| 3   | [Kruskals Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kruskals_algorithm)   | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kruskals_algorithm/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kruskals_algorithm/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/kruskals_algorithm/cpp)    |
+| 4   | [Prims Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/prims_algorithm)         | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/prims_algorithm/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/prims_algorithm/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/prims_algorithm/cpp)             |
+| 5   | [Topological Sort](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/topological_sort)       | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/topological_sort/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/topological_sort/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/topological_sort/cpp)          |
+| 6   | [Astar Algorithm](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/astar_algorithm)         | Very hard  | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/astar_algorithm/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/astar_algorithm/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms/astar_algorithm/cpp)             |
 
 ### Graphs Problems
-| #   | Problem               | Difficulty | Languages               |
-|-----|-----------------------|------------|-------------------------|
-| 1   | [Minimum Passes Of Matrix](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/minimum_passes_of_matrix) | Medium | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/minimum_passes_of_matrix/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/minimum_passes_of_matrix/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/minimum_passes_of_matrix/cpp) |
-| 2   | [Cycle In Graph](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/cycle_in_graph) | Medium | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/cycle_in_graph/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/cycle_in_graph/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/cycle_in_graph/cpp) |
-| 3   | [Boggle Board](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/boggle_board) | Hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/boggle_board/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/boggle_board/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/boggle_board/cpp) |
-| 4   | [Airport Connections](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/airport_connections) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/airport_connections/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/airport_connections/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/airport_connections/cpp) |
-| 5   | [Detect Arbitrage](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/detect_arbitrage) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/detect_arbitrage/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/detect_arbitrage/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/detect_arbitrage/cpp) |
+
+| #   | Problem                                                                                                                   | Difficulty | Languages                                                                                                                                                                                                                                                                                                                        |
+| --- | ------------------------------------------------------------------------------------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [Minimum Passes Of Matrix](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/minimum_passes_of_matrix) | Medium     | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/minimum_passes_of_matrix/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/minimum_passes_of_matrix/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/minimum_passes_of_matrix/cpp) |
+| 2   | [Cycle In Graph](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/cycle_in_graph)                     | Medium     | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/cycle_in_graph/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/cycle_in_graph/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/cycle_in_graph/cpp)                               |
+| 3   | [Boggle Board](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/boggle_board)                         | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/boggle_board/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/boggle_board/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/boggle_board/cpp)                                     |
+| 4   | [Airport Connections](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/airport_connections)           | Very hard  | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/airport_connections/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/airport_connections/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/airport_connections/cpp)                |
+| 5   | [Detect Arbitrage](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/detect_arbitrage)                 | Very hard  | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/detect_arbitrage/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/detect_arbitrage/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs/detect_arbitrage/cpp)                         |
+
+### Greedy algorithms Problems
+
+| #   | Problem                                                                                                            | Difficulty | Languages                                                                                                                                                                                                                                                                                                                              |
+| --- | ------------------------------------------------------------------------------------------------------------------ | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [Task Assignment](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment) | Medium     | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment/cpp) |
+
+### Dynamic programming Problems
+
+| #   | Problem                                                                                                                | Difficulty | Languages                                                                                                                                                                                                                                                                                                                                       |
+| --- | ---------------------------------------------------------------------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [Knapsack Problem](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming/knapsack_problem) | Hard       | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming/knapsack_problem/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming/knapsack_problem/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming/knapsack_problem/cpp) |
 
 <!-- END_TABLE -->
 
@@ -118,6 +136,7 @@ make test-cpp
 
 5. **`make visualize`**:
    Generates visualizations for specific Python tests. This command runs Python tests with the `--visualize` flag, which enables the generation of visual outputs for supported problems.
+   The visualizations for the problems are not included in the repository.
 
    **Steps in make visualize**:
 
@@ -165,6 +184,8 @@ Below is an overview of the project structure:
 │   ├── binary_search_trees/        # Binary search tree problems
 |   ├── binary_trees/               # Binary tree problems
 │   ├── famous_algorithms/          # Well-known algorithms
+│   ├── greedy_algorithms/          # Greedy algorithm problems
+│   ├── dynamic_programming/        # Dynamic programming problems
 │   └── graphs/                     # Graph-related problems
 ├── scripts/                        # Utility scripts for project maintenance
 │   └── update_readme.py            # Updates README with metadata or problem table
@@ -174,6 +195,8 @@ Below is an overview of the project structure:
     │   ├── binary_search_trees/    # Binary search tree JavaScript tests
     │   ├── binary_trees/           # Binary tree JavaScript tests
     │   ├── famous_algorithms/      # Well-known algorithm JavaScript tests
+    |   ├── greedy_algorithms/      # Greedy algorithm JavaScript tests
+    |   ├── dynamic_programming/    # Dynamic programming JavaScript tests
     │   └── graphs/                 # Graph-related JavaScript tests
     ├── cpp/                        # C++ tests (run with CMake and CTest)
     │   ├── CMakeLists.txt          # Main configuration for all C++ tests
@@ -184,6 +207,10 @@ Below is an overview of the project structure:
     |   ├── binary_trees/           # C++ tests for binary tree problems
     │   ├── famous_algorithms/      # C++ tests for well-known algorithms
     │   │   ├── CMakeLists.txt      # Configuration for famous algorithms tests
+    │   ├── dynamic_programming/    # C++ tests for dynamic programming problems
+    │   │   ├── CMakeLists.txt      # Configuration for dynamic programming tests
+    |   ├── greedy_algorithms/      # C++ tests for greedy algorithm problems
+    │   │   ├── CMakeLists.txt      # Configuration for greedy algorithm tests
     │   ├── graphs/                 # C++ tests for graph problems
     │   │   ├── CMakeLists.txt      # Configuration for graph-specific tests
     │   └── jsontestbase.h          # Header for handling JSON-based test cases in C++
@@ -194,12 +221,16 @@ Below is an overview of the project structure:
     │   ├── conftest.py             # Configuration for pytest
     │   ├── famous_algorithms/      # Python tests for well-known algorithms
     │   ├── graphs/                 # Python tests for graph problems
+    │   ├── greedy_algorithms/      # Python tests for greedy algorithm problems
+    │   ├── dynamic_programming/    # Python tests for dynamic programming problems
     │   └── utility.py              # Helper functions for Python tests
     └── test_cases/                 # JSON test cases for all problems
         ├── arrays/                 # Test cases for array problems
         ├── binary_search_trees/    # Test cases for binary search tree problems
         ├── binary_trees/           # Test cases for binary tree problems
         ├── famous_algorithms/      # Test cases for well-known algorithms
+        |── greedy_algorithms/      # Test cases for greedy algorithm problems
+        ├── dynamic_programming/    # Test cases for dynamic programming problems
         └── graphs/                 # Test cases for graph problems
 ````
 

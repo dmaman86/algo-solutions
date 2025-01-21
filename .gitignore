@@ -17,3 +17,6 @@ __pycache__/
 *.pyc
 
 *.gv.png
+
+# Ignore all folders ending with "_images"
+**/*_images/

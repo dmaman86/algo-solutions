@@ -147,6 +147,20 @@
       "difficulty": "very hard",
       "languages": ["js", "python", "cpp"],
       "path": "problems/graphs/detect_arbitrage"
+    },
+    {
+      "name": "task_assignment",
+      "topic": "greedy algorithms",
+      "difficulty": "medium",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/greedy_algorithms/task_assignment"
+    },
+    {
+      "name": "knapsack_problem",
+      "topic": "dynamic programming",
+      "difficulty": "hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/dynamic_programming/knapsack_problem"
     }
   ]
 }
