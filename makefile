@@ -1,11 +1,5 @@
 JS_TEST_DIR = tests/__tests__
 PYTHON_TEST_DIR = tests/python
-VISUALIZATION_DIR = visualization
-OUTPUT_IMAGES_DIR = output_images
-RESULTS_DIR = tests/results
-
-ROOT_DIR := $(shell pwd)
-PYTHON := python
 
 all: test
 
@@ -24,11 +18,9 @@ test-cpp:
 	@mkdir -p build
 	@cd build && cmake .. && make && ctest --output-on-failure
 
-
 visualize:
 	@echo "Running Python tests with visualizations..."
 	@pytest $(PYTHON_TEST_DIR) --tb=short -q --disable-warnings --visualize
-
 
 clean:
 	@echo "Cleaning build directories..."

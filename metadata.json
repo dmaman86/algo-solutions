@@ -58,6 +58,20 @@
       "path": "problems/binary_search_trees/right_smaller_than"
     },
     {
+      "name": "same_bsts",
+      "topic": "binary search trees",
+      "difficulty": "hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/binary_search_trees/same_bsts"
+    },
+    {
+      "name": "find_nodes_distance_k",
+      "topic": "binary trees",
+      "difficulty": "hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/binary_trees/find_nodes_distance_k"
+    },
+    {
       "name": "compare_leaf_traversal",
       "topic": "binary trees",
       "difficulty": "very hard",
@@ -70,6 +84,13 @@
       "difficulty": "very hard",
       "languages": ["js", "python", "cpp"],
       "path": "problems/binary_trees/right_sibling_tree"
+    },
+    {
+      "name": "flatten_binary_tree",
+      "topic": "binary trees",
+      "difficulty": "very hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/binary_trees/flatten_binary_tree"
     },
     {
       "name": "dijkstras_algorithm",
@@ -161,6 +182,13 @@
       "difficulty": "hard",
       "languages": ["js", "python", "cpp"],
       "path": "problems/dynamic_programming/knapsack_problem"
+    },
+    {
+      "name": "max_profit_with_k_transactions",
+      "topic": "dynamic programming",
+      "difficulty": "very hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/dynamic_programming/max_profit_with_k_transactions"
     }
   ]
 }
