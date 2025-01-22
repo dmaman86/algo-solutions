@@ -1,11 +1,3 @@
-export class BinaryTree {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-}
-
 export const compareLeafTraversal = (() => {
   const collectLeafNodes = (root, storedLeaf) => {
     if (!root) return;

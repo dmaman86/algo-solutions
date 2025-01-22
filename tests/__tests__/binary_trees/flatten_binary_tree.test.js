@@ -1,26 +1,8 @@
-import {
-  BinaryTree,
-  flattenBinaryTree,
-} from "@/binary_trees/flatten_binary_tree/js/flatten_binary_tree.js";
+import { flattenBinaryTree } from "@/binary_trees/flatten_binary_tree/js/flatten_binary_tree.js";
+import { buildBT } from "./utility";
 import { expect } from "@jest/globals";
 
 import testCases from "../../test_cases/binary_trees/flatten_binary_tree.json";
-
-const buildBT = (nodes, rootId) => {
-  const idToNode = {};
-
-  nodes.forEach((node) => {
-    idToNode[node.id] = new BinaryTree(node.value);
-  });
-
-  nodes.forEach((node) => {
-    const btNode = idToNode[node.id];
-    btNode.left = node.left ? idToNode[node.left] : null;
-    btNode.right = node.right ? idToNode[node.right] : null;
-  });
-
-  return idToNode[rootId];
-};
 
 const areBTsEqual = (bt1, bt2, visited = new Set()) => {
   // if both are null, they are equal

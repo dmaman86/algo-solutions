@@ -1,11 +1,3 @@
-export class BinaryTree {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-}
-
 export const flattenBinaryTree = (() => {
   const flattenInOrder = (node, state) => {
     if (!node) return;

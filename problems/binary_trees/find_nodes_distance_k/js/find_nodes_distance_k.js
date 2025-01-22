@@ -1,11 +1,3 @@
-export class BinaryTree {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-}
-
 export const findNodesDistanceK = (() => {
   // helper function to map each node to its parent node
   const findParents = (node, parentMap, parent = null) => {
