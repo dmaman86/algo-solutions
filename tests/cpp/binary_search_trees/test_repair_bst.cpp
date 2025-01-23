@@ -1,11 +1,6 @@
 #include "../../../problems/binary_search_trees/repair_bst/cpp/repair_bst.h"
 #include "../jsontestbase.h"
-#include <gtest/gtest.h>
-#include <nlohmann/json.hpp>
-
-#include <unordered_map>
-
-using json = nlohmann::json;
+#include "./utility.h"
 
 class RepairBstTest : public JsonTestBase {
 public:
@@ -14,41 +9,6 @@ public:
         std::string(TEST_CASES_DIR) + "/binary_search_trees/repair_bst.json";
   }
 };
-
-BST *buildBST(const json &treeJson) {
-  const auto &nodes = treeJson["nodes"];
-  const std::string &rootId = treeJson["root"];
-
-  std::unordered_map<std::string, BST *> nodeMap;
-
-  for (const auto &node : nodes) {
-    const std::string &id = node["id"];
-    nodeMap[id] = new BST(node["value"]);
-  }
-
-  for (const auto &node : nodes) {
-    std::string id = node["id"];
-    BST *bstNode = nodeMap[id];
-
-    if (!node["left"].is_null()) {
-      std::string leftId = node["left"];
-      bstNode->left = nodeMap[leftId];
-    }
-    if (!node["right"].is_null()) {
-      std::string rightId = node["right"];
-      bstNode->right = nodeMap[rightId];
-    }
-  }
-  return nodeMap[rootId];
-}
-
-void deleteBST(BST *root) {
-  if (!root)
-    return;
-  deleteBST(root->left);
-  deleteBST(root->right);
-  delete root;
-}
 
 bool areEqual(BST *root1, BST *root2) {
   if (!root1 && !root2)

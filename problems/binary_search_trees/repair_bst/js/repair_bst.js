@@ -1,11 +1,3 @@
-export class BST {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-}
-
 export const repairBST = (tree) => {
   let first = null,
     second = null,

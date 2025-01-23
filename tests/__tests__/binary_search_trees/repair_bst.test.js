@@ -1,25 +1,8 @@
-import { BST, repairBST } from "@/binary_search_trees/repair_bst/js/repair_bst";
+import { repairBST } from "@/binary_search_trees/repair_bst/js/repair_bst";
+import { buildBST } from "./utility";
 import { expect } from "@jest/globals";
 
 import testCases from "../../test_cases/binary_search_trees/repair_bst.json";
-
-const buildBST = (nodes, rootId) => {
-  const idToNode = {};
-
-  // Crear todos los nodos del árbol
-  nodes.forEach((node) => {
-    idToNode[node.id] = new BST(node.value);
-  });
-
-  // Conectar los hijos
-  nodes.forEach((node) => {
-    const bstNode = idToNode[node.id];
-    bstNode.left = node.left ? idToNode[node.left] : null;
-    bstNode.right = node.right ? idToNode[node.right] : null;
-  });
-
-  return idToNode[rootId];
-};
 
 const areBSTsEqual = (bst1, bst2) => {
   if (!bst1 && !bst2) return true;

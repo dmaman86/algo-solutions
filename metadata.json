@@ -65,6 +65,13 @@
       "path": "problems/binary_search_trees/same_bsts"
     },
     {
+      "name": "validate_three_nodes",
+      "topic": "binary search trees",
+      "difficulty": "hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/binary_search_trees/validate_three_nodes"
+    },
+    {
       "name": "find_nodes_distance_k",
       "topic": "binary trees",
       "difficulty": "hard",
@@ -91,6 +98,13 @@
       "difficulty": "very hard",
       "languages": ["js", "python", "cpp"],
       "path": "problems/binary_trees/flatten_binary_tree"
+    },
+    {
+      "name": "all_kinds_of_node_depths",
+      "topic": "binary trees",
+      "difficulty": "very hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/binary_trees/all_kinds_of_node_depths"
     },
     {
       "name": "dijkstras_algorithm",

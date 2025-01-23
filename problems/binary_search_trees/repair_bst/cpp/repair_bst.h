@@ -1,13 +1,4 @@
-
-
-class BST {
-public:
-  int value;
-  BST *left = nullptr;
-  BST *right = nullptr;
-
-  BST(int value) { this->value = value; }
-};
+#include "../../assets/BST.h"
 
 class BSTRepair {
 private:

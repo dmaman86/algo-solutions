@@ -1,8 +1,4 @@
-class BST:
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
+from problems.binary_search_trees.assets.BST import BST
 
 
 def repair_bst(tree: BST) -> BST:
