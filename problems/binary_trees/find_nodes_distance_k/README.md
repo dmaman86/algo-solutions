@@ -32,6 +32,6 @@ k = 2
 
 ### Sample Output
 
-```
-[2, 7, 8]   // These values could be ordered differently.
+```python
+[2, 7, 8]   # These values could be ordered differently.
 ```

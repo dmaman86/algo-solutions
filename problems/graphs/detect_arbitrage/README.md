@@ -29,7 +29,7 @@ might be multiple ways to generate an arbitrage.
 
 ### Sample Input
 
-```
+```python
 exchangeRates = [
   [1.0, 0.8631, 0.5903],
   [1.1587, 1.0, 0.6849],
@@ -39,6 +39,6 @@ exchangeRates = [
 
 ### Sample Output
 
-```
+```python
 true
 ```

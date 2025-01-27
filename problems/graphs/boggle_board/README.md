@@ -14,9 +14,9 @@ repeated letters must come from different positions in the boggle board in order
 for the word to be contained in the board. Note that two or more words are allowed
 to overlap and use the same letters in the boggle board.
 
-## Sample Input
+### Sample Input
 
-```
+```python
 board = [
   ["t", "h", "i", "s", "i", "s", "a"],
   ["s", "i", "m", "p", "l", "e", "x"],
@@ -34,9 +34,9 @@ words = [
 ]
 ```
 
-## Sample Output
+### Sample Output
 
-```
+```python
 ["this", "is", "a", "simple", "boggle", "board", "NOTRE-PEATED"]
-// The words could be ordered differently.
+# The words could be ordered differently.
 ```

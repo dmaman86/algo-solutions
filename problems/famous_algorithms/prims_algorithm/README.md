@@ -6,9 +6,9 @@ Write a function implementing Prim's Algorithm to return a new edges array that 
 
 Note that the graph represented by edges won't contain any self-loops (vertices that have an outbound edge to themselves) and will only positively weighted edges (i.e., no negative distances). The graph will always have at least one node.
 
-Sample Input
+### Sample Input
 
-```
+```python
 edges = [
   [[1, 3], [2, 5]],
   [[0, 3], [2, 10], [3, 12]],
@@ -17,9 +17,9 @@ edges = [
 ]
 ```
 
-Sample Output
+### Sample Output
 
-```
+```python
 [
   [[1, 3], [2, 5]],
   [[0, 3], [3, 12]],

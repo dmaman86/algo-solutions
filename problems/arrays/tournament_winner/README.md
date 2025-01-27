@@ -21,9 +21,9 @@ It's guaranteed that exactly one team will win the tournament and that each team
 all other teams exactly once. It's also guaranteed that the tournament will always have at least two
 teams.
 
-## Sample Input
+### Sample Input
 
-```
+```python
 competitions = [
   ["HTML", "C#"],
   ["C#", "Python"],
@@ -32,16 +32,16 @@ competitions = [
 results = [0, 0, 1]
 ```
 
-## Sample Output
+### Sample Output
 
-```
+```python
 "Python"
-```
 
-// C# beats HTML, Python Beats C#, and Python Beats HTML.
-// HTML - 0 points
-// C# - 3 points
-// Python - 6 points
+# C# beats HTML, Python Beats C#, and Python Beats HTML.
+# HTML - 0 points
+# C# - 3 points
+# Python - 6 points
+```
 
 ```
 

@@ -79,6 +79,13 @@
       "path": "problems/binary_trees/find_nodes_distance_k"
     },
     {
+      "name": "max_path_sum_in_binary_tree",
+      "topic": "binary trees",
+      "difficulty": "hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/binary_trees/max_path_sum_in_binary_tree"
+    },
+    {
       "name": "compare_leaf_traversal",
       "topic": "binary trees",
       "difficulty": "very hard",
@@ -156,6 +163,13 @@
       "path": "problems/graphs/minimum_passes_of_matrix"
     },
     {
+      "name": "youngest_common_ancestor",
+      "topic": "graphs",
+      "difficulty": "medium",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/graphs/youngest_common_ancestor"
+    },
+    {
       "name": "cycle_in_graph",
       "topic": "graphs",
       "difficulty": "medium",
@@ -191,6 +205,13 @@
       "path": "problems/greedy_algorithms/task_assignment"
     },
     {
+      "name": "maximum_sum_submatrix",
+      "topic": "dynamic programming",
+      "difficulty": "hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/dynamic_programming/maximum_sum_submatrix"
+    },
+    {
       "name": "knapsack_problem",
       "topic": "dynamic programming",
       "difficulty": "hard",
@@ -203,6 +224,13 @@
       "difficulty": "very hard",
       "languages": ["js", "python", "cpp"],
       "path": "problems/dynamic_programming/max_profit_with_k_transactions"
+    },
+    {
+      "name": "longest_increasing_subsequence",
+      "topic": "dynamic programming",
+      "difficulty": "very hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/dynamic_programming/longest_increasing_subsequence"
     }
   ]
 }

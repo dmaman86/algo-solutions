@@ -11,15 +11,15 @@ returns a list containing a valid order in which the given jobs can be
 completed. If no such order exists, the function should return
 an empty array.
 
-Sample Input:
+### Sample Input:
 
-```
+```python
 jobs = [1, 2, 3, 4]
 deps = [[1, 2], [1, 3], [3, 2], [4, 2], [4, 3]]
 ```
 
-Sample Output:
+### Sample Output:
 
-```
+```python
 [1, 4, 3, 2] or [4, 1, 3, 2]
 ```

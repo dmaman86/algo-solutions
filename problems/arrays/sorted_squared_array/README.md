@@ -6,12 +6,12 @@ also sorted in ascending order.
 
 Sample Input
 
-```
+```python
 array = [1, 2, 3, 5, 6, 8, 9]
 ```
 
 Sample Output
 
-```
+```python
 [1, 4, 9, 25, 36, 64, 81]
 ```

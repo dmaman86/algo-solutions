@@ -16,9 +16,9 @@ Note that:
 - The start node and end node will never be out of bounds and will never overlap.
 - There will be at most one shortest path from the start node to the end node.
 
-## Sample Input
+### Sample Input
 
-```plaintext
+```python
 startRow = 0
 startCol = 1
 endRow = 4
@@ -32,17 +32,17 @@ graph = [
 ]
 ```
 
-## Sample Output
+### Sample Output
 
-```plaintext
+```python
 [[0, 1], [0, 0], [1, 0], [2, 0], [2, 1], [3, 1], [4, 1], [4, 2], [4, 3]]
 
-// The shortest path can be clearly seen here:
-// [
-//    [., ., 0, 0, 0],
-//    [., 1, 1, 1, 0],
-//    [., ., 0, 0, 0],
-//    [1, ., 1, 1, 1],
-//    [0, ., ., ., 0],
-// ]
+# The shortest path can be clearly seen here:
+# [
+#    [., ., 0, 0, 0],
+#    [., 1, 1, 1, 0],
+#    [., ., 0, 0, 0],
+#    [1, ., 1, 1, 1],
+#    [0, ., ., ., 0],
+# ]
 ```

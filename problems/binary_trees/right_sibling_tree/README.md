@@ -18,7 +18,7 @@ nodes can either be `BinaryTree` nodes themselves or `None` / `null`.
 
 ### Sample Input
 
-```
+```python
 tree =      1
         /       \
        2         3
@@ -32,14 +32,14 @@ tree =      1
 
 ### Sample Output
 
-```
-             1    // The root node with value 1
+```python
+             1    # The root node with value 1
         /
        2----------3
      /           /
     4------5----6----7
   /           /     /
- 8----9 10--11     12-13    // the node with value 10 no longer has a node pointing to it
+ 8----9 10--11     12-13    # the node with value 10 no longer has a node pointing to it
             /
           14
 ```

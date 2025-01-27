@@ -10,9 +10,9 @@ Note that routes only allow you to fly in one direction; for instance, the route
 
 Also note that the connections don't have to be direct; it's okay if an airport can only be reached from the starting airport by stopping at other airports first.
 
-Sample Input
+### Sample Input
 
-```
+```python
 airports = [
   "BGI", "CDG", "DEL", "DOH", "DSM", "EWR", "EYN", "HND", "ICN",
   "JFK", "LGA", "LHR", "ORD", "SAN", "SFO", "SIN", "TLV", "BUD"
@@ -41,8 +41,8 @@ routes = [
 startingAirport = "LGA"
 ```
 
-Sample Output
+### Sample Output
 
-```
-3   // ["LGA", "TLV"], ["LGA", "SFO"], and ["LGA", "EWR"]
+```python
+3   # ["LGA", "TLV"], ["LGA", "SFO"], and ["LGA", "EWR"]
 ```

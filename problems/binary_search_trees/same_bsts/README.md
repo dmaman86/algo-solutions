@@ -22,13 +22,13 @@ arrayTwo = [10, 8, 5, 15, 2, 12, 11, 94, 81]
 
 ### Sample Output
 
-```
-True  // Both arrays represent the BST below:
-                  10
-                 /  \
-                8    15
-               /    /  \
-              5    12   94
-             /    /    /
-            2    11   81
+```python
+True  # Both arrays represent the BST below:
+#                  10
+#                 /  \
+#                8    15
+#               /    /  \
+#              5    12   94
+#             /    /    /
+#            2    11   81
 ```

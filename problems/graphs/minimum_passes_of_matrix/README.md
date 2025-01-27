@@ -16,7 +16,7 @@ A single pass through the matrix involves converting all the negative integers t
 be converted at a particular point in time. For example, consider the following input
 matrix:
 
-```
+```python
 [
   [0, -2, -1],
   [-5, 2, 0],
@@ -26,7 +26,7 @@ matrix:
 
 After a first pass, only 3 values can be converted to positives:
 
-```
+```python
 [
   [0, 2, -1],
   [5, 2, 0],
@@ -36,7 +36,7 @@ After a first pass, only 3 values can be converted to positives:
 
 After a second pass, the remaining negatives values can all be converted to positives:
 
-```
+```python
 [
   [0, 2, 1],
   [5, 2, 0],
@@ -50,7 +50,7 @@ passes are run, your function should return `-1`.
 
 ### Sample Input
 
-```
+```python
 matrix = [
   [0, -1, -3, 2, 0],
   [1, -2, -5, -1, -3],
@@ -60,6 +60,6 @@ matrix = [
 
 ### Sample Output
 
-```
+```python
 3
 ```

@@ -21,7 +21,7 @@ the purpose of this question, a self-loop is considered a cycle.
 
 ### Sample Input
 
-```
+```python
 edges = [
   [1, 3],
   [2, 3, 4],
@@ -34,11 +34,11 @@ edges = [
 
 ### Sample Output
 
-```
+```python
 true
-// There are multiple cycles in this graph:
-// 1) 0 -> 1 -> 2 -> 0
-// 2) 0 -> 1 -> 4 -> 2 -> 0
-// 3) 1 -> 2 -> 0 -> 1
-// These are just 3 examples; there are more
+# There are multiple cycles in this graph:
+# 1) 0 -> 1 -> 2 -> 0
+# 2) 0 -> 1 -> 4 -> 2 -> 0
+# 3) 1 -> 2 -> 0 -> 1
+# These are just 3 examples; there are more
 ```

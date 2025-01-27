@@ -20,27 +20,27 @@ Note: you'll always be given at least one worker (i.e., `k` will always be great
 
 ### Sample Input
 
-```
+```python
 k = 3
 tasks = [1, 3, 5, 3, 1, 4]
 ```
 
 ### Sample Output
 
-```
+```python
 [
   [0, 2], // tasks[0] = 1, tasks[2] = 5 | 1 + 5 = 6
   [4, 5], // tasks[4] = 1, tasks[5] = 4 | 1 + 4 = 5
   [1, 3]  // tasks[1] = 3, tasks[3] = 3 | 3 + 3 = 6
-] // The fastest time to complete all tasks is 6.
+] # The fastest time to complete all tasks is 6.
 
-// Note: there are multiple correct outputs for this sample input.
-// The following is an example of another correct output:
-// [
-//   [2, 4], // tasks[2] = 5, tasks[4] = 1 | 5 + 1 = 6
-//   [0, 5], // tasks[0] = 1, tasks[5] = 4 | 1 + 4 = 5
-//   [1, 3]  // tasks[1] = 3, tasks[3] = 3 | 3 + 3 = 6
-// ]
+# Note: there are multiple correct outputs for this sample input.
+# The following is an example of another correct output:
+# [
+#   [2, 4], // tasks[2] = 5, tasks[4] = 1 | 5 + 1 = 6
+#   [0, 5], // tasks[0] = 1, tasks[5] = 4 | 1 + 4 = 5
+#   [1, 3]  // tasks[1] = 3, tasks[3] = 3 | 3 + 3 = 6
+# ]
 ```
 
 ```

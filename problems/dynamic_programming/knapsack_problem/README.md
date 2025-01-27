@@ -15,13 +15,13 @@ in the knapsack, your function can return any of them.
 
 ### Sample Input
 
-```
+```python
 items = [[1, 2], [4, 3], [5, 6], [6, 7]]
 capacity = 10
 ```
 
 ### Sample Output
 
-```
-[10, [1, 3]] // items [4, 3] and [6, 7]
+```python
+[10, [1, 3]] # items [4, 3] and [6, 7]
 ```

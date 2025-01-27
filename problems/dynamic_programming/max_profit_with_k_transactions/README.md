@@ -23,6 +23,6 @@ k = 2
 
 ### Sample Output
 
-```
-93  // Buy: 5, Sell: 11; Buy: 3, Sell: 90
+```python
+93  # Buy: 5, Sell: 11; Buy: 3, Sell: 90
 ```

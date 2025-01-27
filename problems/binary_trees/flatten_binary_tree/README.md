@@ -30,6 +30,6 @@ tree =
 
 ### Sample Output
 
-```
-4 <-> 2 <-> 7 <-> 5 <-> 8 <-> 1 <-> 6 <-> 3 // the leftmost node with value 4
+```python
+4 <-> 2 <-> 7 <-> 5 <-> 8 <-> 1 <-> 6 <-> 3 # the leftmost node with value 4
 ```

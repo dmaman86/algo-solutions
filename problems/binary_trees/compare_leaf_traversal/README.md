@@ -24,7 +24,7 @@ themselves or `None` / `null`.
 
 ### Sample Input
 
-```
+```python
 tree1 =
        1
       / \
@@ -47,7 +47,6 @@ tree2 =
 
 ### Sample Output
 
-```
+```python
 true
-
 ```

@@ -10,16 +10,16 @@ that are to the right of `i` and that are strictly smaller than `array[i]`.
 
 ### Sample Input
 
-```
+```python
 array = [8, 5, 11, -1, 3, 4, 2]
 ```
 
 ### Sample Output
 
-```
+```python
 [5, 4, 4, 0, 1, 1, 0]
-// There are 5 integers smaller than 8 to the right of it.
-// There are 4 integers smaller than 5 to the right of it.
-// There are 4 integers smaller than 11 to the right of it.
-// Etc...
+# There are 5 integers smaller than 8 to the right of it.
+# There are 4 integers smaller than 5 to the right of it.
+# There are 4 integers smaller than 11 to the right of it.
+# Etc...
 ```

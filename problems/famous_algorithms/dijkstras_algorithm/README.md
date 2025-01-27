@@ -25,9 +25,9 @@ Note that the graph represented by `edges` won't contain any self-loops
 (vertices that have an outbound edge to themselves) and will only have
 positively weighted edges (i.e., no negative distances).
 
-Sample Input
+### Sample Input
 
-```
+```python
 start = 0
 edges = [
     [[1, 7]],
@@ -39,8 +39,8 @@ edges = [
 ]
 ```
 
-Sample Output
+### Sample Output
 
-```
+```python
 [0, 7, 13, 27, 10, -1]
 ```
