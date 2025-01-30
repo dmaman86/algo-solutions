@@ -7,7 +7,7 @@ export const subarraySort = (() => {
     return index;
   };
 
-  const subarraySort = (array) => {
+  return (array) => {
     if (array.length <= 1) return [-1, -1];
 
     let left = findBoundary(
@@ -26,7 +26,6 @@ export const subarraySort = (() => {
       -1,
     );
 
-    // Encuentra el mínimo y máximo del subarreglo desordenado
     const subarray = array.slice(left, right + 1);
     const min = Math.min(...subarray);
     const max = Math.max(...subarray);
@@ -46,6 +45,4 @@ export const subarraySort = (() => {
 
     return [left, right];
   };
-
-  return subarraySort;
 })();

@@ -44,6 +44,13 @@
       "path": "problems/arrays/subarray_sort"
     },
     {
+      "name": "line_through_points",
+      "topic": "arrays",
+      "difficulty": "very hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/arrays/line_through_points"
+    },
+    {
       "name": "repair_bst",
       "topic": "binary search trees",
       "difficulty": "hard",
@@ -198,11 +205,32 @@
       "path": "problems/graphs/detect_arbitrage"
     },
     {
+      "name": "optimal_freelancing",
+      "topic": "greedy algorithms",
+      "difficulty": "easy",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/greedy_algorithms/optimal_freelancing"
+    },
+    {
+      "name": "tandem_bicycle",
+      "topic": "greedy algorithms",
+      "difficulty": "easy",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/greedy_algorithms/tandem_bicycle"
+    },
+    {
       "name": "task_assignment",
       "topic": "greedy algorithms",
       "difficulty": "medium",
       "languages": ["js", "python", "cpp"],
       "path": "problems/greedy_algorithms/task_assignment"
+    },
+    {
+      "name": "valid_starting_city",
+      "topic": "greedy algorithms",
+      "difficulty": "medium",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/greedy_algorithms/valid_starting_city"
     },
     {
       "name": "maximum_sum_submatrix",

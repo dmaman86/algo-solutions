@@ -4,6 +4,7 @@ import os
 
 def generate_summary(metadata: dict) -> str:
     """Generate a summary table with the total count of problems per topic."""
+    repo = metadata["repo"]
     problems = metadata["problems"]
 
     # Count problems by topic
@@ -18,7 +19,8 @@ def generate_summary(metadata: dict) -> str:
 
     total_problems = 0
     for topic, count in topic_counts.items():
-        summary_table += f"| {topic:<19} | {count:<18} |\n"
+        topic_link = f"[{topic}]({repo}/problems/{topic.lower().replace(' ', '_')})"
+        summary_table += f"| {topic_link:<19} | {count:<18} |\n"
         total_problems += count
 
     # Add total row

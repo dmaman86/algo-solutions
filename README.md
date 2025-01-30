@@ -5,15 +5,15 @@
 
 | Topic               | Number of Problems |
 |---------------------|--------------------|
-| Arrays              | 6                  |
-| Binary search trees | 4                  |
-| Binary trees        | 6                  |
-| Famous algorithms   | 6                  |
-| Graphs              | 6                  |
-| Greedy algorithms   | 1                  |
-| Dynamic programming | 4                  |
+| [Arrays](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays) | 7                  |
+| [Binary search trees](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees) | 4                  |
+| [Binary trees](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees) | 6                  |
+| [Famous algorithms](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms) | 6                  |
+| [Graphs](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs) | 6                  |
+| [Greedy algorithms](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms) | 4                  |
+| [Dynamic programming](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming) | 4                  |
 |---------------------|--------------------|
-| **Total**          | **33**           |
+| **Total**          | **37**           |
 
 ### Arrays Problems
 | #   | Problem               | Difficulty | Languages               |
@@ -24,6 +24,7 @@
 | 4   | [Validate Subsequence](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence) | Easy | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence/python) |
 | 5   | [Four Number Sum](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum) | Hard | [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum/cpp), [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum/js) |
 | 6   | [Subarray Sort](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort) | Hard | [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/cpp), [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/python) |
+| 7   | [Line Through Points](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points/cpp) |
 
 ### Binary search trees Problems
 | #   | Problem               | Difficulty | Languages               |
@@ -66,7 +67,10 @@
 ### Greedy algorithms Problems
 | #   | Problem               | Difficulty | Languages               |
 |-----|-----------------------|------------|-------------------------|
-| 1   | [Task Assignment](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment) | Medium | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment/cpp) |
+| 1   | [Optimal Freelancing](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/optimal_freelancing) | Easy | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/optimal_freelancing/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/optimal_freelancing/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/optimal_freelancing/cpp) |
+| 2   | [Tandem Bicycle](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/tandem_bicycle) | Easy | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/tandem_bicycle/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/tandem_bicycle/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/tandem_bicycle/cpp) |
+| 3   | [Task Assignment](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment) | Medium | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment/cpp) |
+| 4   | [Valid Starting City](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/valid_starting_city) | Medium | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/valid_starting_city/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/valid_starting_city/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/valid_starting_city/cpp) |
 
 ### Dynamic programming Problems
 | #   | Problem               | Difficulty | Languages               |

@@ -14,17 +14,5 @@ export const tournamentWinner = (competitions, results) => {
     }
   }
 
-  // for (let i = 0; i < competitions.length; i++) {
-  //   const winnerIndex = results[i] === 0 ? 1 : 0;
-  //   const winner = competitions[i][winnerIndex];
-  //
-  //   if (winner in score) score[winner] += 3;
-  //   else score[winner] = 3;
-  //
-  //   if (res.score < score[winner]) {
-  //     res.name = winner;
-  //     res.score = score[winner];
-  //   }
-  // }
   return currentLeader.name;
 };
