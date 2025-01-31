@@ -5,7 +5,7 @@
 
 | Topic               | Number of Problems |
 |---------------------|--------------------|
-| [Arrays](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays) | 7                  |
+| [Arrays](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays) | 9                  |
 | [Binary search trees](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees) | 4                  |
 | [Binary trees](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees) | 6                  |
 | [Famous algorithms](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms) | 6                  |
@@ -13,7 +13,7 @@
 | [Greedy algorithms](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms) | 4                  |
 | [Dynamic programming](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming) | 4                  |
 |---------------------|--------------------|
-| **Total**          | **37**           |
+| **Total**          | **39**           |
 
 ### Arrays Problems
 | #   | Problem               | Difficulty | Languages               |
@@ -24,7 +24,9 @@
 | 4   | [Validate Subsequence](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence) | Easy | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/validate_subsequence/python) |
 | 5   | [Four Number Sum](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum) | Hard | [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum/cpp), [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum/js) |
 | 6   | [Subarray Sort](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort) | Hard | [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/cpp), [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/python) |
-| 7   | [Line Through Points](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points/cpp) |
+| 7   | [Count Squares](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/count_squares) | Hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/count_squares/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/count_squares/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/count_squares/cpp) |
+| 8   | [Apartment Hunting](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/apartment_hunting) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/apartment_hunting/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/apartment_hunting/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/apartment_hunting/cpp) |
+| 9   | [Line Through Points](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points/cpp) |
 
 ### Binary search trees Problems
 | #   | Problem               | Difficulty | Languages               |

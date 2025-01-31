@@ -44,6 +44,20 @@
       "path": "problems/arrays/subarray_sort"
     },
     {
+      "name": "count_squares",
+      "topic": "arrays",
+      "difficulty": "hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/arrays/count_squares"
+    },
+    {
+      "name": "apartment_hunting",
+      "topic": "arrays",
+      "difficulty": "very hard",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/arrays/apartment_hunting"
+    },
+    {
       "name": "line_through_points",
       "topic": "arrays",
       "difficulty": "very hard",
