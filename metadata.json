@@ -247,6 +247,20 @@
       "path": "problems/greedy_algorithms/valid_starting_city"
     },
     {
+      "name": "class_photos",
+      "topic": "greedy algorithms",
+      "difficulty": "easy",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/greedy_algorithms/class_photos"
+    },
+    {
+      "name": "minimum_waiting_time",
+      "topic": "greedy algorithms",
+      "difficulty": "easy",
+      "languages": ["js", "python", "cpp"],
+      "path": "problems/greedy_algorithms/minimum_waiting_time"
+    },
+    {
       "name": "maximum_sum_submatrix",
       "topic": "dynamic programming",
       "difficulty": "hard",

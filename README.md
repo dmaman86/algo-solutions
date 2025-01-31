@@ -10,10 +10,10 @@
 | [Binary trees](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees) | 6                  |
 | [Famous algorithms](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms) | 6                  |
 | [Graphs](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs) | 6                  |
-| [Greedy algorithms](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms) | 4                  |
+| [Greedy algorithms](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms) | 6                  |
 | [Dynamic programming](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming) | 4                  |
 |---------------------|--------------------|
-| **Total**          | **39**           |
+| **Total**          | **41**           |
 
 ### Arrays Problems
 | #   | Problem               | Difficulty | Languages               |
@@ -71,8 +71,10 @@
 |-----|-----------------------|------------|-------------------------|
 | 1   | [Optimal Freelancing](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/optimal_freelancing) | Easy | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/optimal_freelancing/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/optimal_freelancing/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/optimal_freelancing/cpp) |
 | 2   | [Tandem Bicycle](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/tandem_bicycle) | Easy | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/tandem_bicycle/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/tandem_bicycle/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/tandem_bicycle/cpp) |
-| 3   | [Task Assignment](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment) | Medium | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment/cpp) |
-| 4   | [Valid Starting City](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/valid_starting_city) | Medium | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/valid_starting_city/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/valid_starting_city/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/valid_starting_city/cpp) |
+| 3   | [Class Photos](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/class_photos) | Easy | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/class_photos/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/class_photos/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/class_photos/cpp) |
+| 4   | [Minimum Waiting Time](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/minimum_waiting_time) | Easy | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/minimum_waiting_time/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/minimum_waiting_time/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/minimum_waiting_time/cpp) |
+| 5   | [Task Assignment](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment) | Medium | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/task_assignment/cpp) |
+| 6   | [Valid Starting City](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/valid_starting_city) | Medium | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/valid_starting_city/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/valid_starting_city/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms/valid_starting_city/cpp) |
 
 ### Dynamic programming Problems
 | #   | Problem               | Difficulty | Languages               |
