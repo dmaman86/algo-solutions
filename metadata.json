@@ -1,292 +1,239 @@
 {
   "repo": "https://github.com/dmaman86/algo-solutions/tree/main",
-  "problems": [
-    {
-      "name": "four_number_sum",
-      "topic": "arrays",
-      "difficulty": "hard",
-      "languages": ["cpp", "js"],
-      "path": "problems/arrays/four_number_sum"
-    },
-    {
-      "name": "sorted_squared_array",
-      "topic": "arrays",
-      "difficulty": "easy",
-      "languages": ["js"],
-      "path": "problems/arrays/sorted_squared_array"
-    },
-    {
-      "name": "tournament_winner",
-      "topic": "arrays",
-      "difficulty": "easy",
-      "languages": ["js", "cpp"],
-      "path": "problems/arrays/tournament_winner"
-    },
-    {
-      "name": "two_number_sum",
-      "topic": "arrays",
-      "difficulty": "easy",
-      "languages": ["js"],
-      "path": "problems/arrays/two_number_sum"
-    },
-    {
-      "name": "validate_subsequence",
-      "topic": "arrays",
-      "difficulty": "easy",
-      "languages": ["js", "python"],
-      "path": "problems/arrays/validate_subsequence"
-    },
-    {
-      "name": "subarray_sort",
-      "topic": "arrays",
-      "difficulty": "hard",
-      "languages": ["cpp", "js", "python"],
-      "path": "problems/arrays/subarray_sort"
-    },
-    {
-      "name": "count_squares",
-      "topic": "arrays",
-      "difficulty": "hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/arrays/count_squares"
-    },
-    {
-      "name": "apartment_hunting",
-      "topic": "arrays",
-      "difficulty": "very hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/arrays/apartment_hunting"
-    },
-    {
-      "name": "line_through_points",
-      "topic": "arrays",
-      "difficulty": "very hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/arrays/line_through_points"
-    },
-    {
-      "name": "repair_bst",
-      "topic": "binary search trees",
-      "difficulty": "hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/binary_search_trees/repair_bst"
-    },
-    {
-      "name": "right_smaller_than",
-      "topic": "binary search trees",
-      "difficulty": "very hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/binary_search_trees/right_smaller_than"
-    },
-    {
-      "name": "same_bsts",
-      "topic": "binary search trees",
-      "difficulty": "hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/binary_search_trees/same_bsts"
-    },
-    {
-      "name": "validate_three_nodes",
-      "topic": "binary search trees",
-      "difficulty": "hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/binary_search_trees/validate_three_nodes"
-    },
-    {
-      "name": "find_nodes_distance_k",
-      "topic": "binary trees",
-      "difficulty": "hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/binary_trees/find_nodes_distance_k"
-    },
-    {
-      "name": "max_path_sum_in_binary_tree",
-      "topic": "binary trees",
-      "difficulty": "hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/binary_trees/max_path_sum_in_binary_tree"
-    },
-    {
-      "name": "compare_leaf_traversal",
-      "topic": "binary trees",
-      "difficulty": "very hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/binary_trees/compare_leaf_traversal"
-    },
-    {
-      "name": "right_sibling_tree",
-      "topic": "binary trees",
-      "difficulty": "very hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/binary_trees/right_sibling_tree"
-    },
-    {
-      "name": "flatten_binary_tree",
-      "topic": "binary trees",
-      "difficulty": "very hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/binary_trees/flatten_binary_tree"
-    },
-    {
-      "name": "all_kinds_of_node_depths",
-      "topic": "binary trees",
-      "difficulty": "very hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/binary_trees/all_kinds_of_node_depths"
-    },
-    {
-      "name": "dijkstras_algorithm",
-      "topic": "famous algorithms",
-      "difficulty": "hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/famous_algorithms/dijkstras_algorithm"
-    },
-    {
-      "name": "kadanes_algorithm",
-      "topic": "famous algorithms",
-      "difficulty": "medium",
-      "languages": ["js", "cpp"],
-      "path": "problems/famous_algorithms/kadanes_algorithm"
-    },
-    {
-      "name": "kruskals_algorithm",
-      "topic": "famous algorithms",
-      "difficulty": "hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/famous_algorithms/kruskals_algorithm"
-    },
-    {
-      "name": "prims_algorithm",
-      "topic": "famous algorithms",
-      "difficulty": "hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/famous_algorithms/prims_algorithm"
-    },
-    {
-      "name": "topological_sort",
-      "topic": "famous algorithms",
-      "difficulty": "hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/famous_algorithms/topological_sort"
-    },
-    {
-      "name": "astar_algorithm",
-      "topic": "famous algorithms",
-      "difficulty": "very hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/famous_algorithms/astar_algorithm"
-    },
-    {
-      "name": "minimum_passes_of_matrix",
-      "topic": "graphs",
-      "difficulty": "medium",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/graphs/minimum_passes_of_matrix"
-    },
-    {
-      "name": "youngest_common_ancestor",
-      "topic": "graphs",
-      "difficulty": "medium",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/graphs/youngest_common_ancestor"
-    },
-    {
-      "name": "cycle_in_graph",
-      "topic": "graphs",
-      "difficulty": "medium",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/graphs/cycle_in_graph"
-    },
-    {
-      "name": "airport_connections",
-      "topic": "graphs",
-      "difficulty": "very hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/graphs/airport_connections"
-    },
-    {
-      "name": "boggle_board",
-      "topic": "graphs",
-      "difficulty": "hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/graphs/boggle_board"
-    },
-    {
-      "name": "detect_arbitrage",
-      "topic": "graphs",
-      "difficulty": "very hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/graphs/detect_arbitrage"
-    },
-    {
-      "name": "optimal_freelancing",
-      "topic": "greedy algorithms",
-      "difficulty": "easy",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/greedy_algorithms/optimal_freelancing"
-    },
-    {
-      "name": "tandem_bicycle",
-      "topic": "greedy algorithms",
-      "difficulty": "easy",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/greedy_algorithms/tandem_bicycle"
-    },
-    {
-      "name": "task_assignment",
-      "topic": "greedy algorithms",
-      "difficulty": "medium",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/greedy_algorithms/task_assignment"
-    },
-    {
-      "name": "valid_starting_city",
-      "topic": "greedy algorithms",
-      "difficulty": "medium",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/greedy_algorithms/valid_starting_city"
-    },
-    {
-      "name": "class_photos",
-      "topic": "greedy algorithms",
-      "difficulty": "easy",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/greedy_algorithms/class_photos"
-    },
-    {
-      "name": "minimum_waiting_time",
-      "topic": "greedy algorithms",
-      "difficulty": "easy",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/greedy_algorithms/minimum_waiting_time"
-    },
-    {
-      "name": "maximum_sum_submatrix",
-      "topic": "dynamic programming",
-      "difficulty": "hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/dynamic_programming/maximum_sum_submatrix"
-    },
-    {
-      "name": "knapsack_problem",
-      "topic": "dynamic programming",
-      "difficulty": "hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/dynamic_programming/knapsack_problem"
-    },
-    {
-      "name": "max_profit_with_k_transactions",
-      "topic": "dynamic programming",
-      "difficulty": "very hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/dynamic_programming/max_profit_with_k_transactions"
-    },
-    {
-      "name": "longest_increasing_subsequence",
-      "topic": "dynamic programming",
-      "difficulty": "very hard",
-      "languages": ["js", "python", "cpp"],
-      "path": "problems/dynamic_programming/longest_increasing_subsequence"
-    }
-  ]
+  "problems": {
+    "arrays": [
+      {
+        "name": "four_number_sum",
+        "difficulty": "hard",
+        "languages": ["cpp", "js"]
+      },
+      {
+        "name": "sorted_squared_array",
+        "difficulty": "easy",
+        "languages": ["js"]
+      },
+      {
+        "name": "tournament_winner",
+        "difficulty": "easy",
+        "languages": ["js", "cpp"]
+      },
+      {
+        "name": "two_number_sum",
+        "difficulty": "easy",
+        "languages": ["js"]
+      },
+      {
+        "name": "validate_subsequence",
+        "difficulty": "easy",
+        "languages": ["js", "python"]
+      },
+      {
+        "name": "subarray_sort",
+        "difficulty": "hard",
+        "languages": ["cpp", "js", "python"]
+      },
+      {
+        "name": "count_squares",
+        "difficulty": "hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "zigzag_traverse",
+        "difficulty": "hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "min_rewards",
+        "difficulty": "hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "apartment_hunting",
+        "difficulty": "very hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "line_through_points",
+        "difficulty": "very hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "calendar_matching",
+        "difficulty": "very hard",
+        "languages": ["js", "python", "cpp"]
+      }
+    ],
+    "binary_search_trees": [
+      {
+        "name": "repair_bst",
+        "difficulty": "hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "right_smaller_than",
+        "difficulty": "very hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "same_bsts",
+        "difficulty": "hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "validate_three_nodes",
+        "difficulty": "hard",
+        "languages": ["js", "python", "cpp"]
+      }
+    ],
+    "binary_trees": [
+      {
+        "name": "find_nodes_distance_k",
+        "difficulty": "hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "max_path_sum_in_binary_tree",
+        "difficulty": "hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "compare_leaf_traversal",
+        "difficulty": "very hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "right_sibling_tree",
+        "difficulty": "very hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "flatten_binary_tree",
+        "difficulty": "very hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "all_kinds_of_node_depths",
+        "difficulty": "very hard",
+        "languages": ["js", "python", "cpp"]
+      }
+    ],
+    "famous_algorithms": [
+      {
+        "name": "dijkstras_algorithm",
+        "difficulty": "hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "kadanes_algorithm",
+        "difficulty": "medium",
+        "languages": ["js", "cpp"]
+      },
+      {
+        "name": "kruskals_algorithm",
+        "difficulty": "hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "prims_algorithm",
+        "difficulty": "hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "topological_sort",
+        "difficulty": "hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "astar_algorithm",
+        "difficulty": "very hard",
+        "languages": ["js", "python", "cpp"]
+      }
+    ],
+    "graphs": [
+      {
+        "name": "minimum_passes_of_matrix",
+        "difficulty": "medium",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "youngest_common_ancestor",
+        "difficulty": "medium",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "cycle_in_graph",
+        "difficulty": "medium",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "airport_connections",
+        "difficulty": "very hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "boggle_board",
+        "difficulty": "hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "detect_arbitrage",
+        "difficulty": "very hard",
+        "languages": ["js", "python", "cpp"]
+      }
+    ],
+    "greedy_algorithms": [
+      {
+        "name": "optimal_freelancing",
+        "difficulty": "easy",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "tandem_bicycle",
+        "difficulty": "easy",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "task_assignment",
+        "difficulty": "medium",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "valid_starting_city",
+        "difficulty": "medium",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "class_photos",
+        "difficulty": "easy",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "minimum_waiting_time",
+        "difficulty": "easy",
+        "languages": ["js", "python", "cpp"]
+      }
+    ],
+    "dynamic_programming": [
+      {
+        "name": "maximum_sum_submatrix",
+        "difficulty": "hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "knapsack_problem",
+        "difficulty": "hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "max_profit_with_k_transactions",
+        "difficulty": "very hard",
+        "languages": ["js", "python", "cpp"]
+      },
+      {
+        "name": "longest_increasing_subsequence",
+        "difficulty": "very hard",
+        "languages": ["js", "python", "cpp"]
+      }
+    ]
+  }
 }

@@ -5,23 +5,22 @@ import os
 def generate_summary(metadata: dict) -> str:
     """Generate a summary table with the total count of problems per topic."""
     repo = metadata["repo"]
-    problems = metadata["problems"]
+    problems_by_topic = metadata["problems"]
 
     # Count problems by topic
-    topic_counts = {}
-    for problem in problems:
-        topic = problem.get("topic", "Unknown").capitalize()
-        topic_counts[topic] = topic_counts.get(topic, 0) + 1
+    topic_counts = {
+        topic.replace("_", " ").title(): len(problems)
+        for topic, problems in problems_by_topic.items()
+    }
 
     # Generate the table
     summary_table = "| Topic               | Number of Problems |\n"
     summary_table += "|---------------------|--------------------|\n"
 
-    total_problems = 0
+    total_problems = sum(topic_counts.values())
     for topic, count in topic_counts.items():
         topic_link = f"[{topic}]({repo}/problems/{topic.lower().replace(' ', '_')})"
-        summary_table += f"| {topic_link:<19} | {count:<18} |\n"
-        total_problems += count
+        summary_table += f"| {topic_link} | {count} |\n"
 
     # Add total row
     summary_table += "|---------------------|--------------------|\n"
@@ -33,19 +32,13 @@ def generate_summary(metadata: dict) -> str:
 def generate_topic_tables(metadata: dict) -> str:
     """Generate separate tables for each topic."""
     repo = metadata["repo"]
-    problems = metadata["problems"]
+    problems_by_topic = metadata["problems"]
     topic_tables = ""
 
     difficulty_rank = {"easy": 1, "medium": 2, "hard": 3, "very hard": 4}
 
-    # Group problems by topic
-    grouped_problems = {}
-    for problem in problems:
-        topic = problem["topic"].capitalize()
-        grouped_problems.setdefault(topic, []).append(problem)
-
     # Generate a table for each topic
-    for topic, problems in grouped_problems.items():
+    for topic, problems in problems_by_topic.items():
 
         sorted_problems = sorted(
             problems,
@@ -54,7 +47,7 @@ def generate_topic_tables(metadata: dict) -> str:
             ),
         )
 
-        topic_tables += f"### {topic} Problems\n"
+        topic_tables += f"### {topic.replace('_', ' ').capitalize()} Problems\n"
         topic_tables += (
             "| #   | Problem               | Difficulty | Languages               |\n"
         )
@@ -64,7 +57,7 @@ def generate_topic_tables(metadata: dict) -> str:
 
         for index, problem in enumerate(sorted_problems, start=1):
             problem_name = problem["name"].replace("_", " ").title()
-            problem_url = f"{repo}/{problem['path']}"
+            problem_url = f"{repo}/problems/{topic}/{problem['name']}"
 
             language_links = [
                 f"[{lang.capitalize()}]({problem_url}/{lang})"
@@ -95,15 +88,14 @@ def update_readme(metadata_file: str, readme_file: str) -> None:
 
     start_marker = "<!-- START_TABLE -->\n"
     end_marker = "<!-- END_TABLE -->\n"
+
     start_index = readme.index(start_marker) + 1
     end_index = readme.index(end_marker)
 
+    content = f"## Summary of Problems\n\n{summary}\n{topic_tables}\n"
+
     # Update the README content
-    updated_readme = (
-        readme[:start_index]
-        + ["## Summary of Problems\n\n", summary, "\n", topic_tables]
-        + readme[end_index:]
-    )
+    updated_readme = readme[:start_index] + [content] + readme[end_index:]
 
     with open(readme_file, "w") as file:
         file.writelines(updated_readme)

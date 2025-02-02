@@ -5,15 +5,15 @@
 
 | Topic               | Number of Problems |
 |---------------------|--------------------|
-| [Arrays](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays) | 9                  |
-| [Binary search trees](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees) | 4                  |
-| [Binary trees](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees) | 6                  |
-| [Famous algorithms](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms) | 6                  |
-| [Graphs](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs) | 6                  |
-| [Greedy algorithms](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms) | 6                  |
-| [Dynamic programming](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming) | 4                  |
+| [Arrays](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays) | 12 |
+| [Binary Search Trees](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_search_trees) | 4 |
+| [Binary Trees](https://github.com/dmaman86/algo-solutions/tree/main/problems/binary_trees) | 6 |
+| [Famous Algorithms](https://github.com/dmaman86/algo-solutions/tree/main/problems/famous_algorithms) | 6 |
+| [Graphs](https://github.com/dmaman86/algo-solutions/tree/main/problems/graphs) | 6 |
+| [Greedy Algorithms](https://github.com/dmaman86/algo-solutions/tree/main/problems/greedy_algorithms) | 6 |
+| [Dynamic Programming](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming) | 4 |
 |---------------------|--------------------|
-| **Total**          | **41**           |
+| **Total**          | **44**           |
 
 ### Arrays Problems
 | #   | Problem               | Difficulty | Languages               |
@@ -25,8 +25,11 @@
 | 5   | [Four Number Sum](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum) | Hard | [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum/cpp), [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/four_number_sum/js) |
 | 6   | [Subarray Sort](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort) | Hard | [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/cpp), [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/subarray_sort/python) |
 | 7   | [Count Squares](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/count_squares) | Hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/count_squares/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/count_squares/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/count_squares/cpp) |
-| 8   | [Apartment Hunting](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/apartment_hunting) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/apartment_hunting/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/apartment_hunting/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/apartment_hunting/cpp) |
-| 9   | [Line Through Points](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points/cpp) |
+| 8   | [Zigzag Traverse](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/zigzag_traverse) | Hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/zigzag_traverse/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/zigzag_traverse/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/zigzag_traverse/cpp) |
+| 9   | [Min Rewards](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/min_rewards) | Hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/min_rewards/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/min_rewards/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/min_rewards/cpp) |
+| 10  | [Apartment Hunting](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/apartment_hunting) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/apartment_hunting/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/apartment_hunting/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/apartment_hunting/cpp) |
+| 11  | [Line Through Points](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/line_through_points/cpp) |
+| 12  | [Calendar Matching](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/calendar_matching) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/calendar_matching/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/calendar_matching/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/arrays/calendar_matching/cpp) |
 
 ### Binary search trees Problems
 | #   | Problem               | Difficulty | Languages               |
@@ -83,6 +86,7 @@
 | 2   | [Knapsack Problem](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming/knapsack_problem) | Hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming/knapsack_problem/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming/knapsack_problem/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming/knapsack_problem/cpp) |
 | 3   | [Max Profit With K Transactions](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming/max_profit_with_k_transactions) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming/max_profit_with_k_transactions/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming/max_profit_with_k_transactions/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming/max_profit_with_k_transactions/cpp) |
 | 4   | [Longest Increasing Subsequence](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming/longest_increasing_subsequence) | Very hard | [Js](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming/longest_increasing_subsequence/js), [Python](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming/longest_increasing_subsequence/python), [Cpp](https://github.com/dmaman86/algo-solutions/tree/main/problems/dynamic_programming/longest_increasing_subsequence/cpp) |
+
 
 <!-- END_TABLE -->
 
