@@ -24,7 +24,7 @@ export const kruskalsAlgorithm = (() => {
     return false;
   };
 
-  const kruskalsAlgorithm = (edges) => {
+  return (edges) => {
     const allEdges = [];
 
     for (let u = 0; u < edges.length; u++) {
@@ -53,5 +53,4 @@ export const kruskalsAlgorithm = (() => {
     }
     return mst;
   };
-  return kruskalsAlgorithm;
 })();

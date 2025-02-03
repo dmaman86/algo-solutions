@@ -1,42 +1,39 @@
 #include "find_nodes_distance_k.h"
+#include <functional>
 #include <queue>
+#include <unordered_map>
 #include <utility>
-
-// helper function to map each node to its parent node
-void findParents(BinaryTree *node,
-                 std::unordered_map<BinaryTree *, BinaryTree *> &parentMap,
-                 BinaryTree *parent) {
-  if (!node)
-    return;
-
-  // map the current node to its parent
-  parentMap[node] = parent;
-  findParents(node->left, parentMap, node);
-  findParents(node->right, parentMap, node);
-}
-
-// helper function to find the target node in the tree
-BinaryTree *findTarget(BinaryTree *node, int target) {
-  if (!node)
-    return nullptr;
-
-  // if the current node is the target, return it
-  if (node->value == target)
-    return node;
-
-  // seach in the left subtree
-  BinaryTree *leftResult = findTarget(node->left, target);
-  if (leftResult)
-    return leftResult;
-  // if not found in the left subtree, search in the right subtree
-  return findTarget(node->right, target);
-}
 
 // function to find all nodes at distance K from the target node
 std::vector<int> findNodesDistanceK(BinaryTree *tree, int target, int k) {
+
+  if (!tree)
+    return {}; // if the tree is empty, return an empty vector
+
   // map to store the parent of each node
   std::unordered_map<BinaryTree *, BinaryTree *> parentMap;
-  findParents(tree, parentMap);
+
+  std::function<void(BinaryTree *, BinaryTree *)> findParents =
+      [&](BinaryTree *node, BinaryTree *parent) -> void {
+    if (!node)
+      return;
+
+    parentMap[node] = parent;
+    findParents(node->left, node);
+    findParents(node->right, node);
+  };
+
+  findParents(tree, nullptr);
+
+  std::function<BinaryTree *(BinaryTree *, int)> findTarget =
+      [&](BinaryTree *node, int target) -> BinaryTree * {
+    if (!node)
+      return nullptr;
+    if (node->value == target)
+      return node;
+    BinaryTree *leftResult = findTarget(node->left, target);
+    return leftResult ? leftResult : findTarget(node->right, target);
+  };
 
   // find the target node
   BinaryTree *targetNode = findTarget(tree, target);
@@ -54,7 +51,7 @@ std::vector<int> findNodesDistanceK(BinaryTree *tree, int target, int k) {
   std::vector<int> result;
 
   // lambda to add nodes to the queue if unvisited
-  auto addToQueue = [&](BinaryTree *node, int currentDistance) {
+  auto addToQueue = [&](BinaryTree *node, int currentDistance) -> void {
     if (node && !visited[node]) {
       visited[node] = true;
       q.push({node, currentDistance + 1});

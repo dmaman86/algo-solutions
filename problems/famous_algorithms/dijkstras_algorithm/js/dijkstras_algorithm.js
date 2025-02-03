@@ -44,12 +44,10 @@ export const dijkstrasAlgorithm = (() => {
     }
   };
 
-  const dijkstrasAlgorithm = (start, edges) => {
+  return (start, edges) => {
     const distances = [];
     dijkstra(start, edges, distances);
     convertUnreachableToNegativeOne(distances);
     return distances;
   };
-
-  return { dijkstrasAlgorithm };
 })();

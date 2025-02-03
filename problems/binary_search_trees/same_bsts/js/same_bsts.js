@@ -14,9 +14,10 @@ export const sameBsts = (() => {
   };
 
   return (arrayOne, arrayTwo) => {
-    if (arrayOne.length !== arrayTwo.length) return false;
-    if (arrayOne.length === 0 && arrayTwo.length === 0) return true;
-    if (arrayOne[0] !== arrayTwo[0]) return false;
+    if (!arrayOne.length && !arrayTwo.length) return true;
+
+    if (arrayOne.length !== arrayTwo.length || arrayOne[0] !== arrayTwo[0])
+      return false;
 
     const { smaller: leftOne, greater_or_equal: rightOne } =
       getChildren(arrayOne);

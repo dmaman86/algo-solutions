@@ -1,27 +1,35 @@
 #include "flatten_binary_tree.h"
-
-void flattenInOrder(BinaryTree *node, BinaryTree *&prev) {
-  if (!node)
-    return;
-
-  flattenInOrder(node->left, prev);
-
-  if (prev) {
-    prev->right = node;
-    node->left = prev;
-  }
-  prev = node;
-  flattenInOrder(node->right, prev);
-}
+#include <functional>
+#include <utility>
 
 BinaryTree *flattenBinaryTree(BinaryTree *root) {
-  BinaryTree *prev = nullptr;
+  if (!root)
+    return nullptr;
 
-  flattenInOrder(root, prev);
+  auto connectNodes = [](BinaryTree *first, BinaryTree *second) -> void {
+    if (first)
+      first->right = second;
+    if (second)
+      second->left = first;
+  };
 
-  BinaryTree *leftMost = root;
-  while (leftMost->left)
-    leftMost = leftMost->left;
+  std::function<std::pair<BinaryTree *, BinaryTree *>(BinaryTree *)>
+      flattenInOrder =
+          [&](BinaryTree *node) -> std::pair<BinaryTree *, BinaryTree *> {
+    if (!node)
+      return {nullptr, nullptr};
 
-  return leftMost;
+    auto leftList = flattenInOrder(node->left);
+    auto rightList = flattenInOrder(node->right);
+
+    connectNodes(leftList.second, node);
+    connectNodes(node, rightList.first);
+
+    BinaryTree *head = leftList.first ? leftList.first : node;
+    BinaryTree *tail = rightList.second ? rightList.second : node;
+
+    return {head, tail};
+  };
+
+  return flattenInOrder(root).first;
 }

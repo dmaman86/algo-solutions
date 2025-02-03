@@ -34,7 +34,7 @@ export const aStarAlgorithm = (() => {
     return path.reverse();
   };
 
-  const aStarAlgorithm = (startRow, startCol, endRow, endCol, graph) => {
+  return (startRow, startCol, endRow, endCol, graph) => {
     const rows = graph.length;
     const cols = graph[0].length;
 
@@ -87,6 +87,4 @@ export const aStarAlgorithm = (() => {
     }
     return [];
   };
-
-  return aStarAlgorithm;
 })();

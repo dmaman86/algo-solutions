@@ -1,13 +1,14 @@
 export const findNodesDistanceK = (() => {
   // helper function to map each node to its parent node
-  const findParents = (node, parentMap, parent = null) => {
-    if (!node) return;
+  const findParents = (node, parentMap = new Map(), parent = null) => {
+    if (!node) return parentMap;
 
     // map the current node to its parent
     parentMap.set(node, parent);
 
     findParents(node.left, parentMap, node);
     findParents(node.right, parentMap, node);
+    return parentMap;
   };
 
   // helper function to find the target node in the tree
@@ -26,9 +27,7 @@ export const findNodesDistanceK = (() => {
   };
 
   return (tree, target, k) => {
-    const parentMap = new Map();
-    // populate the parent map
-    findParents(tree, parentMap);
+    const parentMap = findParents(tree);
 
     // find the target node
     const targetNode = findTarget(tree, target);

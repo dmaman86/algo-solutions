@@ -6,7 +6,7 @@ import testCases from "../../test_cases/famous_algorithms/dijkstras_algorithm.js
 describe("Dijkstra Algorithm", () => {
   testCases.forEach(({ start, edges, expected }, idx) => {
     test(`Test case ${idx + 1}`, () => {
-      const result = dijkstrasAlgorithm.dijkstrasAlgorithm(start, edges);
+      const result = dijkstrasAlgorithm(start, edges);
 
       expect(result.sort()).toEqual(expected.sort());
     });

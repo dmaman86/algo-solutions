@@ -18,8 +18,7 @@ void dfs(const AirportGraph &graph, const std::string &airport,
     order->push(airport);
 }
 
-int airportConnections(const Airports &airports, const Routes &routes,
-                       const std::string &startingAirport) {
+AirportGraph buildGraph(const Airports &airports, const Routes &routes) {
 
   AirportGraph graph;
   for (const auto &airport : airports) {
@@ -29,6 +28,13 @@ int airportConnections(const Airports &airports, const Routes &routes,
     if (graph.find(route[0]) != graph.end())
       graph[route[0]].push_back(route[1]);
   }
+  return graph;
+}
+
+int airportConnections(const Airports &airports, const Routes &routes,
+                       const std::string &startingAirport) {
+
+  AirportGraph graph = buildGraph(airports, routes);
 
   std::unordered_set<std::string> visited;
   std::stack<std::string> order;

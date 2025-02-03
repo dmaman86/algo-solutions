@@ -1,4 +1,16 @@
 export const airportConnections = (() => {
+  const initGraph = (airports, routes) => {
+    const graph = {};
+    for (const airport of airports) {
+      graph[airport] = [];
+    }
+
+    for (const [from, to] of routes) {
+      if (graph[from]) graph[from].push(to);
+    }
+    return graph;
+  };
+
   const dfs = (graph, airport, visited, stack = null) => {
     visited.add(airport);
 
@@ -10,15 +22,8 @@ export const airportConnections = (() => {
     if (stack) stack.push(airport);
   };
 
-  const airportConnections = (airports, routes, startingAirport) => {
-    const graph = {};
-    for (const airport of airports) {
-      graph[airport] = [];
-    }
-
-    for (const [from, to] of routes) {
-      if (graph[from]) graph[from].push(to);
-    }
+  return (airports, routes, startingAirport) => {
+    const graph = initGraph(airports, routes);
 
     const visited = new Set();
     const stack = [];
@@ -41,6 +46,4 @@ export const airportConnections = (() => {
     }
     return newConnections;
   };
-
-  return airportConnections;
 })();

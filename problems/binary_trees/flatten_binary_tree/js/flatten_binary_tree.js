@@ -5,25 +5,24 @@ export const flattenBinaryTree = (() => {
     // traverse left subtree
     flattenInOrder(node.left, state);
 
+    // store the head of the linked list
+    if (!state.head) state.head = node;
     // link the previous node with the current node
     if (state.prev) {
       state.prev.right = node;
       node.left = state.prev;
     }
-    state.prev = node; // update the previous node
+    // update the previous node
+    state.prev = node;
 
     // traverse right subtree
     flattenInOrder(node.right, state);
   };
 
   return (root) => {
-    const state = { prev: null }; // shared state object
+    const state = { prev: null, head: null };
     flattenInOrder(root, state);
 
-    // find the leftmost node
-    let leftMost = root;
-    while (leftMost.left) leftMost = leftMost.left;
-
-    return leftMost;
+    return state.head;
   };
 })();

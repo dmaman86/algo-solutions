@@ -11,14 +11,14 @@ def validateThreeNodes(nodeOne: BST, nodeTwo: BST, nodeThree: BST) -> bool:
         nextNode = ancestor.left if node.value < ancestor.value else ancestor.right
         return is_ancestor(nextNode, node)
 
-    def is_descendant(node: BST, descendant: BST) -> bool:
-        return is_ancestor(node, descendant)
+    isNodeOneAncestorOfTwo: bool = is_ancestor(nodeOne, nodeTwo)
+    isNodeThreeAncestorOfTwo: bool = is_ancestor(nodeThree, nodeTwo)
 
-    isNodeOneAncestorOfTwo = is_ancestor(nodeOne, nodeTwo)
-    isNodeThreeAncestorOfTwo = is_ancestor(nodeThree, nodeTwo)
+    if not (isNodeOneAncestorOfTwo or isNodeThreeAncestorOfTwo):
+        return False
 
-    if isNodeOneAncestorOfTwo:
-        return is_descendant(nodeTwo, nodeThree)
-    elif isNodeThreeAncestorOfTwo:
-        return is_descendant(nodeTwo, nodeOne)
-    return False
+    nextPair: tuple[BST, BST] = (
+        (nodeTwo, nodeThree) if isNodeOneAncestorOfTwo else (nodeTwo, nodeOne)
+    )
+
+    return is_ancestor(*nextPair)

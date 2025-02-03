@@ -26,9 +26,5 @@ export const detectArbitrage = (() => {
     return false;
   };
 
-  const detectArbitrage = (exchangeRates) => {
-    return hasNegativeCycle(exchangeRates);
-  };
-
-  return detectArbitrage;
+  return (exchangeRates) => hasNegativeCycle(exchangeRates);
 })();

@@ -4,13 +4,18 @@ from problems.binary_trees.assets.BinaryTree import BinaryTree
 def findNodesDistanceK(tree: BinaryTree, target: int, k: int) -> list[int]:
 
     def find_parents(
-        node: BinaryTree, parent_map: dict, parent: BinaryTree = None
-    ) -> None:
+        node: BinaryTree, parent_map: dict = None, parent: BinaryTree = None
+    ) -> dict[BinaryTree, BinaryTree]:
+        if not parent_map:
+            parent_map = {}
+
         if not node:
-            return
+            return parent_map
+
         parent_map[node] = parent
         find_parents(node.left, parent_map, node)
         find_parents(node.right, parent_map, node)
+        return parent_map
 
     def find_target(node: BinaryTree, target_value: int) -> BinaryTree:
         if not node:
@@ -26,8 +31,7 @@ def findNodesDistanceK(tree: BinaryTree, target: int, k: int) -> list[int]:
     if not tree or k < 0:
         return []
 
-    parent_map = {}
-    find_parents(tree, parent_map)
+    parent_map = find_parents(tree)
 
     target_node = find_target(tree, target)
     if not target_node:

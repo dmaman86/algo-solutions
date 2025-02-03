@@ -11,4 +11,6 @@ void dfs(const AirportGraph &, const std::string &,
          std::unordered_set<std::string> &,
          std::stack<std::string> * = nullptr);
 
+AirportGraph buildGraph(const Airports &, const Routes &);
+
 int airportConnections(const Airports &, const Routes &, const std::string &);

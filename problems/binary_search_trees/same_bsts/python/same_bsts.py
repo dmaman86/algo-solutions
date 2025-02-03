@@ -1,5 +1,6 @@
 def get_children(array: list[int]) -> tuple[list[int], list[int]]:
-    smaller, greater_or_equal = [], []
+    smaller: list[int] = []
+    greater_or_equal: list[int] = []
 
     for i in range(1, len(array)):
         if array[i] < array[0]:
@@ -11,13 +12,10 @@ def get_children(array: list[int]) -> tuple[list[int], list[int]]:
 
 
 def sameBsts(arrayOne: list[int], arrayTwo: list[int]) -> bool:
-    if len(arrayOne) != len(arrayTwo):
-        return False
-
-    if len(arrayOne) == 0 and len(arrayTwo) == 0:
+    if not len(arrayOne) and not len(arrayTwo):
         return True
 
-    if arrayOne[0] != arrayTwo[0]:
+    if (len(arrayOne) != len(arrayTwo)) or (arrayOne[0] != arrayTwo[0]):
         return False
 
     left_one, right_one = get_children(arrayOne)

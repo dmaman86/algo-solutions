@@ -35,7 +35,7 @@ export const topologicalSort = (() => {
     }
   };
 
-  const topologicalSort = (jobs, deps) => {
+  return (jobs, deps) => {
     if (!Array.isArray(jobs) || !Array.isArray(deps)) {
       throw new Error("Invalid input: jobs and deps should be an array");
     }
@@ -54,6 +54,4 @@ export const topologicalSort = (() => {
     }
     return order.reverse();
   };
-
-  return { topologicalSort };
 })();

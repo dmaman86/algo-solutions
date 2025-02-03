@@ -35,8 +35,7 @@ def dfs(adj: dict[str, list[str]], v: str, visited: set[str]) -> None:
 def airport_connections(
     airports: list[str], routes: list[list[str]], starting_airport: str
 ) -> list[tuple[str, str]]:
-    # idmp = {airport: idx for idx, airport in enumerate(airports)}
-    # adj = defaultdict(list)
+
     adj: dict[str, list[str]] = defaultdict(list)
 
     for route in routes:

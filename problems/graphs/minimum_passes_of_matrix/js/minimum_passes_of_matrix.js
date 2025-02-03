@@ -54,7 +54,7 @@ export const minimumPassesOfMatrix = (() => {
     return { passes, negatives };
   };
 
-  const minimumPassesOfMatrix = (matrix) => {
+  return (matrix) => {
     if (!matrix || !matrix.length || !matrix[0].length) return -1;
 
     const { queue, negatives: initialNegatives } = initQueue(matrix);
@@ -65,6 +65,4 @@ export const minimumPassesOfMatrix = (() => {
 
     return negatives === 0 ? passes : -1;
   };
-
-  return minimumPassesOfMatrix;
 })();
