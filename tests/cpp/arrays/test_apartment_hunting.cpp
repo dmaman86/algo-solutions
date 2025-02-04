@@ -1,11 +1,8 @@
 #include "../../../problems/arrays/apartment_hunting/cpp/apartment_hunting.h"
 #include "../jsontestbase.h"
 
-#include <nlohmann/json.hpp>
 #include <unordered_map>
 #include <vector>
-
-using json = nlohmann::json;
 
 class ApartmentHuntingTest : public JsonTestBase {
 public:

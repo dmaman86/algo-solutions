@@ -1,10 +1,7 @@
 #include "../../../problems/famous_algorithms/astar_algorithm/cpp/astar_algorithm.h"
 #include "../jsontestbase.h"
-#include <gtest/gtest.h>
-#include <nlohmann/json.hpp>
-#include <vector>
 
-using json = nlohmann::json;
+#include <vector>
 
 class AStarAlgorithmTest : public JsonTestBase {
 public:

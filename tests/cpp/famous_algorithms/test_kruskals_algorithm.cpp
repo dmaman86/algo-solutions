@@ -1,10 +1,7 @@
 #include "../../../problems/famous_algorithms/kruskals_algorithm/cpp/kruskals_algorithm.h"
 #include "../jsontestbase.h"
-#include <gtest/gtest.h>
-#include <nlohmann/json.hpp>
-#include <vector>
 
-using json = nlohmann::json;
+#include <vector>
 
 class KruskalsAlgorithmTest : public JsonTestBase {
 public:

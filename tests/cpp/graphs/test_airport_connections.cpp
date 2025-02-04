@@ -1,10 +1,7 @@
 #include "../../../problems/graphs/airport_connections/cpp/airport_connections.h"
 #include "../jsontestbase.h"
-#include <gtest/gtest.h>
-#include <nlohmann/json.hpp>
-#include <vector>
 
-using json = nlohmann::json;
+#include <vector>
 
 using Airports = std::vector<std::string>;
 using Routes = std::vector<Airports>;

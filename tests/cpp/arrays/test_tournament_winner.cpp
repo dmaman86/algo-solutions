@@ -1,10 +1,7 @@
 #include "../../../problems/arrays/tournament_winner/cpp/tournament_winner.h"
 #include "../jsontestbase.h"
 
-#include <gtest/gtest.h>
-#include <nlohmann/json.hpp>
-
-using json = nlohmann::json;
+#include <vector>
 
 class TournamentWinnerTest : public JsonTestBase {
 public:

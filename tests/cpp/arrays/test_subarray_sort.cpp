@@ -1,11 +1,7 @@
 #include "../../../problems/arrays/subarray_sort/cpp/subarray_sort.h"
 #include "../jsontestbase.h"
 
-#include <gtest/gtest.h>
-#include <nlohmann/json.hpp>
 #include <vector>
-
-using json = nlohmann::json;
 
 class SubarraySortTest : public JsonTestBase {
 public:

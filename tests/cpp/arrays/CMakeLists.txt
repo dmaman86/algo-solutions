@@ -1,4 +1,3 @@
-
 set(PROBLEM_DIR ${ARRAYS_DIR})
 
 file(GLOB TEST_SOURCE "*.cpp")

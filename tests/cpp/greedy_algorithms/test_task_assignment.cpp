@@ -1,7 +1,6 @@
 #include "../../../problems/greedy_algorithms/task_assignment/cpp/task_assignment.h"
 #include "../jsontestbase.h"
 
-#include <algorithm>
 #include <set>
 #include <vector>
 

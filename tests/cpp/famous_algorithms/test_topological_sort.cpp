@@ -1,9 +1,7 @@
 #include "../../../problems/famous_algorithms/topological_sort/cpp/topological_sort.h"
 #include "../jsontestbase.h"
-#include <gtest/gtest.h>
-#include <nlohmann/json.hpp>
 
-using json = nlohmann::json;
+#include <vector>
 
 class TopologicalSortTest : public JsonTestBase {
 public:

@@ -1,9 +1,5 @@
 #include "../../../problems/famous_algorithms/kadanes_algorithm/cpp/kadanes_algorithm.h"
 #include "../jsontestbase.h"
-#include <gtest/gtest.h>
-#include <nlohmann/json.hpp>
-
-using json = nlohmann::json;
 
 class KadanesAlgorithmTest : public JsonTestBase {
 public:

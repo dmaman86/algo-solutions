@@ -1,12 +1,7 @@
 #include "../../../problems/famous_algorithms/dijkstras_algorithm/cpp/dijkstras_algorithm.h"
 #include "../jsontestbase.h"
 
-#include <gtest/gtest.h>
-
-#include <nlohmann/json.hpp>
 #include <vector>
-
-using json = nlohmann::json;
 
 typedef std::vector<std::vector<int>> twod_vector;
 typedef std::vector<twod_vector> threed_vector;

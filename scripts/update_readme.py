@@ -35,16 +35,28 @@ def generate_topic_tables(metadata: dict) -> str:
     problems_by_topic = metadata["problems"]
     topic_tables = ""
 
-    difficulty_rank = {"easy": 1, "medium": 2, "hard": 3, "very hard": 4}
+    difficulty_levels = {
+        "easy": {"rank": 1, "emoji": "🟢"},
+        "medium": {"rank": 2, "emoji": "🟡"},
+        "hard": {"rank": 3, "emoji": "🔴"},
+        "very hard": {"rank": 4, "emoji": "⚫"},
+    }
+
+    topic_tables += "### Difficulty Legend\n"
+    topic_tables += "| Emoji | Difficulty |\n"
+    topic_tables += "|--------|------------|\n"
+    for difficulty, info in difficulty_levels.items():
+        topic_tables += f"| {info['emoji']} | {difficulty.capitalize()} |\n"
+    topic_tables += "\n"  # Add spacing between sections
 
     # Generate a table for each topic
     for topic, problems in problems_by_topic.items():
 
         sorted_problems = sorted(
             problems,
-            key=lambda p: difficulty_rank.get(
-                p.get("difficulty").lower(), float("inf")
-            ),
+            key=lambda p: difficulty_levels.get(
+                p.get("difficulty").lower(), {"rank": float("inf")}
+            )["rank"],
         )
 
         topic_tables += f"### {topic.replace('_', ' ').capitalize()} Problems\n"
@@ -59,6 +71,12 @@ def generate_topic_tables(metadata: dict) -> str:
             problem_name = problem["name"].replace("_", " ").title()
             problem_url = f"{repo}/problems/{topic}/{problem['name']}"
 
+            difficulty = problem["difficulty"].lower()
+            difficulty_info = difficulty_levels.get(
+                difficulty, {"emoji": "⚪"}
+            )  # Default: white circle
+            difficulty_colored = f"<p align='center'>{difficulty_info['emoji']}</p>"
+
             language_links = [
                 f"[{lang.capitalize()}]({problem_url}/{lang})"
                 for lang in problem["languages"]
@@ -67,7 +85,7 @@ def generate_topic_tables(metadata: dict) -> str:
             topic_tables += (
                 f"| {index:<3} "
                 f"| [{problem_name}]({problem_url}) "
-                f"| {problem['difficulty'].capitalize()} "
+                f"| {difficulty_colored} "
                 f"| {', '.join(language_links)} |\n"
             )
 

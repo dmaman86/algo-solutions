@@ -1,12 +1,8 @@
 #include "../../../problems/arrays/four_number_sum/cpp/four_number_sum.h"
 #include "../jsontestbase.h"
+
 #include <algorithm>
-
-#include <gtest/gtest.h>
-#include <nlohmann/json.hpp>
 #include <vector>
-
-using json = nlohmann::json;
 
 class TestFourNumberSum : public JsonTestBase {
 public:

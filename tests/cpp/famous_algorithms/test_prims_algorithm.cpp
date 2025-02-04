@@ -1,11 +1,8 @@
 #include "../../../problems/famous_algorithms/prims_algorithm/cpp/prims_algorithm.h"
 #include "../jsontestbase.h"
 
-#include <gtest/gtest.h>
-#include <nlohmann/json.hpp>
 #include <vector>
 
-using json = nlohmann::json;
 using AdjacencyList = std::vector<std::vector<std::vector<int>>>;
 
 class PrimsAlgorithmTest : public JsonTestBase {
