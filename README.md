@@ -1,5 +1,22 @@
 # AlgoExpert Solutions
 
+This repository contains solutions to a wide range of algorithmic problems, categorized by topics such as Arrays, Binary Trees, Graphs, Dynamic Programming, and more.
+Each problem is solved in multiple programming languages (JavaScript, Python, and C++) and includes unit tests for verification.
+
+## 📖 Table of Contents
+
+- [Summary of Problems](#summary-of-problems)
+- [🚀 Quick Start](#quick-start)
+- [🔧 How To Use This Project (Workflow)](#how-to-use-this-project-workflow)
+  1. [Set Up the Environment](#1-set-up-the-environment)
+  2. [Run Tests](#2-run-tests)
+  3. [Run Tests with Visualizations (Python only)](#3-run-tests-with-visualizations-python-only)
+  4. [Clean the Project](#4-clean-the-project)
+  5. [Help](#5-help)
+- [📂 Project Structure](#project-structure)
+  - [🗂 Folder Breakdown](#folder-breakdown)
+- [🔹 Notes](#notes)
+
 <!-- START_TABLE -->
 ## Summary of Problems
 
@@ -98,97 +115,130 @@
 
 <!-- END_TABLE -->
 
-## **Makefile Usage**
+## **Quick Start**
 
-This project includes a **Makefile** to simplify common tasks, such as
-running tests and cleaning up temporary files. Below is an
-explanation of the available rules.
+📌 **Clone the repository**:
 
-### **Available Rules**
+```sh
+git clone https://github.com/dmaman86/algo-solutions.git && cd algo-solutions
+```
 
-1. **`make test`**:
+🔹 **Install dependencies**:
 
-- Runs all tests in the project for supported languages (JavaScript, Python, C++).
-- Each language's tests are executed as follows:
-  - **JavaScript**: Runs with `npm test`.
-  - **Python**: Runs with `pytest`.
-  - **C++**: Uses `cmake`, `make`, and `ctest`.
+```sh
+make setup
+```
 
-**Example**:
+🧪 **Run all tests**:
 
-```bash
+```sh
 make test
-```
-
-2. **`make test-js`**:
-
-- Runs only JavaScript tests.
-- Executes tests in the `tests/__tests__` directory.
-
-**Example**:
-
-```bash
-make test-js
-```
-
-3. **`make test-python`**:
-
-- Runs only Python tests using `pytest`.
-- Executes tests in the `tests/python` directory.
-- This command does not generate visualizations.
-
-**Example**:
-
-```bash
-make test-python
-```
-
-4. **`make test-cpp`**:
-
-- Runs C++ tests.
-- Creates a `build` directory in the project root to store temporary build files.
-- Executes tests using `ctest --output-on-failure` to display detailed error
-  messages if tests fail.
-
-**Example**:
-
-```bash
-make test-cpp
-```
-
-5. **`make visualize`**:
-   Generates visualizations for specific Python tests. This command runs Python tests with the `--visualize` flag, which enables the generation of visual outputs for supported problems.
-   The visualizations for the problems are not included in the repository.
-
-   **Steps in make visualize**:
-
-   1. Executes Python tests using `pytest` in the `tests/python` directory.
-   2. Generates visualizations for supported problems and stores them in the `*_images` directory.
-
-**Example**:
-
-```bash
-make visualize
-```
-
-6. **`make clean`**:
-
-- Cleans up temporary files and build directories, including:
-  - `build`
-  - Python temporary files (`__pycache__`).
-
-**Example**:
-
-```bash
-make clean
 ```
 
 ---
 
-### **Project Structure for the Makefile**
+## **How To Use This Project (Workflow)**
 
-The project separates tests, results, and visualizations into well-defined directories.
-Below is an overview of the project structure:
+### 1. **Set Up the Environment**:
+
+Run the following command based on your operating system:
+
+```sh
+make setup
+```
+
+#### **What does `make setup` do?**:
+
+- Installs **Python** dependencies from `requirements.txt`.
+- Installs **Google Test (gtest)** and **nlohmann/json** depending your operating system:
+  - **macOS**: Uses `brew`.
+  - **Linux**: Uses `apt-get`.
+  - **Windows**: Uses `vcpkg`.
+- Sets up the **C++ build structure** using `CMake`.
+- Ensures your Python version is `3.8` or higher.
+
+### 2. **Run Tests**:
+
+You can run tests for each language individually or all at once.
+
+- **Run all tests (JavaScript, Python and C++)**:
+
+  ```sh
+  make test
+  ```
+
+- **Run JavaScript tests only**:
+
+  ```sh
+  make test-js
+  ```
+
+- **Run Python tests only**:
+
+  ```sh
+  make test-python
+  ```
+
+- **Run C++ tests only**:
+
+  ```sh
+  make test-cpp
+  ```
+
+### 3. **Run Tests with Visualizations (Python only)**:
+
+Some Python tests may generate **graphs** or **visual outputs**. To enable them, use:
+
+```sh
+make visualize
+```
+
+### 4. **Clean the project**:
+
+To remove compiled files and Python cache (`__pycache__`), use:
+
+```sh
+make clean
+```
+
+This will delete:
+
+- Build files (`build/`).
+- Python cache files (`__pycache__`).
+
+### 5. **Help**:
+
+To view all available Makefile rules, use:
+
+```sh
+make help
+```
+
+This will display:
+
+```sh
+make setup        # Install all dependencies (Python, C++)
+make test         # Run all tests, without visualizations
+make test-js      # Run JavaScript tests with npm
+make test-python  # Run Python tests with pytest
+make test-cpp     # Run C++ tests with CMake
+make visualize    # Run Python tests and generate visualizations
+make clean        # Clean temporary files
+```
+
+---
+
+## **Project Structure**
+
+This repository is structured as follows:
+
+- **problems/** → Algorithmic challenges, organized by category.
+- **tests/** → Unit tests for JavaScript, C++, and Python solutions.
+- **scripts/** → Utility scripts (e.g., updating the README).
+- **test_cases/** → JSON-based test cases for automated validation.
+- **makefile** → Automates testing, visualization, and cleanup tasks.
+
+### **Folder Breakdown**:
 
 ```plaintext
 .
@@ -200,6 +250,7 @@ Below is an overview of the project structure:
 ├── metadata.json                   # Metadata about problems and their solutions
 ├── package-lock.json               # Dependency lock file for npm
 ├── package.json                    # Node.js project configuration file
+├── requirements.txt                # Python dependencies
 ├── problems/                       # Solutions to problems, organized by topic
 │   ├── arrays/                     # Array-related problems
 │   ├── binary_search_trees/        # Binary search tree problems
@@ -256,117 +307,17 @@ Below is an overview of the project structure:
         └── graphs/                 # Test cases for graph problems
 ```
 
-### **Key Points**
-
-1. **problems/**: Contains solutions to all problems, categorized into topics like arrays, graphs, etc.
-
-2. **tests/**: Organized by language:
-
-- **JavaScript (**tests**/)**: Test written for solutions in JavaScript.
-- **C++ (cpp/)**: C++ tests managed using CMake and Google Test.
-- **Python (python/)**: Tests for Python solutions, executed with `pytest`. Includes a
-  `conftest.py` file for shared configurations and a `utility.py` file for helper functions.
-
-3. **test_cases/**: JSON files specifying input and expected output for all problems, ensuring consistent testing across languages.
-
-4. **scripts/**: Utility scripts like `update_readme.py` for project maintenance.
-
-5. **makefile**: Provides automation for running tests across all languages and other tasks like visualization generation and cleanup.
-
 ---
 
-### **Example Workflow**
+## **Notes**:
 
-1. **Run all tests**:
-   Run all JavaScript, Python, and C++ tests in the project:
-
-```bash
-make test
-```
-
-2. **Run tests for a specific language**:
-
-- **JavaScript**:
-
+- If you're on **Windows**, ensure you have **vcpkg** installed.
+- If you encounter compatibility issues, check that you have **Python 3.8+** installed.
   ```bash
-  make test-js
+  python3 --version
   ```
-
-- **Python**:
-
-  ```bash
-  make test-python
-  ```
-
-- **C++**:
-  ```bash
-  make test-cpp
-  ```
-
-3. **Generate visualizations**:
-   Generate visualizations for Python tests that support this feature:
-
-```bash
-make visualize
-```
-
-4. **Clean temporary files**:
-
-```bash
-make clean
-```
-
-5. **View Makefile Help**:
-   List all available Makefile rules:
-
-```bash
-make help
-```
-
----
-
-### **Prerequisites**
-
-Before using the Makefile, ensure the following tools are installed:
-
-- **JavaScript**:
-
-  - Node.js and npm (for running tests with Jest).
-  - Install dependencies using:
-    ```bash
-    npm install
-    ```
-
-- **Python**:
-
-  - Python 3.x installed with the following libraries:
-
-    - `pytest` for running Python tests.
-    - `matplotlib` for creating visualizations.
-    - `networkx` for graph-based visualizations.
-    - `graphviz` for tree and graph visualizations.
-    - `fpdf` for generating PDF files.
-
-  - **Install the required Python libraries**:
-
-    ```bash
-    pip install pytest matplotlib networkx graphviz fpdf2
-    ```
-
-    Additionally, ensure that Graphviz is installed on your system. You can install it using:
-
-    - **macOS (with Homebrew)**:
-      ```bash
-      brew install graphviz
-      ```
-    - **Ubuntu**:
-      ```bash
-      sudo apt-get install graphviz
-      ```
-    - **Windows**:
-      Download the Graphviz installer from the [official website](https://graphviz.org/download/).
-
-- **C++**:
-  - CMake (version 3.14 or higher).
-  - A compiler supporting C++17 (e.g., GCC or Clang).
-  - Google Test (`GTest`) and `nlohmann/json` libraries installed.
+- You can modify or add more tests in the following directories:
+  - **JavaScript**: `tests/__tests__`
+  - **Python**: `tests/python`
+  - **C++**: `tests/cpp`
+  - **Test Cases**: `tests/test_cases`
