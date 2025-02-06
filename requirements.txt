@@ -12,7 +12,7 @@ matplotlib==3.8.0
 networkx==3.4.2
 numpy==1.26.4
 packaging==24.2
-Pillow==9.4.0
+Pillow>=10.3.0
 pip==24.2
 pluggy==1.5.0
 pydot==3.0.3
