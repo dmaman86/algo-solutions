@@ -1,17 +1,50 @@
 JS_TEST_DIR = tests/__tests__
 PYTHON_TEST_DIR = tests/python
 UNAME_S := $(shell uname -s)
+SHELL := /bin/bash
+IS_CONDA=$(shell python -c 'import sys; print("1" if "conda" in sys.version else "0")')
 
 setup: setup-python setup-cpp
 
 setup-python:
-	@PYTHON_DEPS_CHECK=$$(python3 -m pip list | grep -E 'pytest|numpy' | wc -l); \
-	if [ $$PYTHON_DEPS_CHECK -eq 0 ]; then \
-		echo "Installing Python dependencies..."; \
-		python3 -m pip install -r requirements.txt; \
+	@if [ "$(IS_CONDA)" -eq "1" ]; then \
+		echo "Detected Anaconda environment."; \
 	else \
-		echo "Python dependencies are already installed."; \
+		echo "Checking virtual environment..."; \
+		[ -d "venv" ] || $(MAKE) create-venv; \
 	fi
+	@if [ -n "$$($(MAKE) check-missing)" ]; then \
+		$(MAKE) install-missing; \
+	else \
+		echo "All dependencies are already installed."; \
+	fi
+
+create-venv:
+	@echo "Creating virtual environment..."
+	@python3 -m venv venv
+
+check-missing:
+	@if [ "$(IS_CONDA)" -eq "1" ]; then \
+		comm -23 <(grep -Eo '^[^>=<]+' requirements.txt | tr '[:upper:]' '[:lower:]' | sort) <(conda list | awk '{print tolower($$1)}' | sort) || true; \
+	else \
+		comm -23 <(grep -Eo '^[^>=<]+' requirements.txt | tr '[:upper:]' '[:lower:]' | sort) <(pip list --format=freeze | cut -d= -f1 | tr '[:upper:]' '[:lower:]' | sort) || true; \
+	fi
+
+install-missing:
+	@echo "Installing missing dependencies..."
+	@MISSING=$$($(MAKE) check-missing); \
+	if [ -n "$$MISSING" ]; then \
+		if [ "$(IS_CONDA)" -eq "1" ]; then \
+			conda install -c conda-forge -y $$MISSING; \
+		else \
+			. venv/bin/activate && pip install $$MISSING; \
+		fi; \
+	else \
+		echo "No missing dependencies."; \
+	fi
+	@echo "Ensuring pip is up to date..."
+	@pip install --upgrade pip wheel
+
 
 setup-cpp:
 	@echo "Checking C++ dependencies..."
@@ -28,18 +61,29 @@ setup-cpp:
 		echo "C++ dependencies are already installed."; \
 	fi
 
-install-cpp-linux:
+install-cpp-Linux:
 	@echo "Detected Linux. Installing googletest and nlohmann-json..."
 	@sudo apt-get update && sudo apt-get install -y libgtest-dev nlohmann-json3-dev pkg-config
-	@cd /usr/src/gtest && sudo cmake . && sudo make && sudo cp *.a /usr/lib
+	@if [ ! -f "/usr/lib/libgtest.a" ] && [ ! -f "/usr/local/lib/libgtest.a" ]; then \
+		cd /usr/src/gtest && sudo cmake . && sudo make && sudo cp *.a /usr/lib; \
+	fi
 
 install-cpp-Darwin:
 	@echo "Detected macOS. Installing googletest and nlohmann-json..."
-	@brew install googletest nlohmann-json pkg-config
+	@if ! command -v pkg-config >/dev/null 2>&1; then \
+		echo "Installing pkg-config..."; \
+		brew install pkg-config; \
+	fi
+	@brew install googletest nlohmann-json
 
 install-cpp-Windows_NT:
 	@echo "Detected Windows. Installing googletest and nlohmann-json using vcpkg..."
-	@vcpkg install googletest nlohmann-json
+	@if not exist "C:\vcpkg" ( \
+		echo "vcpkg not found. Please install it first: https://vcpkg.io/en/getting-started.html"; \
+		exit 1; \
+	) else ( \
+		vcpkg install googletest nlohmann-json \
+	)
 
 test: test-js test-python test-cpp
 
@@ -53,7 +97,6 @@ test-python: setup-python
 
 test-cpp: setup-cpp
 	@echo "Running C++ tests with CMake..."
-	@rm -rf build
 	@mkdir -p build
 	@cd build && cmake .. && make && ctest --output-on-failure
 

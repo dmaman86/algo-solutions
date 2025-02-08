@@ -20,3 +20,5 @@ __pycache__/
 
 # Ignore all folders ending with "_images"
 **/*_images/
+
+venv/
