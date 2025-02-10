@@ -1,11 +1,17 @@
 #include <vector>
 
-struct Position {
+struct Point {
   int x, y;
-};
 
-struct Dimension {
-  int rows, cols;
+  Point &operator+=(const Point &other) {
+    x += other.x;
+    y += other.y;
+    return *this;
+  }
+
+  bool operator<(const Point &other) const {
+    return x < other.x && y < other.y;
+  }
 };
 
 std::vector<int> zigzagTraverse(std::vector<std::vector<int>>);

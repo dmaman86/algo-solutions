@@ -1,58 +1,51 @@
 #include "zigzag_traverse.h"
-#include <algorithm>
 #include <utility>
 
 std::vector<int> zigzagTraverse(std::vector<std::vector<int>> array) {
   if (array.empty() || array[0].empty())
     return {};
 
-  Dimension dimension = {(int)array.size(), (int)array[0].size()};
-  Position position = {0, 0};
+  Point point = {0, 0};
+  Point dimension = {(int)array.size(), (int)array[0].size()};
   std::vector<int> result;
   bool goingDown = true;
 
-  std::pair<int, int> moveDown = {1, -1};
-  std::pair<int, int> moveUp = {-1, 1};
+  Point moveDown = {1, -1};
+  Point moveUp = {-1, 1};
 
-  auto updatePosition = [&](int limit) {
-    if (position.x == limit - 1)
-      position.y++;
-    else
-      position.x++;
-  };
-
-  auto updateDirection = [&]() -> std::pair<bool, bool> {
+  auto checkBoundary = [&]() -> std::pair<bool, bool> {
     bool atBottomLeft =
-        goingDown && (position.y == 0 || position.x == dimension.rows - 1);
+        goingDown && (point.y == 0 || point.x == dimension.x - 1);
     bool atTopRight =
-        !goingDown && (position.x == 0 || position.y == dimension.cols - 1);
+        !goingDown && (point.x == 0 || point.y == dimension.y - 1);
 
     if (atBottomLeft || atTopRight)
       goingDown = !goingDown;
-    if (atTopRight)
-      std::swap(position.x, position.y);
 
     return {atBottomLeft, atTopRight};
   };
 
-  auto moveInZigzag = [&](const std::pair<int, int> &move) {
-    auto [atBottomLeft, atTopRight] = updateDirection();
+  auto nextPosition = [&](const bool &atTopRight) {
+    Point position = atTopRight ? Point{point.y, point.x} : point;
+    int limit = atTopRight ? dimension.y : dimension.x;
 
-    if (atBottomLeft)
-      updatePosition(dimension.rows);
-    else if (atTopRight) {
-      updatePosition(dimension.cols);
-      std::swap(position.x, position.y);
-    } else {
-      position.x += move.first;
-      position.y += move.second;
-    }
+    if (position.x == limit - 1)
+      position.y++;
+    else
+      position.x++;
+
+    return atTopRight ? Point{position.y, position.x} : position;
   };
 
-  while (result.size() < dimension.rows * dimension.cols) {
-    result.push_back(array[position.x][position.y]);
-    std::pair<int, int> move = goingDown ? moveDown : moveUp;
-    moveInZigzag(move);
+  while (result.size() < dimension.x * dimension.y) {
+    if (point < dimension)
+      result.push_back(array[point.x][point.y]);
+
+    auto [atBottomLeft, atTopRight] = checkBoundary();
+    if (!atBottomLeft && !atTopRight)
+      point += goingDown ? moveDown : moveUp;
+    else
+      point = nextPosition(atTopRight);
   }
   return result;
 }
