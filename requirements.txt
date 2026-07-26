@@ -20,9 +20,9 @@ pygraphviz==1.9
 pyparsing==3.2.0
 pytest==8.3.4
 python-dateutil==2.9.0.post0
-setuptools==75.1.0
+setuptools>=83.0.0
 six==1.16.0
 tomli==2.2.1
-tornado==6.4.2
+tornado>=6.5.7
 unicodedata2==15.1.0
 wheel==0.44.0
