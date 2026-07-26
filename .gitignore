@@ -22,3 +22,6 @@ __pycache__/
 **/*_images/
 
 venv/
+
+.claude/worktrees/
+.claude/settings.local.json
