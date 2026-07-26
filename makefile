@@ -4,6 +4,12 @@ UNAME_S := $(shell uname -s)
 SHELL := /bin/bash
 IS_CONDA=$(shell python -c 'import sys; print("1" if "conda" in sys.version else "0")')
 
+ifeq ($(IS_CONDA),1)
+	PYTEST := pytest
+else
+	PYTEST := venv/bin/pytest
+endif
+
 setup: setup-python setup-cpp
 
 setup-python:
@@ -93,7 +99,7 @@ test-js:
 
 test-python: setup-python
 	@echo "Running Python tests with pytest..."
-	@pytest $(PYTHON_TEST_DIR) --tb=short -q --disable-warnings
+	@$(PYTEST) $(PYTHON_TEST_DIR) --tb=short -q --disable-warnings
 
 test-cpp: setup-cpp
 	@echo "Running C++ tests with CMake..."
@@ -102,7 +108,7 @@ test-cpp: setup-cpp
 
 visualize: setup-python
 	@echo "Running Python tests with visualizations..."
-	@pytest $(PYTHON_TEST_DIR) --tb=short -q --disable-warnings --visualize
+	@$(PYTEST) $(PYTHON_TEST_DIR) --tb=short -q --disable-warnings --visualize
 
 clean:
 	@echo "Cleaning build directories..."
