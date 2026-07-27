@@ -1,5 +1,7 @@
 # AlgoExpert Solutions
 
+[![CI](https://github.com/dmaman86/algo-solutions/actions/workflows/ci.yml/badge.svg)](https://github.com/dmaman86/algo-solutions/actions/workflows/ci.yml)
+
 This repository contains solutions to a wide range of algorithmic problems, categorized by topics such as Arrays, Binary Trees, Graphs, Dynamic Programming, and more.
 Each problem is solved in multiple programming languages (JavaScript, Python, and C++) and includes unit tests for verification.
 
@@ -242,6 +244,9 @@ This repository is structured as follows:
 
 ```plaintext
 .
+├── .github/
+│   └── workflows/
+│       └── ci.yml                  # GitHub Actions: runs JS/Python/C++ tests on push and PR
 ├── CMakeLists.txt                  # Main configuration file for C++ tests
 ├── README.md                       # Project documentation and usage instructions
 ├── babel.config.json               # Babel configuration for JavaScript tests
