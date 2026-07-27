@@ -71,7 +71,7 @@ install-cpp-Linux:
 	@echo "Detected Linux. Installing googletest and nlohmann-json..."
 	@sudo apt-get update && sudo apt-get install -y libgtest-dev nlohmann-json3-dev pkg-config
 	@if [ ! -f "/usr/lib/libgtest.a" ] && [ ! -f "/usr/local/lib/libgtest.a" ]; then \
-		cd /usr/src/gtest && sudo cmake . && sudo make && sudo cp *.a /usr/lib; \
+		cd /usr/src/gtest && sudo cmake . && sudo make && sudo cp lib/*.a /usr/lib; \
 	fi
 
 install-cpp-Darwin:
