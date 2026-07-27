@@ -1,5 +1,7 @@
 
+#include <functional>
 #include <unordered_map>
+#include <utility>
 #include <vector>
 
 using Node = std::pair<int, int>;

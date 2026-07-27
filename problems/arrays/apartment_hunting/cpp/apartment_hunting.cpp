@@ -1,6 +1,8 @@
 #include "apartment_hunting.h"
 
 #include <algorithm>
+#include <cstdlib>
+#include <limits>
 
 int apartmentHunting(std::vector<std::unordered_map<std::string, bool>> blocks,
                      std::vector<std::string> reqs) {

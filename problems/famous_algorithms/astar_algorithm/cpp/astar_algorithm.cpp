@@ -1,5 +1,6 @@
 #include "astar_algorithm.h"
 #include <algorithm>
+#include <climits>
 #include <cmath>
 #include <queue>
 

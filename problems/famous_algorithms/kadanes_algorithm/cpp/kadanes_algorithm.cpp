@@ -1,5 +1,8 @@
 #include "kadanes_algorithm.h"
 
+#include <algorithm>
+#include <climits>
+
 int kadanesAlgorithm(std::vector<int> array) {
   int max_so_far = INT_MIN, max_ending_here = 0;
 

@@ -1,6 +1,7 @@
 #include "line_through_points.h"
 #include <algorithm>
 #include <map>
+#include <string>
 
 std::pair<int, int> normalizeSlope(int dx, int dy,
                                    const std::function<int(int, int)> &gcd) {

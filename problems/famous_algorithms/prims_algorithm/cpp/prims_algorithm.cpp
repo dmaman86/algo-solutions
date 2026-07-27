@@ -1,4 +1,5 @@
 #include "prims_algorithm.h"
+#include <functional>
 #include <tuple>
 #include <unordered_set>
 

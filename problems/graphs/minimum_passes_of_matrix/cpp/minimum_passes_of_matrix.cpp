@@ -1,5 +1,6 @@
 #include "minimum_passes_of_matrix.h"
 #include <algorithm>
+#include <cstdlib>
 
 bool isValid(const pair &point, const vvi &matrix) {
   return (point.first >= 0 && point.first < matrix.size() &&
