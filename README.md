@@ -157,7 +157,7 @@ make setup
   - **Linux**: Uses `apt-get`.
   - **Windows**: Uses `vcpkg`.
 - Sets up the **C++ build structure** using `CMake`.
-- Ensures your Python version is `3.8` or higher.
+- Ensures your Python version is `3.10` or higher.
 
 ### 2. **Run Tests**:
 
@@ -317,7 +317,7 @@ This repository is structured as follows:
 ## **Notes**:
 
 - If you're on **Windows**, ensure you have **vcpkg** installed.
-- If you encounter compatibility issues, check that you have **Python 3.8+** installed.
+- If you encounter compatibility issues, check that you have **Python 3.10+** installed.
   ```bash
   python3 --version
   ```
