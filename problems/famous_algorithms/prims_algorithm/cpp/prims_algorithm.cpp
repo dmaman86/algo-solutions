@@ -1,4 +1,5 @@
 #include "prims_algorithm.h"
+#include <algorithm>
 #include <functional>
 #include <tuple>
 #include <unordered_set>
@@ -40,7 +41,7 @@ AdjacencyList primsAlgorithm(const AdjacencyList &edges) {
     }
 
     for (int i = 0; i < edges.size(); i++) {
-      sort(mstEdges[i].begin(), mstEdges[i].end());
+      std::sort(mstEdges[i].begin(), mstEdges[i].end());
     }
   }
 
