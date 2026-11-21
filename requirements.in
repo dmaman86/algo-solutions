@@ -1,0 +1,30 @@
+# Direct Python dependencies. requirements.txt is generated from this file:
+# edit this file, then run `make compile-requirements` and commit both files.
+#
+# The algorithms in problems/ use only the standard library; every package below
+# is imported at module level by tests/python, so all are needed to run the suite
+# (not only `make visualize`).
+#
+# Version policy: lower bound = version already validated; upper bound = next
+# major release, so a major upgrade is always a deliberate edit of this file.
+
+# PDF report of the boggle_board visualization (tests/python/graphs/boggle_board).
+# 2.8.8 is the first release without the advisories fixed in Dependabot #73/#74.
+fpdf2>=2.8.8,<3
+
+# Tree diagrams (graphviz.Digraph) in binary tree / BST tests. Pure Python;
+# rendering also needs the Graphviz `dot` executable (`make visualize` checks it).
+graphviz>=0.20,<1
+
+# Plots saved by graph/matrix tests (pyplot savefig/subplots/imread).
+matplotlib>=3.8,<4
+
+# Graph construction and layout in graph algorithm tests.
+networkx>=3.4,<4
+
+# Imported by tests/python/graphs/minimum_passes_of_matrix. NumPy 2 is a major
+# upgrade (and matplotlib 3.8 requires numpy<2).
+numpy>=1.26,<2
+
+# Test runner; conftest.py registers the --visualize option.
+pytest>=9.1,<10

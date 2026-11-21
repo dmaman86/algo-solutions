@@ -25,3 +25,4 @@ venv/
 
 .claude/worktrees/
 .claude/settings.local.json
+.venv-tools/
