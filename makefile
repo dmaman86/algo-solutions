@@ -23,6 +23,7 @@ else
 endif
 
 .PHONY: setup install-python install-js check-python-env check-python-ready setup-cpp \
+	compile-requirements upgrade-requirements check-requirements \
 	test test-js test-python test-cpp visualize clean help
 
 setup: install-python install-js setup-cpp
@@ -68,6 +69,44 @@ check-python-ready: check-python-env
 		echo "No Python environment found at $(PYTHON). Run 'make install-python' first."; \
 		exit 1; \
 	}
+
+# --- Python dependency maintenance (pip-tools) -----------------------------
+# requirements.in lists the direct dependencies; requirements.txt is generated
+# from it by pip-compile and committed. pip-tools is a maintenance tool: it lives
+# in its own ./.venv-tools (Python $(PYTHON_VERSION)) and never in the project
+# environment. Installing and testing never run pip-compile.
+PIP_TOOLS_VERSION := 7.7.0
+TOOLS_VENV := $(CURDIR)/.venv-tools
+PIP_COMPILE := CUSTOM_COMPILE_COMMAND="make compile-requirements" \
+	$(TOOLS_VENV)/bin/pip-compile --quiet --strip-extras --no-emit-index-url
+
+$(TOOLS_VENV)/bin/pip-compile:
+	@command -v $(VENV_BOOTSTRAP_PYTHON) >/dev/null 2>&1 || { \
+		echo "'$(VENV_BOOTSTRAP_PYTHON)' was not found on PATH; it is required to resolve dependencies for Python $(PYTHON_VERSION)."; \
+		exit 1; \
+	}
+	@echo "Installing pip-tools $(PIP_TOOLS_VERSION) into ./.venv-tools..."
+	@$(VENV_BOOTSTRAP_PYTHON) -m venv --upgrade-deps $(TOOLS_VENV)
+	@$(TOOLS_VENV)/bin/python -m pip install --quiet --disable-pip-version-check pip-tools==$(PIP_TOOLS_VERSION)
+
+# Regenerates requirements.txt from requirements.in, keeping existing pins.
+# Upgrade specific packages with: make compile-requirements P="pytest pluggy"
+# (other pins are kept, so list any dependency that must move along with them).
+compile-requirements: $(TOOLS_VENV)/bin/pip-compile
+	@$(PIP_COMPILE) $(foreach p,$(P),--upgrade-package $(p)) requirements.in --output-file requirements.txt
+
+# Upgrades every pin to the newest versions allowed by requirements.in.
+upgrade-requirements: $(TOOLS_VENV)/bin/pip-compile
+	@$(PIP_COMPILE) --upgrade requirements.in --output-file requirements.txt
+
+# Fails if requirements.txt is not what requirements.in currently resolves to.
+# Works on a temporary copy: tracked files are never modified.
+check-requirements: $(TOOLS_VENV)/bin/pip-compile
+	@tmp=$$(mktemp -d) && trap 'rm -rf "$$tmp"' EXIT && \
+	cp requirements.in requirements.txt "$$tmp"/ && \
+	(cd "$$tmp" && $(PIP_COMPILE) requirements.in --output-file requirements.txt) && \
+	diff -u requirements.txt "$$tmp"/requirements.txt && \
+	echo "requirements.txt is up to date with requirements.in."
 
 # --- JavaScript -----------------------------------------------------------
 
@@ -160,6 +199,9 @@ help:
 	@echo "  make setup          - Install all dependencies (Python, JavaScript, C++)"
 	@echo "  make install-python - Install Python dependencies from requirements.txt (creates ./venv with Python 3.12 if no env is active)"
 	@echo "  make install-js     - Clean install of npm dependencies from package-lock.json"
+	@echo "  make compile-requirements [P=\"pkg ...\"] - Regenerate requirements.txt from requirements.in (P upgrades the listed packages)"
+	@echo "  make upgrade-requirements - Upgrade all pins within the ranges in requirements.in"
+	@echo "  make check-requirements   - Verify requirements.txt matches requirements.in (modifies nothing)"
 	@echo "  make test           - Run all tests, without visualizations"
 	@echo "  make test-js        - Run JavaScript tests with npm"
 	@echo "  make test-python    - Run Python tests with pytest"
