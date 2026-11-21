@@ -1,56 +1,85 @@
-JS_TEST_DIR = tests/__tests__
 PYTHON_TEST_DIR = tests/python
 UNAME_S := $(shell uname -s)
 SHELL := /bin/bash
-IS_CONDA=$(shell python -c 'import sys; print("1" if "conda" in sys.version else "0")')
 
-ifeq ($(IS_CONDA),1)
-	PYTEST := pytest
+# Python version used to create ./venv (and by CI). Active environments may also
+# use any version in SUPPORTED_PYTHON_VERSIONS: every pinned dependency ships
+# binary wheels for them.
+PYTHON_VERSION := 3.12
+SUPPORTED_PYTHON_VERSIONS := 3.11 3.12
+VENV_BOOTSTRAP_PYTHON := python$(PYTHON_VERSION)
+
+# Python environment selection:
+#   - an activated virtualenv (VIRTUAL_ENV) or Conda env (CONDA_PREFIX) is used as-is;
+#   - otherwise ./venv, created by `make install-python` with Python $(PYTHON_VERSION).
+# The Conda base environment is refused (see check-python-env).
+ifneq ($(VIRTUAL_ENV),)
+  PYTHON := $(VIRTUAL_ENV)/bin/python
+else ifneq ($(CONDA_PREFIX),)
+  PYTHON := $(CONDA_PREFIX)/bin/python
 else
-	PYTEST := venv/bin/pytest
+  PYTHON := venv/bin/python
+  VENV_DEP := venv/bin/python
 endif
 
-setup: setup-python setup-cpp
+.PHONY: setup install-python install-js check-python-env check-python-ready setup-cpp \
+	test test-js test-python test-cpp visualize clean help
 
-setup-python:
-	@if [ "$(IS_CONDA)" -eq "1" ]; then \
-		echo "Detected Anaconda environment."; \
-	else \
-		echo "Checking virtual environment..."; \
-		[ -d "venv" ] || $(MAKE) create-venv; \
+setup: install-python install-js setup-cpp
+
+# --- Python ---------------------------------------------------------------
+
+# Refuses the Conda base environment and Python versions without wheels for the pins.
+check-python-env:
+	@if [ -z "$(VIRTUAL_ENV)" ] && [ "$(CONDA_DEFAULT_ENV)" = "base" ]; then \
+		echo "Refusing to use the Conda 'base' environment."; \
+		echo "Run 'conda activate algo-solutions', or 'conda deactivate' to use ./venv."; \
+		exit 1; \
 	fi
-	@if [ -n "$$($(MAKE) check-missing)" ]; then \
-		$(MAKE) install-missing; \
-	else \
-		echo "All dependencies are already installed."; \
-	fi
-
-create-venv:
-	@echo "Creating virtual environment..."
-	@python3 -m venv venv
-
-check-missing:
-	@if [ "$(IS_CONDA)" -eq "1" ]; then \
-		comm -23 <(grep -Eo '^[^>=<]+' requirements.txt | tr '[:upper:]' '[:lower:]' | sort) <(conda list | awk '{print tolower($$1)}' | sort) || true; \
-	else \
-		comm -23 <(grep -Eo '^[^>=<]+' requirements.txt | tr '[:upper:]' '[:lower:]' | sort) <(pip list --format=freeze | cut -d= -f1 | tr '[:upper:]' '[:lower:]' | sort) || true; \
+	@if [ -x "$(PYTHON)" ]; then \
+		version=$$($(PYTHON) -c 'import sys; print("%d.%d" % sys.version_info[:2])'); \
+		case " $(SUPPORTED_PYTHON_VERSIONS) " in \
+			*" $$version "*) ;; \
+			*) echo "Python $$version at $(PYTHON) is not supported (supported: $(SUPPORTED_PYTHON_VERSIONS))."; \
+			   exit 1 ;; \
+		esac; \
 	fi
 
-install-missing:
-	@echo "Installing missing dependencies..."
-	@MISSING=$$($(MAKE) check-missing); \
-	if [ -n "$$MISSING" ]; then \
-		if [ "$(IS_CONDA)" -eq "1" ]; then \
-			conda install -c conda-forge -y $$MISSING; \
-		else \
-			. venv/bin/activate && pip install $$MISSING; \
-		fi; \
-	else \
-		echo "No missing dependencies."; \
-	fi
-	@echo "Ensuring pip is up to date..."
-	@pip install --upgrade pip wheel
+venv/bin/python:
+	@command -v $(VENV_BOOTSTRAP_PYTHON) >/dev/null 2>&1 || { \
+		echo "Python $(PYTHON_VERSION) is required to create ./venv, but '$(VENV_BOOTSTRAP_PYTHON)' was not found on PATH."; \
+		echo "Install it (e.g. 'brew install python@$(PYTHON_VERSION)' or 'uv python install $(PYTHON_VERSION)'),"; \
+		echo "or activate a Conda env/virtualenv with a supported Python ($(SUPPORTED_PYTHON_VERSIONS))."; \
+		exit 1; \
+	}
+	@echo "Creating virtual environment in ./venv with $(VENV_BOOTSTRAP_PYTHON)..."
+	@$(VENV_BOOTSTRAP_PYTHON) -m venv --upgrade-deps venv
 
+# Installs exactly what requirements.txt declares into the selected environment.
+# A no-op when everything is already satisfied.
+install-python: check-python-env $(VENV_DEP)
+	@echo "Installing Python dependencies into $$($(PYTHON) -c 'import sys; print(sys.prefix)')..."
+	@$(PYTHON) -m pip install --disable-pip-version-check -r requirements.txt
+	@$(PYTHON) -m pip check
+
+# Test targets never install: they only require an existing, supported environment.
+check-python-ready: check-python-env
+	@[ -x "$(PYTHON)" ] || { \
+		echo "No Python environment found at $(PYTHON). Run 'make install-python' first."; \
+		exit 1; \
+	}
+
+# --- JavaScript -----------------------------------------------------------
+
+# Explicit clean install from package-lock.json.
+install-js:
+	@npm ci
+
+# Reinstalls only when package.json or package-lock.json change.
+node_modules/.package-lock.json: package.json package-lock.json
+	@npm ci
+
+# --- C++ ------------------------------------------------------------------
 
 setup-cpp:
 	@echo "Checking C++ dependencies..."
@@ -91,24 +120,35 @@ install-cpp-Windows_NT:
 		vcpkg install googletest nlohmann-json \
 	)
 
+# --- Tests ----------------------------------------------------------------
+
 test: test-js test-python test-cpp
 
-test-js:
+test-js: node_modules/.package-lock.json
 	@echo "Running JS tests with npm..."
-	@cd $(JS_TEST_DIR) && npm install && npm test
+	@npm test
 
-test-python: setup-python
+test-python: check-python-ready
 	@echo "Running Python tests with pytest..."
-	@$(PYTEST) $(PYTHON_TEST_DIR) --tb=short -q --disable-warnings
+	@$(PYTHON) -m pytest $(PYTHON_TEST_DIR) --tb=short -q --disable-warnings
 
 test-cpp: setup-cpp
 	@echo "Running C++ tests with CMake..."
 	@mkdir -p build
 	@cd build && cmake .. && make && ctest --output-on-failure
 
-visualize: setup-python
+# Graphviz's `dot` executable is required only for --visualize.
+visualize: check-python-ready
+	@command -v dot >/dev/null 2>&1 || { \
+		echo "Graphviz 'dot' executable not found; it is required for visualizations."; \
+		echo "Install it with one of:"; \
+		echo "  macOS:  brew install graphviz"; \
+		echo "  Linux:  sudo apt-get install graphviz"; \
+		echo "  Conda:  conda install -n algo-solutions -c conda-forge graphviz"; \
+		exit 1; \
+	}
 	@echo "Running Python tests with visualizations..."
-	@$(PYTEST) $(PYTHON_TEST_DIR) --tb=short -q --disable-warnings --visualize
+	@$(PYTHON) -m pytest $(PYTHON_TEST_DIR) --tb=short -q --disable-warnings --visualize
 
 clean:
 	@echo "Cleaning build directories..."
@@ -117,10 +157,12 @@ clean:
 
 help:
 	@echo "Usage:"
-	@echo "  make setup       - Install all dependencies (Python, C++)"
-	@echo "  make test        - Run all tests, without visualizations"
-	@echo "  make test-js     - Run JavaScript tests with npm"
-	@echo "  make test-python - Run Python tests with pytest"
-	@echo "  make test-cpp    - Run C++ tests with CMake"
-	@echo "  make visualize   - Run Python tests and generate visualizations"
-	@echo "  make clean       - Clean temporary files"
+	@echo "  make setup          - Install all dependencies (Python, JavaScript, C++)"
+	@echo "  make install-python - Install Python dependencies from requirements.txt (creates ./venv with Python 3.12 if no env is active)"
+	@echo "  make install-js     - Clean install of npm dependencies from package-lock.json"
+	@echo "  make test           - Run all tests, without visualizations"
+	@echo "  make test-js        - Run JavaScript tests with npm"
+	@echo "  make test-python    - Run Python tests with pytest"
+	@echo "  make test-cpp       - Run C++ tests with CMake"
+	@echo "  make visualize      - Run Python tests and generate visualizations (requires Graphviz)"
+	@echo "  make clean          - Clean temporary files"

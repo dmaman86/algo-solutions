@@ -151,13 +151,18 @@ make setup
 
 #### **What does `make setup` do?**:
 
-- Installs **Python** dependencies from `requirements.txt`.
+- Installs **Python** dependencies from `requirements.txt` (`make install-python`) into:
+  - the active virtualenv or Conda environment (e.g. `conda activate algo-solutions`), or
+  - a local `./venv`, created with Python 3.12 (`python3.12` must be on `PATH`) when no environment is active.
+
+  Active environments must use Python 3.11 or 3.12. The Conda `base` environment is refused on purpose.
+- Installs **JavaScript** dependencies exactly as locked in `package-lock.json` (`make install-js`, which runs `npm ci`).
 - Installs **Google Test (gtest)** and **nlohmann/json** depending your operating system:
   - **macOS**: Uses `brew`.
   - **Linux**: Uses `apt-get`.
   - **Windows**: Uses `vcpkg`.
-- Sets up the **C++ build structure** using `CMake`.
-- Ensures your Python version is `3.10` or higher.
+
+`make test-python` and `make visualize` never install packages: run `make install-python` (or `make setup`) first, and again after `requirements.txt` changes. `make test-js` reinstalls npm dependencies only when `package.json` or `package-lock.json` change. To add or update a JavaScript dependency, use `npm install <package>` (which updates `package-lock.json`) and commit both files.
 
 ### 2. **Run Tests**:
 
@@ -195,6 +200,14 @@ Some Python tests may generate **graphs** or **visual outputs**. To enable them,
 make visualize
 ```
 
+Visualizations require the **Graphviz** `dot` executable (regular test runs, including CI, do not):
+
+```sh
+brew install graphviz                                   # macOS
+sudo apt-get install graphviz                           # Linux
+conda install -n algo-solutions -c conda-forge graphviz # Conda
+```
+
 ### 4. **Clean the project**:
 
 To remove compiled files and Python cache (`__pycache__`), use:
@@ -219,13 +232,15 @@ make help
 This will display:
 
 ```sh
-make setup        # Install all dependencies (Python, C++)
-make test         # Run all tests, without visualizations
-make test-js      # Run JavaScript tests with npm
-make test-python  # Run Python tests with pytest
-make test-cpp     # Run C++ tests with CMake
-make visualize    # Run Python tests and generate visualizations
-make clean        # Clean temporary files
+make setup          # Install all dependencies (Python, JavaScript, C++)
+make install-python # Install Python dependencies from requirements.txt (creates ./venv with Python 3.12 if no env is active)
+make install-js     # Clean install of npm dependencies from package-lock.json
+make test           # Run all tests, without visualizations
+make test-js        # Run JavaScript tests with npm
+make test-python    # Run Python tests with pytest
+make test-cpp       # Run C++ tests with CMake
+make visualize      # Run Python tests and generate visualizations (requires Graphviz)
+make clean          # Clean temporary files
 ```
 
 ---
@@ -317,7 +332,7 @@ This repository is structured as follows:
 ## **Notes**:
 
 - If you're on **Windows**, ensure you have **vcpkg** installed.
-- If you encounter compatibility issues, check that you have **Python 3.10+** installed.
+- CI runs **Python 3.12**; locally use Python 3.12 (3.11 is also supported).
   ```bash
   python3 --version
   ```
